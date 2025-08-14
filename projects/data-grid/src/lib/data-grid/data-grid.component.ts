@@ -12,6 +12,8 @@ import {
   ChangeDetectorRef,
 } from '@angular/core';
 import { SplitColumnsService } from '../services/split-columns.service';
+import { CommonService } from '../services/common.service';
+import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 
 @Component({
   selector: 'data-grid',
@@ -97,6 +99,10 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   // dropdowns Background Color;
   @Input() dropdownsBackgroundColor: string | undefined = '';
 
+  // Footer row Height;
+  @Input() footerRowHeight: number | undefined = 46;
+
+
   activeCol: any = null;
   activeFilterCell: any = null;
   isShowSideMenu = false;
@@ -107,8 +113,9 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   originalColumns: any[] = [];
   constructor(
     private columnService: SplitColumnsService,
-    private cdr: ChangeDetectorRef
-  ) {}
+    private cdr: ChangeDetectorRef,
+    public commonSevice: CommonService
+  ) { }
 
   ngAfterViewInit(): void {
     this.columns = this.columnService.setColumnsQuery(this.columns);
@@ -118,6 +125,39 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     setTimeout(() => {
       this.setSectionsWidth();
     }, 10);
+    setTimeout(() => {
+      const syncScroll = (
+        source: CdkVirtualScrollViewport,
+        targets: CdkVirtualScrollViewport[]
+      ) => {
+        const scrollOffset = source.measureScrollOffset();
+        targets.forEach(vp => {
+          const diff = Math.abs(vp.measureScrollOffset() - scrollOffset);
+          if (diff > 1) {
+            vp.scrollToOffset(scrollOffset);
+          }
+        });
+      };
+
+      // Make center the master scroll source
+      this.centerViewport.elementScrolled().subscribe(() => {
+        syncScroll(this.centerViewport, [this.leftViewport, this.rightViewport]);
+      });
+    }, 200);
+
+
+    setTimeout(() => {
+      this.computeViewportRows();
+      this.updateVisibleRows(0);
+
+      // if the container or rows can resize, recompute on resize
+      const ro = new ResizeObserver(() => {
+        this.computeViewportRows();
+        this.updateVisibleRows(this.mainScroll.nativeElement.scrollTop);
+      });
+      ro.observe(this.mainScroll.nativeElement);
+    }, 300);
+
   }
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['columns'] && !changes['columns'].firstChange) {
@@ -131,6 +171,10 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
         }
       }, 0);
     }
+
+    // if (changes['dataSet']) {
+    //   this.updateVisibleRows();
+    // }
   }
 
   leftPinnedColumns: any[] = [];
@@ -150,11 +194,11 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   rightPinnedBody!: ElementRef<HTMLDivElement>;
 
   // Headers Template References
-  @ViewChild('leftPinnedBody')
+  @ViewChild('leftPinnedHeader')
   leftPinnedHeader!: ElementRef<HTMLDivElement>;
-  @ViewChild('centerPinnedBody')
+  @ViewChild('centerPinnedHeader')
   centerPinnedHeader!: ElementRef<HTMLDivElement>;
-  @ViewChild('rightPinnedBody')
+  @ViewChild('rightPinnedHeader')
   rightPinnedHeader!: ElementRef<HTMLDivElement>;
 
   // Center Fake scrollbard
@@ -204,18 +248,18 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     }
   }
 
-  onCenterBodyScroll(): void {
-    const scrollTop = this.centerPinnedBody.nativeElement.scrollTop;
-    const scrollLeft = this.centerPinnedBody.nativeElement.scrollLeft;
+  // onCenterBodyScroll(): void {
+  //   const scrollTop = this.centerPinnedBody.nativeElement.scrollTop;
+  //   const scrollLeft = this.centerPinnedBody.nativeElement.scrollLeft;
 
-    // Sync vertical scroll with left & right pinned bodies
-    this.leftPinnedBody.nativeElement.scrollTop = scrollTop;
-    this.rightPinnedBody.nativeElement.scrollTop = scrollTop;
+  //   // Sync vertical scroll with left & right pinned bodies
+  //   this.leftPinnedBody.nativeElement.scrollTop = scrollTop;
+  //   this.rightPinnedBody.nativeElement.scrollTop = scrollTop;
 
-    // Sync horizontal scroll with center header
-    this.centerPinnedHeader.nativeElement.scrollLeft = scrollLeft;
-    this.centerFakeScrollbar.nativeElement.scrollLeft = scrollLeft;
-  }
+  //   // Sync horizontal scroll with center header
+  //   this.centerPinnedHeader.nativeElement.scrollLeft = scrollLeft;
+  //   this.centerFakeScrollbar.nativeElement.scrollLeft = scrollLeft;
+  // }
 
   onLeftBodyScroll(): void {
     const scrollTop = this.leftPinnedBody.nativeElement.scrollTop;
@@ -238,8 +282,8 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
 
   onCenterHeaderScroll(event: Event) {
     const target = event.target as HTMLElement;
-    this.centerPinnedBody.nativeElement.scrollLeft = target.scrollLeft;
-    this.centerFakeScrollbar.nativeElement.scrollLeft = target.scrollLeft;
+    this.horizintalFakeScroll.nativeElement.scrollLeft = target.scrollLeft;
+    this.centerScrollableBody.nativeElement.scrollLeft = target.scrollLeft;
   }
 
   getNestedValue(obj: any, field: string): any {
@@ -366,7 +410,7 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   // Get Body Height
   get bodyWrapperHeight(): string {
     const rows = this.showColumnsGrouping ? 3 : 2;
-    const offset = this.headerRowHeight * rows;
+    const offset = ((this.headerRowHeight * rows) + 17);
     return `calc(100% - ${offset}px)`;
   }
 
@@ -610,15 +654,18 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   }
 
   toggleSelectAll(data: any[]): void {
-    const allIds = data.map((row) => this.getRowId(row));
-    const allSelected = allIds.every((id) => this.selectedRows.has(id));
+    const allIds = this.dataSet.map(row => this.getRowId(row));
+    const allSelected = allIds.every(id => this.selectedRows.has(id));
 
     if (allSelected) {
-      allIds.forEach((id) => this.selectedRows.delete(id));
+      allIds.forEach(id => this.selectedRows.delete(id));
     } else {
-      allIds.forEach((id) => this.selectedRows.add(id));
+      allIds.forEach(id => this.selectedRows.add(id));
     }
+
+    this.cdr.detectChanges();
   }
+
 
   isRowSelected(row: any): boolean {
     return this.selectedRows.has(this.getRowId(row));
@@ -648,6 +695,11 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   toggleGroupVisibility(col: any) {
     const allVisible = col.children.every((child: any) => child.is_visible);
     col.children.forEach((child: any) => (child.is_visible = !allVisible));
+    setTimeout(() => {
+      this.updateColumnWidthsAndGroups();
+      this.SetColumnsDefaultWidth();
+      this.cdr.detectChanges();
+    }, 10);
   }
 
   isColumnVisible(columns: any) {
@@ -667,6 +719,10 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     const flatten = this.flattenColumns(this.columns);
     const allSelected = flatten.every((col: any) => col.is_visible);
     flatten.forEach((col: any) => (col.is_visible = !allSelected));
+    setTimeout(() => {
+      this.updateColumnWidthsAndGroups();
+      this.cdr.detectChanges();
+    }, 10);
   }
 
   flattenColumns(cols: any[]): any[] {
@@ -765,17 +821,148 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   }
 
   // Check If  Any column have right pinned
-  get hasRightPinnedColumns(): boolean {
-    const checkPinnedRight = (columns: any[]): boolean => {
-      return columns.some((col) => {
-        if (col.pinned === 'right') return true;
-        if (col.children?.length) {
-          return checkPinnedRight(col.children);
-        }
-        return false;
-      });
-    };
+  get hasRightPinnedColumns() {
+    return this.commonSevice.gethasRightPinnedColumns(this.columns);
+  }
 
-    return checkPinnedRight(this.columns);
+  @HostListener('window:resize', ['$event'])
+  onResize(event: UIEvent) {
+    this.autosizeAllColumns();
+    setTimeout(() => {
+      
+    }, 100);
+  }
+
+  refreshHeaders() {
+    setTimeout(() => {
+      this.updateColumnWidthsAndGroups();
+    }, 0)
+  }
+
+  get hasAnyVisibleColumn() {
+    return this.commonSevice.gethasVisibleColumns(this.columns);
+  }
+
+  tableHeaderAndBodyHeight() {
+    return `calc(100% - ${this.footerRowHeight})`
+  }
+
+  @ViewChild('leftViewport') leftViewport!: CdkVirtualScrollViewport;
+  @ViewChild('centerViewport') centerViewport!: CdkVirtualScrollViewport;
+  @ViewChild('rightViewport') rightViewport!: CdkVirtualScrollViewport;
+
+  private syncing = false;
+
+  onScrollIndexChange(index: number) {
+    if (this.syncing) return;
+    this.syncing = true;
+
+    this.leftViewport.scrollToIndex(index, 'smooth');
+    this.centerViewport.scrollToIndex(index, 'smooth');
+    this.rightViewport.scrollToIndex(index, 'smooth');
+
+    setTimeout(() => this.syncing = false, 0);
+  }
+
+  @ViewChild('centerScroll') centerScroll!: ElementRef<HTMLDivElement>;
+  visibleRowCount = 25;
+  startIndex = 0;
+  visibleRows: any[] = [];
+
+  private updateVisibleRows(scrollTop: number) {
+    const total = this.dataSet.length;
+
+    // clamp firstIndex so we *always* have viewportRows (no short slice at the end)
+    const maxFirst = Math.max(0, total - this.viewportRows);
+    const first = Math.min(Math.floor(scrollTop / this.rowHeight), maxFirst);
+
+    // overscan around the clamped first index
+    const start = Math.max(0, first - this.overscan);
+    const end = Math.min(total, first + this.viewportRows + this.overscan);
+
+    this.firstIndex = first;
+    this.renderStart = start;
+    this.visibleRows = this.dataSet.slice(start, end);
+  }
+
+  // keep DOM stable; avoids flicker when the slice shifts
+  trackByRenderedIndex = (i: number, _row: any) => this.renderStart + i;
+
+  private isSyncingFromMain = false;
+  private isSyncingFromFake = false;
+  private mainScrollRaf: number | null = null;
+
+  onMainScroll(event: Event) {
+    if (this.isSyncingFromFake) {
+      this.isSyncingFromFake = false;
+      return;
+    }
+
+    const scrollTop = (event.target as HTMLElement).scrollTop;
+
+    if (this.mainScrollRaf) cancelAnimationFrame(this.mainScrollRaf);
+    this.mainScrollRaf = requestAnimationFrame(() => {
+      this.isSyncingFromMain = true;
+      this.fakeScroll.nativeElement.scrollTop = scrollTop;
+
+      this.startIndex = Math.floor(scrollTop / this.rowHeight);
+      this.visibleRows = this.dataSet.slice(
+        this.startIndex,
+        this.startIndex + this.visibleRowCount
+      );
+      this.cdr.markForCheck();
+    });
+
+  }
+
+  onMainFakeScroll(event: Event) {
+    if (this.isSyncingFromMain) {
+      this.isSyncingFromMain = false;
+      return;
+    }
+
+    const scrollTop = (event.target as HTMLElement).scrollTop;
+
+    this.isSyncingFromFake = true;
+    this.mainScroll.nativeElement.scrollTop = scrollTop;
+
+    this.startIndex = Math.floor(scrollTop / this.rowHeight);
+    this.visibleRows = this.dataSet.slice(
+      this.startIndex,
+      this.startIndex + this.visibleRowCount
+    );
+    this.cdr.markForCheck();
+  }
+
+
+
+  overscan = 4;                // extra rows above/below for smoothness
+  viewportRows = 0;            // how many rows fit in viewport (computed)
+  firstIndex = 0;              // index of the first visible row (clamped)
+  renderStart = 0;             // where the slice actually starts (firstIndex - overscan, clamped)
+
+  private scrollRaf: number | null = null;
+  private pendingScrollTop = 0;
+
+  @ViewChild('mainScroll') mainScroll!: ElementRef<HTMLDivElement>;
+  @ViewChild('fakeScroll') fakeScroll!: ElementRef<HTMLDivElement>;
+  @ViewChild('horizintalFakeScroll') horizintalFakeScroll!: ElementRef<HTMLDivElement>;
+  @ViewChild('centerScrollableBody') centerScrollableBody!: ElementRef<HTMLDivElement>;
+  computeViewportRows() {
+    const h = this.mainScroll?.nativeElement?.clientHeight ?? 0;
+    this.viewportRows = Math.max(1, Math.ceil(h / this.rowHeight));
+  }
+
+
+  onHorizintalFakeScroll(event: Event){
+    const scrollLeft = (event.target as HTMLElement).scrollLeft;
+    this.centerPinnedHeader.nativeElement.scrollLeft = scrollLeft;
+    this.centerScrollableBody.nativeElement.scrollLeft = scrollLeft;
+  }
+
+  onCenterBodyScroll(event: Event){
+    const scrollLeft = (event.target as HTMLElement).scrollLeft;
+    // this.horizintalFakeScroll.nativeElement.scrollLeft = scrollLeft;
+    this.centerPinnedHeader.nativeElement.scrollLeft = (event.target as HTMLElement).scrollLeft;
   }
 }

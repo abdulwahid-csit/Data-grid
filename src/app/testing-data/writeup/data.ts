@@ -744,6 +744,11006 @@ export const result = {
       },
       __typename: 'WriteUp',
     },
+    {
+    "_id": "5ff8f15a32944d9ab66cb2c492b54dec",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "64f2dec02ea84c4bb7640a618c4cf039",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9c30c967bb924fa18b902974b2374fbd",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "606b48bd0ceb44548c42263bef59249a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "8f8626b56aab430da772981ca3d5074a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "0b1eb4fce46f4b399b892479b98753b2",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "5eaeca060445478a8085b478a0275240",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "1ed37189ea1b4392894a9c85a148a296",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "a9ebed2927574af98ad495a338f9fdbe",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "28d1ff1c153c4439af219ef219aad959",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "5324d9f9d5934e47bc464c042c7458c1",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "e45a290523154026b2e26b4fe12828ea",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "a611ce69513f4412beb8cf89e6470673",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f59a755ffd17402dbc2c37503b6ea66b",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "0fc4f749bc58442c84b9584a32c216a5",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "3dc7f2ded0234541a9fb1e0a3f79b6dc",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "5d2550c1bdac4d4ba9ee21ea9926f655",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b7bf4ea89e0b43d180c5e4412445c3d1",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "82cd966f0043444c8bb6be191e9adc76",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "7d054dced4c7401ab44c0ad80344543f",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "2bfd996444ed431389d5dd00249c4ce2",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "376e82fa42494db0a5930b2036fd1861",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "64aa5266ed3044889244ec9b389073d2",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "2ab3c18616c7425087b2acd306451e24",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "5b095fadc08d4be29a897a14b7ff01b4",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "8010ddfdadeb42faa653e04655e90d2d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9638c9af5a534edcbb3211ff66488896",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "c341450ebd8f47408f4957bcad4e1839",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "4198199ccd1348418578b0e596978f12",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "3c20918c46de4acc820dcbc584f54dee",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "dc75d3b70afb44e8aa1dea4049a5dca4",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "ff6f68144f06480fa5d702c364ab422f",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "bea75afcd41c4d1ab4fabf3942f452b4",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "8a994d10b91242bb96dfaa23fa0c5ed1",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "90a7d5e017eb4ef689f7ebee215d3889",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "17a629261c23413ba027720f07c59525",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "45be408195c548fd8dd5448aa841b471",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b2154806ac9b4563becaee2875e3a41d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "360570369a9d45bc9073786059c46110",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f94206ec48ad427baaa1162cc4e16a5a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "31571ffa66ce472bbf57bffbfc39430f",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "cf38c17fe6b64fb88bf0adf5e20aa053",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "be280f7b2c75440794dbe1696905de13",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f651f80d255542e49dd50168a7b7f826",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "32e6c79cba434135a5f3c863c45d3f71",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "1ec2614a0f7b4f16ac9eaee3725bc170",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "64bd4959a4f94e9ba000ad1ffb742c70",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "dddfa1724b7f474c91df290d2ce1dbd3",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "ba9fd572a6c847b7a636d22b5346413e",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f27a185dd4f94ab0897e47ff73516559",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "6f22a7f3657c4863800710989d52c1fc",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b1783083e6ea4692bed8d9547fff6cf6",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "c46794cec57d4ed1abb9ab02f2ffa0b1",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "5b0c6c9097474c18ae47299ca0d495fe",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "a57397d9b3df479a83972dded02fc8f4",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "78920d888d284114b378fa390e930f67",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "7add3568df974322829417f15d9bf72c",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "c3cacfcd33ff48f9b783b6439313d737",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "72f1a453510547868d4a2c502d7485ec",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "2d3d477da7524e7fa0f3994246e1a015",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "2292ee5e887d497dac98623def3b665e",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "69f6cf2bdbf74d2f8aa0de150130443b",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "925fbd8a2730495d91488083008e993a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "017f2dfb011d4188a0b9f61ae1e55553",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "c02703fb26f146ac8c90f57a496fcdb8",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "fd5b73912a6a4388b2a88c6c0ff112d6",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "4c450c642fbc41088a3a76cc043a64ca",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "096253cf73754d369ac030c51385250e",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "d1becb87314d4d398aa61f107e3845f1",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "1ddfeeec8ba54e4f959f87907165dcd7",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "8e3f76dac9134e939abd604c116decfc",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "ab509ea3ecbf450bbb37c7f0a3e2cd85",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "dfd3f60f2dbf484aabaabc53711a337b",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f318d5c90fa545f881363664afefb37e",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "7e9704bcc96840db92b2aae27290e877",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "92b623251aa64a779f402193e4aef77f",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b2c31e72da06415bb6901f0e3e849610",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "0e3d777827514e1e84b89ae720fbeedd",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "dc65033965da4f8ba8afb4fc5474c03b",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "abfd6585139a4cafa243c5a922954f68",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "20c272440e3b47f78d37a14651ff596b",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "36871eae3d884f2297bb024936ee7745",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "8006bc68f7214a3daf1efd24a2082b80",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "d7cc8aa545214af7b19b0187870f086d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "572702e15c744579879d74d0e7560956",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "2982631762d046409d7f19a14a759e4f",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "a13fe484f441494da8d442569bd3f06c",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "1c63d22fe2664da08b5c683ca46b6bc0",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "993c1d5bc15145c0901ce6d373dbc278",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "91d44c1d7981463ba9fffaacc2f0027d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "e27a530e792242e2b568d87057db2d22",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "647fb71dd41f4caab6d7863c8b608573",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b5493bbd0f104a63b270e1af46fd67c9",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "bb93f743e61347ddbd2bc86b2ec4b0b0",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "2f6eadd725fe4b79907235f0e0dadd24",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "2237b67d956a4f7db8d44152fb826cd6",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "4d39cd20d4784136b96ee29592287af1",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "5a40c31e99654f2dba18e5920200d9ba",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "92bae0259e344946bc51a17a213564a1",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "e4352120c28941f4bbd947bcc79194a2",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9bf3beb95bf0475faef0b48cda575e0e",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "97a9131a92704415b843d22971b1eda9",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "fbb0fca5d83b4f468a3b8302451f6fb5",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "da6e39bbe787450d8444cadad19bfbe4",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "c9970511857f4c289161c4e946ec1830",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f8cd4580a9ac483bbd58050ca1e4c4cd",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "cfa4c9a206274ffdafee2a54cb47da76",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "2d57907ceab94057b94a1f346fcde4bc",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "fc199ee1931146baaf6e0264081778f3",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f536a2e1c1fd49fb969d7192ec45c952",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f5c96d922ddc4664beb5cb2f1f6a90ee",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "96d6f3f4b1ef4babbdc2d73cbf9bc8fe",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "6abb97204c6f45069f8089bede99fc93",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "ca0830d821a94ee7900f36ddabf16120",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "990a8397735f40d69460201456099f7c",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "50c5b6f720f647aa959d2b5ddce939d9",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9fe723d21c294a2bad2053d8e9cf66c0",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f9307a8fcce947f5949c51fca4b11b0c",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "4e4171fec02c4e78bccb82d8d5833794",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9bef90e28aa6472d90d60152e9685788",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "2c968cceaa6544769ebee3d97fdf5c88",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "7aac27c34f5f4289b2bffdd7e1ce1948",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "e819a07ae3984d0bab7952fa8453204f",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "4cba839873154c9395d45f07cd3749fd",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "4d7af06f7bac4258b0d0135d286b9159",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "e28631c392d94512a5c4204a3ed37283",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "e1b1f96707be4276beb3a4c90b90f6cd",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "d551a6ef5fdc4efc9dcf21cc51526338",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "12292fe8152441b8b99250c03e2ea675",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "247f403de51e4fe8af24685b1013c013",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f6c4662d6f824418a63f395789def011",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "8f2145ed40924f43938d1df488e2d9af",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b116e3230ae348c0b31526cd642b6f31",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "bc1e6947a28b4a06b535d698448802cc",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "538952712e3b4e10b435298b7ad877e5",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "518d1da4433b4481bb684a3ea55d8200",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "fa2a6b34ff764219a6354f8eb9dba603",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "5662eb877536458697f44e19d56bb189",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "7aad62781a75411283ffab120c6e2895",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "d2c86dfd038d462eb8ac80654c5e34cc",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b51abbb098c94e6cb2ef2872ed638224",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "8522a5d9790d4e619286f4ea8e76c448",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f28ce15e44a94c758c8c9d80b87585d5",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "34a53786dcfe469caef2179267372d09",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "6e21daf052c84f2eaa3d6ee4fb1e49db",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "41adc48d7d5642e680239d428ba49aa7",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "dc13e1ee8b4742fca21686a5d6bc1d04",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "162d0cf41cc24152890717d74952f077",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f98fec4b20bc46dea43c0569f365ef01",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "4d90753a00f34b11827af6687d2534ea",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "43462dcb76044ed99709fa574bc0b870",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "000d670abd4844afb03512e2d42fccfa",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "11f19e107c2e4df8a5c28d9b0e43cd71",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "072c9d604c2748e48a88fd47dc833bd1",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f6bb7b813b80457dbe3d625723e82159",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "948c58c598af4991b292431a102bea93",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "e1c14018a53b4c9ead9f3208d168731c",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "93e8787734974af5bda965f5b4642578",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "6ec27db323f347459d08624b8e940e2d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "bf3a04ef9a054e9c995d10fe008b17f0",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "0659d929b7f244519f2a96ddf9bbd264",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "a9911b4322114f08b9af73419b49e8ba",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "4c44b27f7e614d908fd87dc0667103b5",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "ec66f966d12f449aa05544fdf0622e11",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "af4efa3fc540496abc507557eb0f430a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "482b4b962b7248db9f830405322f078e",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "4366bbe5288641ca98b134531ed02dcd",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "e05a530d4fee43cf81323775b68b4481",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "acedf20ffd8b4e3f996b51f4f788763b",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9651ce083d7a44c89f5204f4d70f66c1",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "cb96f8986abd4dd6a5acac553eb8a607",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "6a00241d4b7c4fe3b0d44879abfffd11",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "e8af7a2593a849239f31c7132795fa76",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "75a2266b989a4f0f97ff2d24d183e264",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "bad4fe0444fa4116bf708968941c817a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "8783370f82e44097a2d8edda4c655826",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "fc0cbe3efc4d48febe36172f027c4d4d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "1f1154be0cea44a8821789fcb1b717c3",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "8fdd0dfcdcd0452a92530d55ed889d98",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "0cc1286864a84c0f88af42c5d5bd5f2d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "bc7e707ebf894365bab839450646c2f2",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "cd9f335f490d4ff5b4a4a6ef64631f74",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "21350b646bd44b3ca278dc0616a8bc18",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "53a22c3bfa484885951a19331f3f0d75",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "548e002b80d34b1ba678a3d29b6ac7e8",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "93f90b5cc2eb4c8cafe710dd2f86510d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "151e1c055c224345a79c9046f501db62",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "2376c4e58d4a40708e0d8997df5ba603",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9f19d2a773f84f6b8e9311716566acb6",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "fdd740bd13a548379faac709fa3aeb83",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b11b9e361d77476087ef23ce3cc5f30a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f9546d494e61482cbb8d273aaa50d6da",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "be5d42cb7484400c9d512fe63c8ff046",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "59e624f2b4fe42b28bf0d8df11875e22",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f6e8d1dd35e5460eb391646e22429c20",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "915ad6c5a4ac41cf97b91c11eecd5c48",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "0214be340c73485aa189582c6021985d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "708ba2a920204a85a04cfb9093c5b40a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9a5e5b9b781f4c5cab24dbcb69f6db6b",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "008428e17a9547829918f91df9057cbe",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "5480c05d88e84d24acd4b68e1dfb8b04",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "1e703b2821db4db0975cbac55f38d415",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b2fde47a6c3645659df5aa7ac39792c6",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "4383658b45c5400aa22f672f07b3ba4f",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "725f33253bfd4fda9c1036a06a50e713",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "c1acee5421904077b8d59ae2febfe4c5",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "85a917605a3e4044b5ddb1282e3a4d91",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "e1aa9184d04e48f2bf2b7cab7106e525",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "75c8c3307d92412888bdd423b76e3630",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9ae8c080e78846aaa11d6be47d8dac1a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "350d33adbb4a4bd495631653b34dd7ce",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "8e45a0a8299e48c0af1ffe9ff3952565",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "30d4fa1058d14be9b78b55d1ff50d5e1",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "c3c4473722e04f03b3e4dafaeb9df313",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "7e89bc957daf4e71bec38583116ff2ed",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b6a8344516024da785d49de68114286a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "c687b0c76bed4d32a0c08dd22a8b0ad1",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "930f13c91c064aa6981a6e331437ddbc",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "c83f279d7b0e4c9282226b3639844aa5",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "786d67edbb7f4dad94f45fb5b6087d11",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "376ef262626c4bcba906a388198e3d5c",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "8a4cae7a4c79490ea00e41a4328a8a06",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "605998677db041a9a6755a03c3f6e63e",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "1eb7802d43044c8a917443ea20e0a270",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "bf99cd9f43da4299a82c5f6d00ec8353",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "090bc9d2d4f44524b0efcd707c0971dc",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "d0fe7a0e574b42b69a2841a6a2a2343c",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "82311d9a72144d31bce2d328d6162970",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b78ca8c990fa400795e673f458e45a45",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "38ee6d9c9bc54a7890e7d6bd0c5a7701",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "881c9c0dbb1243918d9af7338a963e09",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "c51faa0ae5ed4e269a4bdadb35939165",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "55c4d1c74fff4f6282adffe1b0de1ff1",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "1e6540ad64bf4de884bfb08e61bdb990",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "bd36d9b79ca64b1c94997a88e56cc7bb",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "a8b754aaf7af4e72bf84fb039e0fadb8",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "8ea7279cc70149d19e613a0515435832",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b124030362ed429e81284ebea8aff5d3",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "2e36d3a6a7e04e30b793ad4864e01e74",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "3bae11dc844f4feeb334e2c7a02ab484",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "0c65e625781d45a2af9c6fda1f782c78",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9198fb8cade443a683a6cb085a7f42e5",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "cfa79e25d06a4c67a07447364c547e42",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "aa24f10698a644c68a4889cce8a25064",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f4852959cb03424a96f7dc84f6e3dfe4",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "090fcc118ef143f7985dc5bed87f9912",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "3cd89ac27b574234a1aa1007f9072eb3",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "c401bae9792248c59284ee404424c830",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "99c53acad9f849adaea2e0062290024b",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "fac130bf58ae487996e6e190eb2951b6",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "70f51132f3d04af3b1ce3b0084e3e850",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "dfe8b73b4075463ea25a9ca595827f23",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "13908cc278f347809aba62e7c984e2d7",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "37ce6e29e0be46829292dca5ec0fe351",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "157afa114ead43fbbbb581ef0438b231",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b89e159714444cf9a43522402ad61eb1",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "eff79d0b27904b15930d4b1ae3ba6e0e",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "414e00fcd3fb4c8381feaebf8aeaeab4",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9809f31ebdc241cfb8d26a918526846a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "18f3ae377d6b423fbbeb660ecacfd2c9",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "91a0baa5e17a437dafc10311a590541e",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "0d89854be0fd4bdb8c9f41f66c9c1317",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "644c42230934439fb843dd590498b20a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "132f1b606e104586ba931d143cf66f2e",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "7a4f2e0ded9b49ef8c42b724a48461a9",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "13cda47a1d9544e5a72d744e6080def7",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "783ce1a6778b45b29c74efe22deadd71",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "ef6148be17684ad39462a3789e92681d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "58114fe07253478c8d21ab8d2fd7177b",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "ee3936e173c043149430a84ded33204b",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "7201e1883f9c4c3499213eca74528163",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "264403e429b24f2c864ec6e72a0caa8d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b14f49fc938545ef89e331e0e013a2e0",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9b9c9bda400a45528a5c206292452aee",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "5f2d69395c874897bc5c9d9bc0faf8d6",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "6f08ec293c594c238b7c17cf0069ef8f",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "e78e9f8d86ac4855b58d34a92f340df1",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "5d251a90c7e04692bf9b691389a325fc",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9bd31bfd94404fc3ba1d77e450a417b0",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f0caa75ad48d4137aa14d09a8e4e171d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "986fed020a1242fea4158296422a9312",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "1032c4f68acc4beaa873bbb854e83b79",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "291122e1cc264e319bc4be412a7f0dbc",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "03e6d8b766e44fac9bbd65217e235aa2",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "c4024fbc0e824cfe81fb33764135d075",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "01383db5ace443d196798ca3acd786e1",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "0f3cb06a7c5e4f3d9ef7ca50712d5c51",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "bea276e1109a48c6a33b4aee7a1aa36c",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "13ae371ac4424964b97945c5efdd41cd",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "02c9cc4c36e549d48ba2846c6fb18b07",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "5cd6dd7a513345cd81f27cf99245d9c5",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "5fd90a8fe34a4c1790209f4d8cbc3af7",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f966996e18ef47ef9a5b0c5d49261b45",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "1cadf76c5d0b411d9951b23451c16faa",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f2a27391f19540729ad8948aa47e3eeb",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "1aaaccb8951e4fc19878ed26041809bd",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "55e6f9b26e934f66aa42560140ba1a43",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "5beb0e9d6fed45548a36477ab945d549",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "c3ab94c17d734d3581acf8573c05d3fa",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "278a8dd5de6449368cecf5994a8b6a83",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "1cfeac39699d46b4967d1bdb39466ecc",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f94a42dc690240ca8e60e01c7990b897",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "920e3a884e3b410e970599ba6e74a46f",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "cb13c3c365cf4f54953926aceec89a1a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "8090881a0e124052931a031df7a11441",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "a59e7a614dd64bb193cbe16f6eda778f",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "2673e758e7c64d19806027aac3b4ed04",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b8204ab58f4b4b59b6260f885697504d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "e35738cba4744338a802195810e5f052",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "6c91f1fa4ec2465cb7e097a0ec6cc577",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "99f0258a68e8484bb9f82ca0104ee6a7",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "d622dbdf76b04c5c8cf9772131245e51",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "e5d4f00d5954481b9f09c90b3f4c1ab3",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "32d0da97ab0b4397ae3762aeff397104",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "558e442fd8724781bf5ccd31e563c75f",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "0311822ef54145ba83bb8261d7144817",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "5a0a3e3c2c664934a60573f32238ab8a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "01bd7eef154b4d3da93b1827b48b32a6",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9a62759293ad429eb97e6e46e761e012",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "bf2120b859d6473fb68d578fe1886831",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "3d9ac1d73c14467c830c6b05f1f913db",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "6a7bd1eb2c274855ba91036977f54292",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "995dc7023f1946919745a21afab7890b",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "782a3617863242068d04dc269e732338",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "c9214554bfc24c5bb835b9a9f54773c7",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "69ef49f86aff42178f7baf0ccfc94f71",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "0908d49a185c47be92252b1c10012978",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b7b6fd77556a480a93a4bc2ccd1e1da9",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "ef3a352ad2f448ab9ee261d1a6ea6315",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "d05c257c52ee4990b023d1b3bc9a6fc9",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "62db9de60d224a64b050876c8598b090",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "0d14beb461bf49dfa3b73a744ad4fc33",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f52c95694d9f483690e6b36403cb08d4",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9d91db18aaa0426a86125be1535a04a2",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9125c83f3d894fe4819b8a1d20885344",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "184ef9a4df5e470c9e34007d6a841b1a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "20fe1794a1f042b5892fa1b2349f28c0",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "40286721b3b84b258eba8c13b78b403f",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "e45e188e53134160a340fabed44edd42",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "6517042c77874f67b9bcfdf73bf2c39f",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "a7f651f115d84185b70ce8fedb834738",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "c5b305b57adc4b03a14ad41f25adcb89",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "d97f34b73bfa4c4c8898301f2f402d9a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "5bf271d7fe744404afa6c93d7d3261a7",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "32fc85d8b1ab4ef6a0fd134fe6f43a89",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "583b976c7e8347268ad87e289418dc2e",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "94ce425b5f0d46a99c42aca4724e6505",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "2f226b88fffe4f2899364f2f12a6f707",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "1e340f6697b84fbe9915c37236da42ac",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "ab18d064ac964ec58de3eb991d15d664",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "4d7f820dd0514ad5882b384a148671bd",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "7300314ae793401b97651fe493ddb480",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "6eb344c172d4434b8660de8b68c4ca4a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b4bae7b42efc45e19599a7081406620f",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "98f5c4cc3c9a4185946bbee59391ce53",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "4ea7056498a84959aa8a175eda4bf5fd",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "af87379098b84a359769fc779a7f1caf",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "fc2e492abc6a4dac8fa48d6b77d916d7",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "a6aea2f4b95040cbbe6d03b3d90f91dd",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "03e6e2a7bbce40e29b321f87382f06c9",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "65f3c99534184e13b0f7b9143d5edb2d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "6c9d1eaf8b434ab6b7abe7aa031cdca9",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "5d8c02e7b736477dac9a8bce926be0fd",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "20eb8dcbec8e47749eb656eb48977fed",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "59fcfbed6c98472da76d8ccb03290b80",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "532a349df0b54dac84761ef3ec5b3316",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "a806e03e3f204e9d87227863a2fcee04",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "088beffb5c6b4a10a5da82ed23e2910e",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f5bc6de649c240f48ffd51c509bc9d9f",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "3caec4fa5605484ba81d6fe70cfea805",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "e0130f720ff4440ba8210cb91cae1488",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9b7cb6045abf4ad2acaef0b56b595d5d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "7130b7898bc5448da77bc3c3c4e22a72",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9724f5aed2bc46fb9b6c9948cf566419",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "ba661e27326c45de8c198afd8dd90f6d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "22c0ad82aa1342c7b419caf556c04eec",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "df7665b5c76e44e08833a70621f2f0cd",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f56cd63f393148dd97db2920dc94653e",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "5b7805d9064847999db850b123b21c9a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "28565a5efb074f59b938b6e8cd118c99",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "832975f2a8884fa0a15f6d9df34c43c9",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "ae748b5e00184eaeadc97e94f763a028",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b3a967eb46d74ff59bac94ed941fa076",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "701c9eda80f74899be892d56c0f319de",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "a5bca2fa57e14cb9a37f13276eea871d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "ae520acfd2fe4e27bc19cb5986059432",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "86ae8e2389e348ad9040a94daaca248d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "621076d503a04fda92b478ff32e2865e",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "d281a9c48c354e918ebbc78a0a7e1492",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b3cc8541bda2434ca4ad5bc9acdd182a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "63d25b1ae0f340379e03bf3e46e959f6",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "d7b4133513bf4db7b07130e8051dc367",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "4aef6e7b03a449e2862b2e5bd2077cd0",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "6bd9cc5937a342239aef00584b8e76d5",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "d881dc11b2dc4e97a3356592c7958b02",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "4401298d8dfa4fc99de79a45d8eaadbf",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "1c51d38ad44c4b5dbe8a937fd1c6ffcb",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "10d1eb05386648619cf0490bce1c3118",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "048cc06854424885be86b918e4f116e6",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "a3aad7bf82974cfaa51f8c79fff05e9c",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9607d9e287a04cde98bd507b41dbfc66",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "7a8b9c7ea0c2417d8e997e665e5c9170",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "2326d82a9dc9408cb9fa2482a7c4ba3c",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "654c9cff219a46178b2a62eff2834995",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "674c140611d34f70ae536e325fc62ec7",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "15a159a860604d4d93043ff5e10bef8c",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "584274c9317c4564becddab5cbc7aec2",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b188ee05be3c4bcc937f28234b2c73e3",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "6b22f5c648604330a3cd3ee218f77412",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9dca5b64f90e438c8120167d0e68229c",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "d117698848a74d34bf1458373f22107b",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "c061b0a2cc3847f79f5a8e516ddda0f4",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "588cfb16612b479a9fa1d4d30db0f70f",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "d2f6d50d0d4f40c4aa2c5fb0e4a7b57a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "6bb260fcb65b42ec9561ceeb0ddc0d62",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "7e5d1b346eed4342bb4fcb35b5a9ec1e",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "2c05f03a52b646f0b46a0d9087a6e1a8",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f469c70438f149a0a994bbbe59372936",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "34ed193d82204c2f8f1bc5a6eeed4fa0",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f1c4aa3087eb444bb2eed4c58dd69b86",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "3de10d4d83e14140a704260fe3064c22",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f49836ae677f41e6a101452bc88b40cd",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "c9025e9773b04f38b775dfe26748c464",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "956a149f2a9b45aca6df7296c235375f",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "017034a2ee7c4d8e9bf26e2b45161244",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "87ff13dac0e84a16939b5b2a04476efa",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "68ab710c62964c75a89df07daac1657d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "0a71e37a0dc846a788c9e9dbea5ccba3",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "d79db225659d4320891141027a748646",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "3de0484661944886a50de32bd5bdf152",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9bd3349e942d42e097ca249e52e2cd88",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "81b71b86a5d34e8bbf72123eb6dc01cd",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "1b53b2ff81544d8bbcd1659f25333ddc",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "5067f42933034b81923c8057184f3be4",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "ed3364d76f0344239e785113e5fce854",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "6d6e959c3f184f4fbb3bc8e049188660",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "1d895c901f3d45ecafff526e22df1fc7",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "c24656e577cf4c24a1c1e87f160897a5",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "99cef26541b54abab3c0a4ba0d04b50f",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "dca2bc474802454fb760b05d9d7af1d2",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "a557af7a682e4e18bdfd5438adca4ba3",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "2c1a98e65ee14474901195674121d22e",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "d0e2e441dffd4ceea7b61b5e36313488",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "1dfee3ae7ba24d33a45e2b3f7a9aec9b",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "d28c9b0af48a499c8cc5f2966717324b",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "0fb28beaa7e64ed093cc38a59ee91dbe",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "ac1094dcced84355a54176e66bfac286",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "7a1fee0e9b0e4750ac5d906fe414fa39",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "707dcc6862874f258bbf4be23e9c88f1",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "da5d2c6368654867a4eb1c9967ff6e5d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "419418827f0242c298a490adeff53802",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f6c1e365349841099edd2120d21d25d2",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "d5af94351de64cd882d3f54cb2506e7b",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "ccc885ac463b466b83dd05273630d44f",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "348fe9383bfe44e996c59968f362b692",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "aa337e8a91d646e8a0ca73c9216decb0",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "82ad9132ab614116a8b8483ab35b01b2",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "16c57a4da1614bac8ca0ec9ef552524c",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "08621b02d5b64c79927e45f178bb2412",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "477126248d0f4a2ca57cee5075a18abe",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9d85f5760c264ba9babd33e03f30ced2",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "578a862c0da44a4187ed286c390c172c",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9a261967fbb346daaf1854e99ef6d1e7",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "57745d0cbf8444529184fa6953696f57",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "28e7a1e64a3e4dd08ea8afed449766e3",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "90bb07278d3441bd9c29743e730179d1",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "91b1f15afcb748119797eb0c71d7a798",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "7503504959b24aa0ad19d9e0a6ada36c",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "1c8585e6982640df94f961de36d23300",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "45936e3c0e664b3ba2ac7c70c9db1e0d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "d1a70ee2e77c41efaaaca83f67441ef6",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "68e868fc35dc4070bc958f2d8f0d6612",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "308ccb160eb148beb348fc1a07906510",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "ca06ebd8769f4b7ebfa563a91fe58a81",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "544327efb96043e7ae1b0b95d10cf724",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9414a0d715844cb087dbab0c9ac5853e",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "5fcf480dc690450090ea8352ded6c154",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "878fcf5e53a04eae8e6275d32037613b",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "675e5c99cb764b6ea99d8f11edb6931d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "7fa9fb67515e48eaa9eae33ca1c0dd44",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "1c0364e9341f47df9bb8a40568beda43",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "cb80211bd1b741ee83dab36c01494bc9",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "63c0a026de1f4521b885107d2baa164a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "9a2ab2668d1041479068a3eae37f7774",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "d6bb23e1bb0d48e68d6787eb856d05b6",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "e02dff76fe634cc28e92599c99b5a678",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "5b053afde45041f3a0ce87b47d59405d",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f3d2527a2f9f4f5e877fa699de8947f3",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "7fe16076bcb24e429c44a12688744243",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "08775b712e27403cb6fae98f1d94e804",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "112fb271781f484f8d16e6f3d3094497",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "56a1fe72d9f94ce4ae025b87de8ec79c",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "b50479c838c44b4bb8ae1092eef53142",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "35e3a3109a0144068c1a9c8df0cdf677",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "f99c4983edaa4849bcc2ca2996580e57",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "97efb935e1434ad48d8157a6aea6d52f",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "6dc02481e6ff45e6acda39139a295e39",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "82b1864d17d84dd5acf67c3773d2eb1a",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "ff6f2c364232421ebf9d6e4be24d07da",
+    "write_up_type": "EarlyOut",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "pending",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "kamran akmal",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  },
+  {
+    "_id": "15792f26e4b144ff9de245c5b7c5884d",
+    "write_up_type": "EarlyIn",
+    "informed_hr": true,
+    "email": "SMS",
+    "description": "late",
+    "attachments": [],
+    "accept_assign_schedule": true,
+    "is_deleted": false,
+    "created_at": "2025-03-21T06:10:14.173Z",
+    "status": "completed",
+    "Business": {
+      "_id": "67c15e62c6d34e38167a5095",
+      "__typename": "Business"
+    },
+    "employee": {
+      "id": "67dcf674effa372827121659",
+      "full_name": "Abdul Wahid",
+      "__typename": "User"
+    },
+    "__typename": "WriteUp"
+  }
   ],
   __typename: 'writeUpListDataTable',
 };
