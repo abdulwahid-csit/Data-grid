@@ -1,0 +1,1223 @@
+<div class="h-100 d-flex data-grid-table-wrapper" #dataGridContainer>
+  <div
+    class="h-100 transition position-relative"
+    [style.width]="isShowSideMenu ? 'calc(100% - 280px)' : 'calc(100% - 30px)'"
+  >
+    <!-- ##################################################################################################################################################################################### -->
+    <!-- ##################################################################################################################################################################################### -->
+    <!-- Data Grid Header starts here -->
+    <!-- ##################################################################################################################################################################################### -->
+    <!-- ##################################################################################################################################################################################### -->
+
+    <div
+      class="data-grid-header-wrapper"
+      [style.color]="headerTextColor"
+      [style.fontSize.px]="headerTextFontsSize"
+    >
+      <!-- ********************************************************************************* -->
+      <!-- ********************************************************************************* -->
+      <!-- Data Grid Left Pinned Header starts here -->
+      <!-- ********************************************************************************* -->
+      <!-- ********************************************************************************* -->
+      <div class="data-grid-header left-pinned" #leftPinnedHeader>
+        <div
+          [style.backgroundColor]="checkboxesBackgroundColor"
+          class="select-all-checkbox-cell border-bottom"
+          [style.height.px]="
+            showColumnsGrouping ? headerRowHeight * 3 : headerRowHeight * 2
+          "
+        >
+          <input
+            type="checkbox"
+            [checked]="isAllSelected(dataSet)"
+            (change)="toggleSelectAll(dataSet)"
+          />
+        </div>
+        <ng-container *ngFor="let col of leftPinnedColumns">
+          <ng-container
+            *ngTemplateOutlet="headerCell; context: { $implicit: col }"
+          ></ng-container>
+        </ng-container>
+      </div>
+
+      <!-- ********************************************************************************* -->
+      <!-- ********************************************************************************* -->
+      <!-- Data Grid Center Pinned Header starts here -->
+      <!-- ********************************************************************************* -->
+      <!-- ********************************************************************************* -->
+      <div
+        class="data-grid-header center-scrollable"
+        #centerPinnedHeader
+        (scroll)="onCenterHeaderScroll($event)"
+      >
+        <ng-container *ngFor="let col of centerColumns">
+          <ng-container
+            *ngTemplateOutlet="headerCell; context: { $implicit: col }"
+          ></ng-container>
+        </ng-container>
+      </div>
+
+      <!-- ********************************************************************************* -->
+      <!-- ********************************************************************************* -->
+      <!-- Data Grid Right Pinned Header starts here -->
+      <!-- ********************************************************************************* -->
+      <!-- ********************************************************************************* -->
+      <div class="data-grid-header right-pinned" #rightPinnedHeader>
+        <ng-container *ngFor="let col of rightPinnedColumns">
+          <ng-container
+            *ngTemplateOutlet="
+              headerCell;
+              context: { $implicit: col, pinnedRight: true }
+            "
+          ></ng-container>
+        </ng-container>
+      </div>
+    </div>
+
+    <!--########################################################################################################################################################################################################################### -->
+    <!--########################################################################################################################################################################################################################### -->
+    <!-- Data Grid Body starts here -->
+    <!--########################################################################################################################################################################################################################### -->
+    <!--########################################################################################################################################################################################################################### -->
+
+    <div
+      class="data-grid-body-wrapper position-relative"
+      [style.height]="bodyWrapperHeight"
+      [style.color]="bodyTextColor"
+      [style.fontSize.px]="bodyTextFontsSize"
+    >
+      <!-- ********************************************************************************* -->
+      <!-- ********************************************************************************* -->
+      <!-- Data Grid Left Pinned Body starts here -->
+      <!-- ********************************************************************************* -->
+      <!-- ********************************************************************************* -->
+      <div
+        class="h-100"
+        [style.min-width.px]="leftPinnedHeader.offsetWidth"
+        [style.max-width.px]="leftPinnedHeader.offsetWidth"
+      >
+        <div
+          class="data-grid-body left-pinned-body w-100"
+          style="height: calc(100% - 15px)"
+          #leftPinnedBody
+          (scroll)="onLeftBodyScroll()"
+          [style.backgroundColor]="leftPinnedBackgroundColor"
+        >
+          <ng-container
+            *ngFor="
+              let row of dataSet;
+              let i = index;
+              even as isEven;
+              odd as isOdd
+            "
+          >
+            <ng-container
+              *ngTemplateOutlet="
+                rowCell;
+                context: {
+                  $implicit: row,
+                  columns: leftPinnedColumns,
+                  isEven: isEven,
+                  isOdd: isOdd,
+                  isLeft: true,
+                }
+              "
+            ></ng-container>
+          </ng-container>
+        </div>
+
+        <!-- Fake Scrollbar -->
+        <div
+          class="fake-scroll-bar"
+          [style.min-width.px]="leftPinnedHeader.offsetWidth"
+          #leftFakeScrollBar
+        ></div>
+      </div>
+
+      <!-- ********************************************************************************* -->
+      <!-- ********************************************************************************* -->
+      <!-- Data Grid Center Pinned Body starts here -->
+      <!-- ********************************************************************************* -->
+      <!-- ********************************************************************************* -->
+
+      <div
+        class="h-100"
+        [style.min-width.px]="centerPinnedHeader.offsetWidth"
+        [style.max-width.px]="centerPinnedHeader.offsetWidth"
+      >
+        <!-- Actual scrollable body -->
+        <div
+          class="data-grid-body center-scrollable-body w-100"
+          style="height: calc(100% - 15px)"
+          #centerPinnedBody
+          (scroll)="onCenterBodyScroll()"
+          [style.backgroundColor]="bodyBackgroundColor"
+        >
+          <ng-container
+            *ngFor="
+              let row of dataSet;
+              let i = index;
+              even as isEven;
+              odd as isOdd
+            "
+          >
+            <ng-container
+              *ngTemplateOutlet="
+                rowCell;
+                context: {
+                  $implicit: row,
+                  columns: centerColumns,
+                  isEven: isEven,
+                  isOdd: isOdd
+                }
+              "
+            ></ng-container>
+          </ng-container>
+        </div>
+
+        <!-- Fake horizontal scrollbar -->
+        <div
+          class="fake-scroll-bar"
+          [style.min-width.px]="centerPinnedHeader.offsetWidth"
+          [style.max-width.px]="centerPinnedHeader.offsetWidth"
+          (scroll)="onFakeScroll($event)"
+          #centerFakeScrollbar
+        >
+          <div
+            class="fake-scroll-content"
+            [style.width.px]="centerPinnedHeader.scrollWidth - 18"
+          ></div>
+        </div>
+      </div>
+
+      <!-- ********************************************************************************* -->
+      <!-- ********************************************************************************* -->
+      <!-- Data Grid Right Pinned Body starts here -->
+      <!-- ********************************************************************************* -->
+      <!-- ********************************************************************************* -->
+      <div class="h-100" *ngIf="hasRightPinnedColumns">
+        <!-- Right Pinned Scrollable Body -->
+        <div
+          class="data-grid-body right-pinned-body w-100"
+          style="height: calc(100% - 15px)"
+          [style.backgroundColor]="rightPinnedBackgroundColor"
+          [style.min-width.px]="rightPinnedHeader.offsetWidth"
+          #rightPinnedBody
+          (scroll)="onRightBodyScroll()"
+        >
+          <ng-container
+            *ngFor="
+              let row of dataSet;
+              let i = index;
+              even as isEven;
+              odd as isOdd
+            "
+          >
+            <ng-container
+              *ngTemplateOutlet="
+                rowCell;
+                context: {
+                  $implicit: row,
+                  columns: rightPinnedColumns,
+                  isEven: isEven,
+                  isOdd: isOdd
+                }
+              "
+            ></ng-container>
+          </ng-container>
+        </div>
+
+        <!-- Fake Scrollbar -->
+        <div
+          class="fake-scroll-bar"
+          [style.min-width.px]="rightPinnedHeader.offsetWidth"
+          #rightFakeScrollBar
+        ></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Side Menu Implemented Here -->
+  <div
+    [style.width.px]="isShowSideMenu ? 280 : 30"
+    class="right-menu"
+    [style.backgroundColor]="sidemenuBackgroundColor"
+  >
+    <div class="h-100 d-flex flex-row-reverse">
+      <div
+        style="width: 30px"
+        class="d-flex flex-column align-items-center cursor-pointer"
+        [class.border-start]="isShowSideMenu"
+      >
+        <div
+          (click)="toggleSideMenu('cols')"
+          [class.bg-white]="currentOpenedSideMenue == 'cols' && isShowSideMenu"
+          [class.border-bottom]="isShowSideMenu"
+          class="columns-button d-flex flex-column align-items-center"
+        >
+          <div><i class="bi bi-ui-checks-grid"></i></div>
+          <div class="side-menue-text">Columns</div>
+        </div>
+
+        <div
+          (click)="toggleSideMenu('filtrs')"
+          [class.bg-white]="
+            currentOpenedSideMenue == 'filtrs' && isShowSideMenu
+          "
+          [class.border-bottom]="
+            isShowSideMenu && currentOpenedSideMenue == 'filtrs'
+          "
+          class="columns-button d-flex flex-column align-items-center"
+        >
+          <div><i class="bi bi-filter"></i></div>
+          <div class="side-menue-text">Filter</div>
+        </div>
+      </div>
+      <div
+        *ngIf="isShowSideMenu"
+        [ngStyle]="{ width: isShowSideMenu ? '250px' : '' }"
+      >
+        <div class="h-100">
+          <ng-container
+            *ngIf="currentOpenedSideMenue == 'cols' && isShowSideMenu"
+          >
+            <ng-container *ngTemplateOutlet="columnPannel"></ng-container>
+            <!-- Column Items -->
+            <div class="column-panel-body px-3">
+              <ng-container *ngFor="let col of columns">
+                <ng-container
+                  *ngTemplateOutlet="columnPanelItem; context: { col: col }"
+                ></ng-container>
+              </ng-container></div
+          ></ng-container>
+          <ng-container
+            *ngIf="currentOpenedSideMenue == 'filtrs' && isShowSideMenu"
+          >
+            <ng-container *ngTemplateOutlet="sideFilters"></ng-container>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ------------------------------------------------------------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------------------------------------------------------------ -->
+<!-- Header Cell Template -->
+<!-- ------------------------------------------------------------------------------------------------------------------------ -->
+<!-- ------------------------------------------------------------------------------------------------------------------------ -->
+
+<ng-template #headerCell let-col let-pinnedRight="pinnedRight">
+  <!-- Group Header -->
+  <ng-container *ngIf="col.children?.length > 0; else flatHeader">
+    <div class="group-column-wrapper">
+      <!-- Parent Header -->
+      <div
+        class="header-cell group-header"
+        [style.height.px]="headerRowHeight"
+        [style.backgroundColor]="headerBackgroundColor"
+        [style.min-height.px]="headerRowHeight"
+        [style.max-height.px]="headerRowHeight"
+        [class.border-right]="showVerticalBorder"
+        [style.gridColumn]="'span ' + col.children.length"
+        [style.fontWeight]="headerFontWeight"
+        [class.flex-row-reverse]="pinnedRight"
+        [class.justify-content-end]="pinnedRight"
+        style="grid-row: 1"
+      >
+        <div
+          class="group-header-content"
+          [title]="col.header"
+          [class.ms-2]="pinnedRight"
+        >
+          {{ col.header }}
+        </div>
+        <div
+          class="resize-handle"
+          (dblclick)="autosizeColumn(col.children)"
+          (mousedown)="onResizeGroup($event, col, pinnedRight)"
+        >
+          |
+        </div>
+      </div>
+
+      <!-- Child Headers and Filters -->
+      <ng-container *ngFor="let child of col.children">
+        <!-- Child Header -->
+        <div
+          class="header-cell"
+          [style.backgroundColor]="headerBackgroundColor"
+          [class.border-right]="showVerticalBorder"
+          [attr.field]="child.field"
+          [style.width.px]="child.width"
+          [style.min-width.px]="child.width"
+          [style.min-height.px]="headerRowHeight"
+          [style.max-height.px]="headerRowHeight"
+          [class.border-right]="showVerticalBorder"
+          [style.fontWeight]="headerFontWeight"
+          style="grid-row: 2"
+        >
+          <div
+            class="d-flex justify-content-between h-100 align-items-center w-100"
+          >
+            <div
+              class="d-flex justify-content-between w-100"
+              [class.flex-row-reverse]="pinnedRight"
+            >
+              <div
+                class="text-ellipsis h-100 d-flex align-items-center"
+                [title]="col.header"
+                [class.w-100]="pinnedRight"
+              >
+                {{ child.header }}
+              </div>
+
+              <div
+                class="position-relative d-flex"
+                [class.flex-row-reverse]="pinnedRight"
+              >
+                <div
+                  class="three-dots p-1"
+                  (click)="openThreeDotsMenu($event, child)"
+                  style="cursor: pointer"
+                >
+                  <i class="bi bi-three-dots-vertical"></i>
+                </div>
+
+                <!-- Only show menu if this column is active -->
+                <div
+                  class="position-absolute"
+                  *ngIf="activeCol === child"
+                  style="top: -50%; z-index: 21"
+                  [style.left.px]="!child.pinned ? 0 : -fakeScrollbarScrollLeft"
+                >
+                  <ng-container
+                    *ngTemplateOutlet="columnMenu; context: { col: child }"
+                  ></ng-container>
+                </div>
+
+                <div
+                  class="resize-handle" (dblclick)="autosizeColumn(child)"
+                  (mousedown)="onResizeColumn($event, child)"
+                >
+                  |
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter Cell -->
+        <div
+          [style.backgroundColor]="headerBackgroundColor"
+          class="header-cell filter-cell"
+          [class.border-right]="showVerticalBorder"
+          [attr.field]="child.field"
+          [style.width.px]="child.width"
+          [style.min-width.px]="child.width"
+          [style.height.px]="headerRowHeight"
+          [style.min-height.px]="headerRowHeight"
+          [style.max-height.px]="headerRowHeight"
+          [class.border-right]="showVerticalBorder"
+          style="grid-row: 3"
+        >
+          <div
+            class="header-cell filter-cell"
+            [attr.field]="col.field"
+            [style.width.px]="col.width"
+            [style.min-width.px]="col.width"
+            [style.height.px]="headerRowHeight"
+            [style.min-height.px]="headerRowHeight"
+            [style.max-height.px]="headerRowHeight"
+          >
+            <input
+              type="text"
+              class="form-control form-control-sm"
+              placeholder="Filter"
+              [(ngModel)]="col.filterValue"
+              (ngModelChange)="onFilterChange(col)"
+            />
+            <span
+              class="filter-icon-wrapper"
+              (click)="activeFilterCell = child; activeCol = null"
+              ><i class="bi bi-filter"></i
+            ></span>
+
+            <div
+              class="position-absolute"
+              *ngIf="activeFilterCell === child"
+              style="top: 100%; right: 0; z-index: 10; left: 0"
+            >
+              <ng-container
+                *ngTemplateOutlet="filterMenu; context: { col: child }"
+              ></ng-container>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </ng-container>
+
+  <!-- Flat Header || Single Header Cell-->
+  <ng-template #flatHeader>
+    <div class="group-column-wrapper">
+      <!-- Full-height Header Cell (spans 2 rows visually) -->
+      <div
+        [style.backgroundColor]="headerBackgroundColor"
+        class="header-cell"
+        [attr.field]="col.field"
+        [style.width.px]="col.width"
+        [style.min-width.px]="col.width"
+        [style.min-height.px]="headerRowHeight * 2"
+        [style.height.px]="headerRowHeight * 2"
+        [style.fontWeight]="headerFontWeight"
+        style="grid-row: 1 / span 2"
+      >
+        <div
+          class="d-flex justify-content-between h-100 align-items-center w-100"
+        >
+          <div
+            class="d-flex justify-content-between w-100"
+            [class.flex-row-reverse]="pinnedRight"
+          >
+            <div
+              class="text-ellipsis h-100 d-flex align-items-center w-100"
+              [title]="col.header"
+            >
+              {{ col.header }}
+            </div>
+
+            <div
+              class="position-relative d-flex"
+              [class.flex-row-reverse]="pinnedRight"
+            >
+              <div
+                class="three-dots p-1"
+                (click)="activeCol = col; activeFilterCell = null"
+                style="cursor: pointer"
+              >
+                <i class="bi bi-three-dots-vertical"></i>
+              </div>
+
+              <!-- Only show menu if this column is active -->
+              <div
+                class="position-absolute"
+                *ngIf="activeCol === col"
+                style="top: -50%; z-index: 21"
+              >
+                <ng-container
+                  *ngTemplateOutlet="columnMenu; context: { col: col }"
+                ></ng-container>
+              </div>
+
+              <div
+                class="resize-handle"
+                [class.w-100]="col.pinned == 'right'"
+                (dblclick)="autosizeColumn(col)"
+                (mousedown)="onResizeColumn($event, col)"
+              >
+                |
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter Cell -->
+      <div
+        [style.backgroundColor]="headerBackgroundColor"
+        class="header-cell filter-cell"
+        [class.border-right]="showVerticalBorder"
+        [attr.field]="col.field"
+        [style.width.px]="col.width"
+        [style.min-width.px]="col.width"
+        [style.height.px]="headerRowHeight"
+        [style.min-height.px]="headerRowHeight"
+        [style.max-height.px]="headerRowHeight"
+      >
+        <input
+          type="text"
+          class="form-control form-control-sm"
+          placeholder="Filter"
+          [(ngModel)]="col.filterValue"
+          (ngModelChange)="onFilterChange(col)"
+        />
+        <span
+          class="filter-icon-wrapper"
+          (click)="activeFilterCell = col; activeCol = null"
+          ><i class="bi bi-filter"></i
+        ></span>
+
+        <div
+          class="position-absolute"
+          *ngIf="activeFilterCell === col"
+          style="top: 100%; right: 0; z-index: 10; left: 0"
+        >
+          <ng-container
+            *ngTemplateOutlet="filterMenu; context: { col: col }"
+          ></ng-container>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</ng-template>
+
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- Body Cell Template -->
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+<!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+<ng-template
+  #rowCell
+  let-row
+  let-columns="columns"
+  let-isEven="isEven"
+  let-isOdd="isOdd"
+  let-isLeftSection="isLeft"
+>
+  <div
+    [style.height.px]="rowHeight"
+    class="data-grid-row"
+    [class.even-row]="isEven"
+    [class.odd-row]="isOdd"
+    [class.hovered-row]="hoveredRowId === (row._id || row.id)"
+    [ngStyle]="{
+      'background-color':
+        hoveredRowId === (row._id || row.id)
+          ? rowHoverColor
+          : isRowSelected(row)
+          ? checkedRowBackgroundColor
+          : null
+    }"
+    (mouseenter)="onRowHover(row)"
+    (mouseleave)="onRowLeave()"
+    [ngStyle]="{
+      'background-color': isEven
+        ? evenRowsBackgroundColor
+        : oddRowsBackgroundColor
+    }"
+  >
+    <div
+      [style.backgroundColor]="checkboxesBackgroundColor"
+      class="select-all-checkbox-cell"
+      *ngIf="isLeftSection"
+    >
+      <input
+        type="checkbox"
+        [checked]="isRowSelected(row)"
+        (change)="toggleRowSelection(row)"
+      />
+    </div>
+    <ng-container *ngFor="let col of columns">
+      <ng-container *ngIf="col.children?.length > 0; else flatColumn">
+        <!-- Loop over children and reuse cellTemplate -->
+        <ng-container *ngFor="let child of col.children">
+          <ng-container
+            *ngTemplateOutlet="cellTemplate; context: { col: child, row: row }"
+          ></ng-container>
+        </ng-container>
+      </ng-container>
+
+      <ng-template #flatColumn>
+        <!-- Reuse cellTemplate for flat columns -->
+        <ng-container
+          *ngTemplateOutlet="cellTemplate; context: { col: col, row: row }"
+        ></ng-container>
+      </ng-template>
+    </ng-container>
+  </div>
+</ng-template>
+
+<!-- Actual Cell is Here -->
+<ng-template #cellTemplate let-col="col" let-row="row">
+  <div
+    [style.fontWeight]="bodyFontWeight"
+    [class.border-right]="showVerticalBorder"
+    class="cell"
+    [attr.field]="col.field"
+    [style.width.px]="col.width"
+    [style.min-width.px]="col.width"
+  >
+    <ng-container [ngSwitch]="col.type">
+      <span *ngSwitchCase="'text'">{{ getNestedValue(row, col.field) }}</span>
+      <input *ngSwitchCase="'input'" [(ngModel)]="row[col.field]" />
+      <span *ngSwitchDefault>{{ getNestedValue(row, col.field) || "-" }}</span>
+    </ng-container>
+  </div>
+</ng-template>
+
+<!-- Headers Action List On clicking three dots -->
+
+<ng-template #columnMenu let-col="col">
+  <div class="column-menu" [class.visually-hidden]="isMenueHidden" *ngIf="activeCol" [style.backgroundColor]="dropdownsBackgroundColor">
+    <!-- Sort Ascending -->
+    <div class="column-menu-item" (click)="sortAsc(activeCol)">
+      <i class="bi bi-sort-alpha-down me-2"></i> Sort Ascending
+    </div>
+
+    <!-- Sort Descending -->
+    <div class="column-menu-item" (click)="sortDesc(activeCol)">
+      <i class="bi bi-sort-alpha-up me-2"></i> Sort Descending
+    </div>
+
+    <!-- Pin Column with Submenu -->
+    <div class="column-menu-item position-relative pin-parent">
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <span> <i class="bi bi-pin-angle-fill me-2"></i> Pin Column </span>
+        <i class="bi bi-chevron-right ms-2"></i>
+      </div>
+
+      <!-- Submenu -->
+      <div class="column-submenu" [style.backgroundColor]="dropdownsBackgroundColor">
+        <div class="column-menu-item" (click)="updateColumnPinInSourceByField(activeCol, null)">
+          <i class="bi bi-check me-2" *ngIf="!activeCol.pinned"></i> <span [class.ms-4]="activeCol.pinned !== null">Unpin</span>
+        </div>
+        <div class="column-menu-item" (click)="updateColumnPinInSourceByField(activeCol, 'left')">
+          <i class="bi bi-check me-2" *ngIf="activeCol.pinned == 'left'"></i> <span [class.ms-4]="activeCol.pinned !== 'left'">Pin Left</span> 
+        </div>
+        <div class="column-menu-item" (click)="updateColumnPinInSourceByField(activeCol, 'right')">
+          <i class="bi bi-check me-2" *ngIf="activeCol.pinned == 'right'"></i> <span [class.ms-4]="activeCol.pinned !== 'right'">Pin Right</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Autosize This Column -->
+    <div class="column-menu-item" (click)="autosizeColumn(activeCol)">
+      <i class="bi bi-arrows-expand me-2"></i> Autosize This Column
+    </div>
+
+    <!-- Autosize All Columns -->
+    <div class="column-menu-item" (click)="autosizeAllColumns()">
+      <i class="bi bi-arrows-angle-expand me-2"></i> Autosize All Columns
+    </div>
+
+    <!-- Group By -->
+    <div class="column-menu-item" (click)="groupBy(activeCol)">
+      <i class="bi bi-diagram-3 me-2"></i> Group by {{ col.header }}
+    </div>
+
+    <!-- Choose Columns -->
+    <div class="column-menu-item" (click)="chooseColumns()">
+      <i class="bi bi-ui-checks-grid me-2"></i> Choose Columns
+    </div>
+
+    <!-- Reset Columns -->
+    <div class="column-menu-item" (click)="resetColumns()">
+      <i class="bi bi-arrow-counterclockwise me-2"></i> Reset Columns
+    </div>
+  </div>
+</ng-template>
+
+<!-- Filter Menue -->
+<ng-template #filterMenu let-col="col">
+  <div class="filter-menu-container filter-menu" [style.backgroundColor]="dropdownsBackgroundColor">
+    <!-- Dropdown Type -->
+    <ng-container *ngIf="col.type === 'dropdown'; else textFilter">
+      <div class="filter-dropdown-section p-1">
+        <input
+          type="text"
+          class="form-control form-control-sm mb-2"
+          placeholder="Search..."
+          [(ngModel)]="col.searchValue"
+        />
+
+        <div class="form-check mb-1">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            [(ngModel)]="col.selectAll"
+            (change)="toggleSelectAll(col)"
+            id="selectAll_{{ col.field }}"
+          />
+          <label class="form-check-label" for="selectAll_{{ col.field }}">
+            Select All
+          </label>
+        </div>
+
+        <div class="dropdown-options">
+          <div
+            class="form-check mb-1"
+            *ngFor="let option of col.dropdownValues | filter : col.searchValue"
+          >
+            <input
+              class="form-check-input"
+              type="checkbox"
+              [value]="option"
+              [(ngModel)]="col.selectedOptions[option]"
+              [id]="col.field + '_' + option"
+            />
+            <label class="form-check-label" [for]="col.field + '_' + option">
+              {{ option }}
+            </label>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Text Filter Section -->
+    <ng-template #textFilter>
+      <div class="filter-text-section">
+        <div class="form-group mb-2">
+          <select
+            class="form-select form-select-sm"
+            [(ngModel)]="col!.query!.first_condition"
+          >
+            <option value="contains">Contains</option>
+            <option value="equals">Equals</option>
+            <option value="startsWith">Starts With</option>
+            <option value="endsWith">Ends With</option>
+          </select>
+        </div>
+
+        <input
+          type="text"
+          class="form-control form-control-sm mb-3"
+          placeholder="Value"
+          [(ngModel)]="col!.query!.firt_value"
+        />
+
+        <ng-container *ngIf="col?.query?.firt_value">
+          <div class="form-group mb-2">
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input filter-radio-inputs"
+                type="radio"
+                name="condition"
+                [(ngModel)]="col!.query.condition"
+                value="and"
+                id="and_{{ col.field }}"
+              />
+              <label class="form-check-label" for="and_{{ col.field }}"
+                >AND</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input filter-radio-inputs"
+                type="radio"
+                name="condition"
+                [(ngModel)]="col!.query.condition"
+                value="or"
+                id="or_{{ col.field }}"
+              />
+              <label class="form-check-label" for="or_{{ col.field }}"
+                >OR</label
+              >
+            </div>
+          </div>
+
+          <div class="form-group mb-2">
+            <select
+              class="form-select form-select-sm"
+              [(ngModel)]="col!.query.second_condition"
+            >
+              <option value="contains">Contains</option>
+              <option value="equals">Equals</option>
+              <option value="startsWith">Starts With</option>
+              <option value="endsWith">Ends With</option>
+            </select>
+          </div>
+
+          <input
+            type="text"
+            class="form-control form-control-sm mb-2"
+            placeholder="Second Value"
+            [(ngModel)]="col!.query.second_value"
+          />
+        </ng-container>
+      </div>
+    </ng-template>
+
+    <!-- Actions -->
+    <div class="filter-menu-actions d-flex justify-content-end mt-2">
+      <button class="btn btn-sm btn-secondary" (click)="clearFilter(col)">
+        Reset
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<!-- Side Menue -->
+
+<!-- Column Pannel / Pivot Mode / Searching -->
+
+<ng-template #columnPannel>
+  <div class="column-panel-header">
+    <!-- Pivot Toggle -->
+    <div
+      class="form-check form-switch d-flex align-items-center mb-2 pivot-mode px-5 ms-2"
+    >
+      <input
+        class="form-check-input me-2"
+        type="checkbox"
+        id="pivotToggle"
+        [(ngModel)]="pivotMode"
+      />
+      <label class="form-check-label" for="pivotToggle">Pivot Mode</label>
+    </div>
+
+    <!-- Select All & Search -->
+    <div class="d-flex align-items-center mb-2 px-3">
+      <span class="filter-icon-wrapper me-2">
+        <i
+          class="bi bi-chevron-right toggle-icon"
+          [ngClass]="{
+            bi: true,
+            'bi-chevron-down': accordionState === 'all',
+            'bi-dash': accordionState === 'some',
+            'bi-chevron-right': accordionState === 'none'
+          }"
+          (click)="toggleAllAccordions()"
+        ></i>
+      </span>
+      <input
+        type="checkbox"
+        class="form-check-input me-2"
+        [checked]="allColumnsSelected()"
+        (change)="toggleAllColumnsVisibility()"
+      />
+      <input
+        type="text"
+        class="form-control form-control-sm"
+        placeholder="Search columns..."
+        [(ngModel)]="columnSearch"
+      />
+    </div>
+
+    <!-- Separator -->
+    <hr class="my-2" />
+  </div>
+</ng-template>
+
+<!-- Column Panel Item Template -->
+<ng-template #columnPanelItem let-col="col">
+  <!-- Group Column -->
+  <ng-container *ngIf="col.children?.length">
+    <div class="column-group d-flex align-items-center mb-2">
+      <span class="filter-icon-wrapper me-2">
+        <i
+          class="bi bi-chevron-right toggle-icon"
+          [class.rotate]="col.expanded"
+          (click)="col.expanded = !col.expanded"
+        ></i>
+      </span>
+      <input
+        type="checkbox"
+        class="form-check-input me-2"
+        [id]="'group_' + col.header"
+        [checked]="isColumnVisible(col)"
+        (change)="toggleGroupVisibility(col)"
+      />
+      <i class="bi bi-grid-3x2-gap me-2 grab-icon"></i>
+      <label
+        class="d-flex align-items-center mb-0 w-100"
+        [for]="'group_' + col.header"
+        style="cursor: pointer"
+      >
+        <span class="text-truncate">{{ col.header }}</span>
+      </label>
+    </div>
+    <div *ngIf="col.expanded" class="ps-4">
+      <ng-container *ngFor="let child of col.children">
+        <ng-container
+          *ngTemplateOutlet="columnPanelItem; context: { col: child }"
+        ></ng-container>
+      </ng-container>
+    </div>
+  </ng-container>
+
+  <!-- Leaf Column -->
+  <ng-container *ngIf="!col.children?.length">
+    <div class="d-flex align-items-center mb-2">
+      <span class="me-2" style="width: 1.5rem"></span>
+      <input
+        type="checkbox"
+        class="form-check-input me-2"
+        [(ngModel)]="col.is_visible"
+        [id]="'col_' + col.field"
+      />
+      <i class="bi bi-grid-3x2-gap me-2 grab-icon"></i>
+      <label
+        class="d-flex align-items-center mb-0 w-100"
+        [for]="'col_' + col.field"
+        style="cursor: pointer"
+      >
+        <span class="text-truncate">{{ col.header }}</span>
+      </label>
+    </div>
+  </ng-container>
+</ng-template>
+
+<!-- Columns Side Filter -->
+<ng-template #sideFilters>
+  <div class="py-3 px-2 pe-3 h-100">
+    <div class="d-flex align-items-center mb-2">
+      <span class="filter-icon-wrapper me-2">
+        <i
+          class="bi bi-chevron-right toggle-icon"
+          [ngClass]="{
+            bi: true,
+            'bi-chevron-down': filterAccordionState === 'all',
+            'bi-dash': filterAccordionState === 'some',
+            'bi-chevron-right': filterAccordionState === 'none'
+          }"
+          (click)="toggleAllFilterAccordions()"
+        ></i>
+      </span>
+      <input
+        type="text"
+        class="form-control form-control-sm"
+        placeholder="Search..."
+        [(ngModel)]="columnSearch"
+      />
+    </div>
+    <div class="overflow-auto side-filter-columns-wrapper">
+      <ng-container *ngFor="let col of columns">
+        <ng-container
+          *ngTemplateOutlet="filterPannelItem; context: { col: col }"
+        ></ng-container>
+      </ng-container>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #filterPannelItem let-col="col">
+  <!-- Group Column -->
+  <ng-container *ngIf="col.children?.length">
+    <div class="column-group d-flex align-items-center mb-2">
+      <!-- Chevron toggle -->
+      <span class="filter-icon-wrapper me-2">
+        <i
+          class="bi bi-chevron-right toggle-icon"
+          [class.rotate]="col.expandedFilter"
+          (click)="col.expandedFilter = !col.expandedFilter"
+        ></i>
+      </span>
+
+      <!-- Group label toggle -->
+      <label
+        class="d-flex align-items-center mb-0 w-100"
+        style="cursor: pointer"
+        (click)="col.expandedFilter = !col.expandedFilter"
+      >
+        <span class="fw-bold text-truncate">{{ col.header }}</span>
+      </label>
+    </div>
+
+    <!-- Children columns -->
+    <div *ngIf="col.expandedFilter" class="ps-4">
+      <ng-container *ngFor="let child of col.children">
+        <ng-container
+          *ngTemplateOutlet="filterPannelItem; context: { col: child }"
+        ></ng-container>
+      </ng-container>
+    </div>
+  </ng-container>
+
+  <!-- Leaf Column -->
+  <ng-container *ngIf="!col.children?.length">
+    <div class="d-flex align-items-center mb-2">
+      <span class="me-2 filter-icon-wrapper me-2" (click)="col.expandedFilter = !col.expandedFilter">
+        <i
+          class="bi bi-chevron-right toggle-icon"
+          [class.rotate]="col.expandedFilter"
+        ></i>
+      </span>
+
+      <label
+        class="d-flex align-items-center mb-0 w-100"
+        style="cursor: pointer"
+        (click)="col.expandedFilter = !col.expandedFilter"
+      >
+        <span class="text-truncate fw-bold">{{ col.header }}</span>
+      </label>
+    </div>
+
+    <!-- Show filter when expanded -->
+    <div *ngIf="col.expandedFilter" class="ps-4 pe-3">
+      <ng-container
+        *ngTemplateOutlet="sideNestedFilter; context: { col: col }"
+      ></ng-container>
+    </div>
+  </ng-container>
+</ng-template>
+
+<!-- Side Nested Filters -->
+<ng-template #sideNestedFilter let-col="col">
+  <div class="">
+    <!-- Dropdown Type -->
+    <ng-container *ngIf="col.type === 'dropdown'; else textFilter">
+      <div class=" p-1">
+        <input
+          type="text"
+          class="form-control form-control-sm mb-2"
+          placeholder="Search..."
+          [(ngModel)]="col.searchValue"
+        />
+
+        <div>
+          <div class="form-check mb-1 ms-1">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              [(ngModel)]="col.selectAll"
+              (change)="toggleSelectAll(col)"
+              id="selectAll_{{ col.field }}"
+            />
+            <label class="form-check-label" for="selectAll_{{ col.field }}">
+              Select All
+            </label>
+          </div>
+  
+          <div class="dropdown-options">
+            <div
+              class="form-check mb-1 ms-1"
+              *ngFor="let option of col.column_dropdown_value"
+            >
+              <input
+                class="form-check-input"
+                type="checkbox"
+                [value]="option.id || option._id || option"
+                [id]="option.value + '_' + option"
+              />
+              <label class="form-check-label" [for]="option.value + '_' + option">
+                {{ option.value || option }}
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+
+    <!-- Text Filter Section -->
+    <ng-template #textFilter>
+      <div class="filter-text-section">
+        <div class="form-group mb-2">
+          <select
+            class="form-select form-select-sm"
+            [(ngModel)]="col!.query!.first_condition"
+          >
+            <option value="contains">Contains</option>
+            <option value="equals">Equals</option>
+            <option value="startsWith">Starts With</option>
+            <option value="endsWith">Ends With</option>
+          </select>
+        </div>
+
+        <input
+          [type]="col.type == 'date'? 'date' : 'text'"
+          class="form-control form-control-sm mb-3"
+          placeholder="Value"
+          [(ngModel)]="col!.query!.firt_value"
+        />
+
+        <ng-container *ngIf="col?.query?.firt_value">
+          <div class="form-group mb-2">
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input filter-radio-inputs"
+                type="radio"
+                name="condition"
+                [(ngModel)]="col!.query.condition"
+                value="and"
+                id="and_{{ col.field }}"
+              />
+              <label class="form-check-label" for="and_{{ col.field }}"
+                >AND</label
+              >
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                class="form-check-input filter-radio-inputs"
+                type="radio"
+                name="condition"
+                [(ngModel)]="col!.query.condition"
+                value="or"
+                id="or_{{ col.field }}"
+              />
+              <label class="form-check-label" for="or_{{ col.field }}"
+                >OR</label
+              >
+            </div>
+          </div>
+
+          <div class="form-group mb-2">
+            <select
+              class="form-select form-select-sm"
+              [(ngModel)]="col!.query.second_condition"
+            >
+              <option value="contains">Contains</option>
+              <option value="equals">Equals</option>
+              <option value="startsWith">Starts With</option>
+              <option value="endsWith">Ends With</option>
+            </select>
+          </div>
+
+          <input
+          [type]="col.type == 'date'? 'date' : 'text'"
+            class="form-control form-control-sm mb-2"
+            placeholder="Second Value"
+            [(ngModel)]="col!.query.second_value"
+          />
+        </ng-container>
+      </div>
+    </ng-template>
+  </div>
+</ng-template>
+
+
+<!-- Centr Overlay for showing the chose columns -->
+
+<div *ngIf="showColumnPanel" class="custom-modal-overlay">
+  <div class="custom-modal-content" [style.backgroundColor]="dropdownsBackgroundColor" (click)="$event.stopPropagation()">
+    <ng-container *ngTemplateOutlet="modalColumnPannel"></ng-container>
+  </div>
+</div>
+
+<!-- The existing ng-template you provided -->
+<ng-template #modalColumnPannel>
+  <div class="column-panel-header">
+    <div class="d-flex justify-content-between align-items-center px-2 ps-3 rounded-top-2 moda-header" [style.height.px]="48">Choose Columns
+      <span class="filter-icon-wrapper" (click)="closeModalColumnPanel()"><i class="bi bi-x"></i></span>
+    </div>
+    <hr class="my-0">
+    <div>
+      <div class="d-flex align-items-center px-2 pe-3" [style.height.px]="48">
+        <span class="filter-icon-wrapper me-2">
+          <i
+            class="bi bi-chevron-right toggle-icon"
+            [ngClass]="{
+              bi: true,
+              'bi-chevron-down': accordionState === 'all',
+              'bi-dash': accordionState === 'some',
+              'bi-chevron-right': accordionState === 'none'
+            }"
+            (click)="toggleAllAccordions()"
+          ></i>
+        </span>
+        <input
+          type="checkbox"
+          class="form-check-input me-2"
+          [checked]="allColumnsSelected()"
+          (change)="toggleAllColumnsVisibility()"
+        />
+        <input
+          type="text"
+          class="form-control form-control-sm"
+          placeholder="Search columns..."
+          [(ngModel)]="columnSearch"
+        />
+      </div>
+  
+      <hr class="mt-0 mb-1" />
+      <div class="px-2 overlay-scrollable">
+        <ng-container *ngFor="let col of columns">
+          <ng-container
+            *ngTemplateOutlet="columnPanelItem; context: { col: col }"
+          ></ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</ng-template>
