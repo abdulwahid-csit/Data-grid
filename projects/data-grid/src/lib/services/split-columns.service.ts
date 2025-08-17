@@ -27,13 +27,21 @@ export class SplitColumnsService {
         }
 
         if (leftChildren.length) {
-          left.push({ header: col.header, children: leftChildren });
+          left.push({ header: col.header, children: leftChildren, id: col?.id || col?._id });
         }
         if (centerChildren.length) {
-          center.push({ header: col.header, children: centerChildren });
+          center.push({
+            header: col.header,
+            children: centerChildren,
+            id: col.id || col._id,
+          });
         }
         if (rightChildren.length) {
-          right.push({ header: col.header, children: rightChildren });
+          right.push({
+            header: col.header,
+            children: rightChildren,
+            id: col.id || col._id,
+          });
         }
       } else if (col.is_visible !== false) {
         const pinned = col.pinned ?? null;

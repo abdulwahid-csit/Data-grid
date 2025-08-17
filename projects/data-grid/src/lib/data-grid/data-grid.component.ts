@@ -13,12 +13,43 @@ import {
 } from '@angular/core';
 import { SplitColumnsService } from '../services/split-columns.service';
 import { CommonService } from '../services/common.service';
-import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
+import { SwapColumnsService } from '../services/swap-columns.service';
+import {
+  CdkDrag,
+  CdkDragDrop,
+  CdkDragEnd,
+  CdkDragEnter,
+  CdkDragExit,
+  CdkDragMove,
+  CdkDragSortEvent,
+  CdkDragStart,
+  DragDrop,
+  moveItemInArray,
+} from '@angular/cdk/drag-drop';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
+import { CdkDropList } from '@angular/cdk/drag-drop';
+
 
 @Component({
   selector: 'data-grid',
   templateUrl: './data-grid.component.html',
   styleUrls: ['./data-grid.component.scss'],
+  animations: [
+    trigger('accordionToggle', [
+      state(
+        'collapsed',
+        style({ height: '0px', overflow: 'hidden', opacity: 0 })
+      ),
+      state('expanded', style({ height: '*', overflow: 'hidden', opacity: 1 })),
+      transition('collapsed <=> expanded', animate('200ms ease-in-out')),
+    ]),
+  ],
 })
 export class DataGridComponent implements OnChanges, AfterViewInit {
   //  **************************************//
@@ -100,9 +131,15 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   @Input() dropdownsBackgroundColor: string | undefined = '';
 
   // Footer row Height;
-  @Input() footerRowHeight: number | undefined = 46;
+  @Input() footerRowHeight: number = 46;
 
+  // Footer row Height;
+  @Input() topGroupedBadgesBackgroundColor: string | undefined = '#eaeaeb';
 
+  // Show Row wise grouping;
+  @Input() showRowsGrouping: boolean | undefined = true;
+
+  groupedColumns: any[] = [];
   activeCol: any = null;
   activeFilterCell: any = null;
   isShowSideMenu = false;
@@ -111,53 +148,39 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   expandAllAccordians = true;
   currentOpenedSideMenue: 'cols' | 'filtrs' | null = null;
   originalColumns: any[] = [];
+  originalDataSet: any[] = [];
   constructor(
     private columnService: SplitColumnsService,
     private cdr: ChangeDetectorRef,
-    public commonSevice: CommonService
-  ) { }
+    public commonSevice: CommonService,
+    private swapColumnService: SwapColumnsService
+  ) {}
 
   ngAfterViewInit(): void {
     this.columns = this.columnService.setColumnsQuery(this.columns);
     this.originalColumns = structuredClone(this.columns);
     this.SetColumnsDefaultWidth();
     this.updateColumnWidthsAndGroups();
+    this.refreshPreviewColumns();
     setTimeout(() => {
       this.setSectionsWidth();
     }, 10);
-    setTimeout(() => {
-      const syncScroll = (
-        source: CdkVirtualScrollViewport,
-        targets: CdkVirtualScrollViewport[]
-      ) => {
-        const scrollOffset = source.measureScrollOffset();
-        targets.forEach(vp => {
-          const diff = Math.abs(vp.measureScrollOffset() - scrollOffset);
-          if (diff > 1) {
-            vp.scrollToOffset(scrollOffset);
-          }
-        });
-      };
-
-      // Make center the master scroll source
-      this.centerViewport.elementScrolled().subscribe(() => {
-        syncScroll(this.centerViewport, [this.leftViewport, this.rightViewport]);
-      });
-    }, 200);
-
 
     setTimeout(() => {
+      this.updateFlattenedData();
       this.computeViewportRows();
       this.updateVisibleRows(0);
-
-      // if the container or rows can resize, recompute on resize
       const ro = new ResizeObserver(() => {
+        this.updateFlattenedData();
         this.computeViewportRows();
         this.updateVisibleRows(this.mainScroll.nativeElement.scrollTop);
       });
       ro.observe(this.mainScroll.nativeElement);
     }, 300);
 
+    setTimeout(() => {
+      this.generateDropListIds();
+    }, 10);
   }
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['columns'] && !changes['columns'].firstChange) {
@@ -168,18 +191,27 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
           // this.originalColumns = structuredClone(this.columns);
           this.SetColumnsDefaultWidth;
           this.updateColumnWidthsAndGroups();
+          this.refreshPreviewColumns();
         }
       }, 0);
     }
 
-    // if (changes['dataSet']) {
-    //   this.updateVisibleRows();
-    // }
+    if (changes['dataSet']) {
+      this.originalDataSet = structuredClone(this.dataSet);
+    }
+
+    if (changes['dataSet'] && !changes['columns'].firstChange) {
+      this.updateFlattenedData();
+    }
   }
 
   leftPinnedColumns: any[] = [];
   centerColumns: any[] = [];
   rightPinnedColumns: any[] = [];
+
+  previewLeftPinnedColumns: any[] = [];
+  previewCenterColumns: any[] = [];
+  previewRightPinnedColumns: any[] = [];
 
   // Main Container Template References
   @ViewChild('dataGridContainer')
@@ -204,19 +236,36 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   // Center Fake scrollbard
   @ViewChild('centerFakeScrollbar')
   centerFakeScrollbar!: ElementRef<HTMLDivElement>;
-  updateColumnWidthsAndGroups() {
-    debugger;
+  updateColumnWidthsAndGroups(columns: any = null) {
     if (!this.dataGridContainer) return;
     const containerWidth = this.dataGridContainer.nativeElement.offsetWidth;
 
     const { left, center, right }: any = this.columnService.prepareColumns(
-      this.columns,
+      columns ? columns : this.columns,
       containerWidth
     );
 
     this.leftPinnedColumns = left;
     this.centerColumns = center;
     this.rightPinnedColumns = right;
+
+    console.log('Left groups: ', this.leftPinnedColumns);
+    console.log('Left center: ', this.centerColumns);
+    console.log('Left right: ', this.rightPinnedColumns);
+  }
+
+  refreshPreviewColumns(columns: any = null) {
+    if (!this.dataGridContainer) return;
+    const containerWidth = this.dataGridContainer.nativeElement.offsetWidth;
+
+    const { left, center, right }: any = this.columnService.prepareColumns(
+      columns ? columns : this.columns,
+      containerWidth
+    );
+
+    this.previewLeftPinnedColumns = left;
+    this.previewCenterColumns = center;
+    this.previewRightPinnedColumns = right;
 
     console.log('Left groups: ', this.leftPinnedColumns);
     console.log('Left center: ', this.centerColumns);
@@ -322,22 +371,37 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
         deltaX = -deltaX;
       }
 
+      // Prevent shrinking too small
       if (totalInitialWidth + deltaX < children.length * 80) return;
+
+      let totalNewWidth = 0;
 
       childWidths.forEach((child) => {
         const ratio = child.width / totalInitialWidth;
         const newWidth = Math.max(child.width + deltaX * ratio, 80);
+        totalNewWidth += newWidth;
+
         const childEls = document.querySelectorAll(`[field="${child.field}"]`);
         childEls.forEach((el: Element) => {
           const elHtml = el as HTMLElement;
           elHtml.style.minWidth = `${newWidth}px`;
           elHtml.style.width = `${newWidth}px`;
         });
+
         this.updateColumnWidthInSourceByField(child.field, newWidth);
       });
+
+      // ✅ Update group header width in DOM
+      const groupHeaderEl = document.querySelector(
+        `[group="${col.header}"]`
+      ) as HTMLElement;
+      if (groupHeaderEl) {
+        groupHeaderEl.style.width = `${totalNewWidth}px`;
+      }
     };
 
     const onMouseUp = () => {
+      this.refreshPreviewColumns();
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);
     };
@@ -393,6 +457,7 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     };
 
     const onMouseUp = () => {
+      this.refreshPreviewColumns();
       window.removeEventListener('mousemove', onMouseMove);
       window.removeEventListener('mouseup', onMouseUp);
     };
@@ -410,7 +475,7 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   // Get Body Height
   get bodyWrapperHeight(): string {
     const rows = this.showColumnsGrouping ? 3 : 2;
-    const offset = ((this.headerRowHeight * rows) + 17);
+    const offset = this.headerRowHeight * rows + 17;
     return `calc(100% - ${offset}px)`;
   }
 
@@ -462,6 +527,8 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
 
   isMenueHidden = false;
   openThreeDotsMenu(event: MouseEvent, child: any) {
+    event.preventDefault();
+    event.stopPropagation();
     this.isMenueHidden = true;
     const containerWidth = this.dataGridContainer?.nativeElement?.offsetWidth;
     this.activeCol = child;
@@ -510,6 +577,7 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     update(this.columns);
     setTimeout(() => {
       this.updateColumnWidthsAndGroups();
+      this.refreshPreviewColumns();
       this.cdr.detectChanges();
     }, 0);
   }
@@ -551,7 +619,15 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     }
 
     this.updateColumnWidthsAndGroups();
-    this.cdr.detectChanges();
+    this.refreshPreviewColumns();
+  }
+
+  getGroupWidth(group: any): number {
+    return (
+      group?.children
+        ?.filter((col: any) => col?.is_visible)
+        ?.reduce((acc: number, col: any) => acc + (col?.width || 0), 0) || 0
+    );
   }
 
   autosizeAllColumns(): void {
@@ -587,7 +663,7 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
       this.updateColumnWidthInSourceByField(col.field, equalWidth);
     });
 
-    this.updateColumnWidthsAndGroups();
+    this.refreshHeaders();
     this.cdr.detectChanges();
   }
 
@@ -654,18 +730,17 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   }
 
   toggleSelectAll(data: any[]): void {
-    const allIds = this.dataSet.map(row => this.getRowId(row));
-    const allSelected = allIds.every(id => this.selectedRows.has(id));
+    const allIds = this.originalDataSet.map((row) => this.getRowId(row));
+    const allSelected = allIds.every((id) => this.selectedRows.has(id));
 
     if (allSelected) {
-      allIds.forEach(id => this.selectedRows.delete(id));
+      allIds.forEach((id) => this.selectedRows.delete(id));
     } else {
-      allIds.forEach(id => this.selectedRows.add(id));
+      allIds.forEach((id) => this.selectedRows.add(id));
     }
 
     this.cdr.detectChanges();
   }
-
 
   isRowSelected(row: any): boolean {
     return this.selectedRows.has(this.getRowId(row));
@@ -697,6 +772,7 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     col.children.forEach((child: any) => (child.is_visible = !allVisible));
     setTimeout(() => {
       this.updateColumnWidthsAndGroups();
+      this.refreshPreviewColumns();
       this.SetColumnsDefaultWidth();
       this.cdr.detectChanges();
     }, 10);
@@ -721,13 +797,16 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     flatten.forEach((col: any) => (col.is_visible = !allSelected));
     setTimeout(() => {
       this.updateColumnWidthsAndGroups();
+      this.refreshPreviewColumns();
       this.cdr.detectChanges();
     }, 10);
   }
 
   flattenColumns(cols: any[]): any[] {
     return cols.flatMap((col) =>
-      col.children ? this.flattenColumns(col.children) : [col]
+      col?.children && col.children.length
+        ? this.flattenColumns(col?.children)
+        : [col]
     );
   }
 
@@ -828,15 +907,14 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   @HostListener('window:resize', ['$event'])
   onResize(event: UIEvent) {
     this.autosizeAllColumns();
-    setTimeout(() => {
-      
-    }, 100);
+    setTimeout(() => {}, 100);
   }
 
   refreshHeaders() {
     setTimeout(() => {
       this.updateColumnWidthsAndGroups();
-    }, 0)
+      this.refreshPreviewColumns();
+    }, 10);
   }
 
   get hasAnyVisibleColumn() {
@@ -844,53 +922,62 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   }
 
   tableHeaderAndBodyHeight() {
-    return `calc(100% - ${this.footerRowHeight})`
+    return `calc(100% - ${this.footerRowHeight})`;
   }
 
-  @ViewChild('leftViewport') leftViewport!: CdkVirtualScrollViewport;
-  @ViewChild('centerViewport') centerViewport!: CdkVirtualScrollViewport;
-  @ViewChild('rightViewport') rightViewport!: CdkVirtualScrollViewport;
-
-  private syncing = false;
-
-  onScrollIndexChange(index: number) {
-    if (this.syncing) return;
-    this.syncing = true;
-
-    this.leftViewport.scrollToIndex(index, 'smooth');
-    this.centerViewport.scrollToIndex(index, 'smooth');
-    this.rightViewport.scrollToIndex(index, 'smooth');
-
-    setTimeout(() => this.syncing = false, 0);
-  }
+  draggingInGroupArea = false;
 
   @ViewChild('centerScroll') centerScroll!: ElementRef<HTMLDivElement>;
   visibleRowCount = 25;
   startIndex = 0;
   visibleRows: any[] = [];
 
-  private updateVisibleRows(scrollTop: number) {
-    const total = this.dataSet.length;
+  private flattenGroupedRows(
+    rows: any[],
+    level = 0,
+    result: any[] = []
+  ): any[] {
+    for (const row of rows) {
+      result.push({ ...row, __depth: level });
+      if (row.isGroup && row.isExpand && row.children?.length) {
+        this.flattenGroupedRows(row.children, level + 1, result);
+      }
+    }
+    return result;
+  }
 
-    // clamp firstIndex so we *always* have viewportRows (no short slice at the end)
+  updateVisibleRows(scrollTop: number) {
+    const flatData = this.flattenGroupedRows(this.dataSet);
+    const total = flatData.length;
     const maxFirst = Math.max(0, total - this.viewportRows);
     const first = Math.min(Math.floor(scrollTop / this.rowHeight), maxFirst);
-
-    // overscan around the clamped first index
     const start = Math.max(0, first - this.overscan);
     const end = Math.min(total, first + this.viewportRows + this.overscan);
 
     this.firstIndex = first;
     this.renderStart = start;
     this.visibleRows = this.dataSet.slice(start, end);
+    this.cdr.detectChanges();
   }
 
-  // keep DOM stable; avoids flicker when the slice shifts
   trackByRenderedIndex = (i: number, _row: any) => this.renderStart + i;
 
   private isSyncingFromMain = false;
   private isSyncingFromFake = false;
   private mainScrollRaf: number | null = null;
+
+  trackById(index: number, item: any) {
+    return item.id || item._id;
+  }
+
+  private flattenedData: any[] = [];
+
+  updateFlattenedData(): void {
+    this.flattenedData = this.flattenGroupedRows(this.dataSet);
+    setTimeout(() => {
+      this.cdr.detectChanges();
+    }, 10);
+  }
 
   onMainScroll(event: Event) {
     if (this.isSyncingFromFake) {
@@ -906,14 +993,21 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
       this.fakeScroll.nativeElement.scrollTop = scrollTop;
 
       this.startIndex = Math.floor(scrollTop / this.rowHeight);
-      this.visibleRows = this.dataSet.slice(
+      this.visibleRows = this.flattenedData.slice(
         this.startIndex,
         this.startIndex + this.visibleRowCount
       );
-      this.cdr.markForCheck();
+      this.cdr.detectChanges();
     });
-
   }
+
+  // toggleExpand(row: any) {
+  //   row.isExpand = !row.isExpand;
+  //   requestAnimationFrame(() => this.updateFlattenedData());
+  //   setTimeout(() => {
+  //     this.cdr.detectChanges();
+  //   }, 10);
+  // }
 
   onMainFakeScroll(event: Event) {
     if (this.isSyncingFromMain) {
@@ -922,47 +1016,538 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     }
 
     const scrollTop = (event.target as HTMLElement).scrollTop;
+    if (this.mainScrollRaf) cancelAnimationFrame(this.mainScrollRaf);
+    this.mainScrollRaf = requestAnimationFrame(() => {
+      this.isSyncingFromMain = true;
+      this.mainScroll.nativeElement.scrollTop = scrollTop;
 
-    this.isSyncingFromFake = true;
-    this.mainScroll.nativeElement.scrollTop = scrollTop;
-
-    this.startIndex = Math.floor(scrollTop / this.rowHeight);
-    this.visibleRows = this.dataSet.slice(
-      this.startIndex,
-      this.startIndex + this.visibleRowCount
-    );
-    this.cdr.markForCheck();
+      this.startIndex = Math.floor(scrollTop / this.rowHeight);
+      this.visibleRows = this.flattenedData.slice(
+        this.startIndex,
+        this.startIndex + this.visibleRowCount
+      );
+      this.cdr.detectChanges();
+    });
   }
 
-
-
-  overscan = 4;                // extra rows above/below for smoothness
-  viewportRows = 0;            // how many rows fit in viewport (computed)
-  firstIndex = 0;              // index of the first visible row (clamped)
-  renderStart = 0;             // where the slice actually starts (firstIndex - overscan, clamped)
+  overscan = 4; // extra rows above/below for smoothness
+  viewportRows = 0; // how many rows fit in viewport (computed)
+  firstIndex = 0; // index of the first visible row (clamped)
+  renderStart = 0; // where the slice actually starts (firstIndex - overscan, clamped)
 
   private scrollRaf: number | null = null;
   private pendingScrollTop = 0;
 
   @ViewChild('mainScroll') mainScroll!: ElementRef<HTMLDivElement>;
   @ViewChild('fakeScroll') fakeScroll!: ElementRef<HTMLDivElement>;
-  @ViewChild('horizintalFakeScroll') horizintalFakeScroll!: ElementRef<HTMLDivElement>;
-  @ViewChild('centerScrollableBody') centerScrollableBody!: ElementRef<HTMLDivElement>;
+  @ViewChild('horizintalFakeScroll')
+  horizintalFakeScroll!: ElementRef<HTMLDivElement>;
+  @ViewChild('centerScrollableBody')
+  centerScrollableBody!: ElementRef<HTMLDivElement>;
   computeViewportRows() {
     const h = this.mainScroll?.nativeElement?.clientHeight ?? 0;
     this.viewportRows = Math.max(1, Math.ceil(h / this.rowHeight));
   }
 
-
-  onHorizintalFakeScroll(event: Event){
+  onHorizintalFakeScroll(event: Event) {
     const scrollLeft = (event.target as HTMLElement).scrollLeft;
     this.centerPinnedHeader.nativeElement.scrollLeft = scrollLeft;
     this.centerScrollableBody.nativeElement.scrollLeft = scrollLeft;
   }
 
-  onCenterBodyScroll(event: Event){
-    const scrollLeft = (event.target as HTMLElement).scrollLeft;
-    // this.horizintalFakeScroll.nativeElement.scrollLeft = scrollLeft;
-    this.centerPinnedHeader.nativeElement.scrollLeft = (event.target as HTMLElement).scrollLeft;
+  onCenterBodyScroll(event: Event) {
+    this.centerPinnedHeader.nativeElement.scrollLeft = (
+      event.target as HTMLElement
+    ).scrollLeft;
+  }
+
+  // Dragging Logic is implemented here
+  // private initialIndex: number | null = null;
+
+  draggingColumn: any;
+  dragStartIndex: any = 0;
+  // onDragStart(data: any, index: number) {
+  //   this.draggingColumn = data.column;
+  //   this.dragStartIndex = index;
+  // }
+  // onDragMove(data: any) {
+  //   const { clientX, clientY } = data.event;
+  //   const headers = Array.from(
+  //     document.querySelectorAll('.one-row-header-cells')
+  //   ) as HTMLElement[];
+
+  //   headers.forEach((headerEl, idx) => {
+  //     const rect = headerEl.getBoundingClientRect();
+  //     if (
+  //       idx !== this.dragStartIndex &&
+  //       clientX > rect.left &&
+  //       clientX < rect.right &&
+  //       clientY > rect.top &&
+  //       clientY < rect.bottom
+  //     ) {
+  //       const otherIndex = idx;
+  //       console.log(`${this.dragStartIndex} --> ${otherIndex}`);
+  //       this.swapColumn(this.dragStartIndex, otherIndex);
+  //       console.log('Updated Columns: ', this.columns);
+  //       this.dragStartIndex = otherIndex; // update index
+  //     }
+  //   });
+  // }
+
+  // swapColumn(previusIndex: number, currentIndex: number) {
+  //   const columns = structuredClone(this.columns);
+  //   const flattenColumns = this.flattenColumns(columns);
+
+  //   const visibleFlattenColumns = flattenColumns.filter(
+  //     (col) => col.is_visible
+  //   );
+  //   const previusColumn = visibleFlattenColumns[previusIndex];
+  //   const currentColumn = visibleFlattenColumns[currentIndex];
+
+  //   console.log('Previus Column: ', previusColumn);
+  //   console.log('current clumn: ', currentColumn);
+  // }
+
+  // onDragEnd(data: any) {
+  //   this.draggingColumn = null;
+  //   this.dragStartIndex = null;
+  // }
+
+  // CDK DRAG DROP LOGIC GOES HERE
+
+  canEnterToRowsGrouping = (drag: CdkDrag<any>, drop: CdkDropList<any>) => {
+    // Example: Block if already pinned left
+    const data = drag.data;
+    if (data?.children && data?.children.length) {
+      return data.children.some(
+        (col: any) => col.is_visible && col.isGroupable
+      );
+    }
+    return data.is_visible && data.isGroupable;
+  };
+
+  onDragMoved(event: CdkDragMove<any>) {
+    const pointerX = event.pointerPosition.x;
+    const pointerY = event.pointerPosition.y;
+
+    const targetElement = document.getElementById(
+      'rows-grouping-top-container'
+    );
+
+    if (targetElement) {
+      const rect = targetElement.getBoundingClientRect();
+
+      const isOverTarget =
+        pointerX >= rect.left &&
+        pointerX <= rect.right &&
+        pointerY >= rect.top &&
+        pointerY <= rect.bottom;
+
+      if (isOverTarget) {
+        this.draggingInGroupArea = true;
+      } else {
+        this.draggingInGroupArea = false;
+      }
+    }
+  }
+
+  enterToTopRowGrouping(dropList: CdkDragEnter<any>) {
+    const draggingData = dropList.item.data;
+    this.draggingInGroupArea = true;
+
+    // 🟢 Case 1: If draggingData is a parent group
+    if (Array.isArray(draggingData?.children)) {
+      const targetGroup = this.columns.find(
+        (col) => col.header === draggingData.header
+      );
+      if (targetGroup) {
+        draggingData.children.forEach((draggedChild: any) => {
+          const matchingChild = targetGroup.children.find(
+            (child: any) => child.field === draggedChild.field
+          );
+          if (matchingChild) {
+            matchingChild.isRowGrouped = !!matchingChild.isGroupable;
+          }
+        });
+      }
+    }
+    // 🟡 Case 2: If draggingData is a direct column
+    else {
+      // Try finding it in top-level columns first
+      let targetColumn = this.columns.find(
+        (col: any) => col.field === draggingData.field
+      );
+
+      if (targetColumn) {
+        targetColumn.isRowGrouped = !!targetColumn.isGroupable;
+      } else {
+        // 🔴 Case 3: If draggingData is a child column inside a group
+        for (let group of this.columns) {
+          if (Array.isArray(group.children)) {
+            const matchingChild = group.children.find(
+              (child: any) => child.field === draggingData.field
+            );
+            if (matchingChild) {
+              matchingChild.isRowGrouped = !!matchingChild.isGroupable;
+              break;
+            }
+          }
+        }
+      }
+    }
+
+    // ✅ Refresh UI
+    this.refreshPreviewColumns();
+    this.cdr.detectChanges();
+  }
+
+  onDropListEnter(
+    dropList: CdkDragEnter<any>,
+    section: 'left' | 'center' | 'right'
+  ) {
+    const draggingData = dropList.item.data;
+
+    const targetColumn: any = this.columns.find(
+      (col) => col.header == draggingData.header
+    );
+
+    if (!targetColumn) return;
+
+    if (
+      Array.isArray(draggingData?.children) &&
+      Array.isArray(targetColumn?.children)
+    ) {
+      draggingData.children.forEach((draggedChild: any) => {
+        const matchingChild = targetColumn.children.find(
+          (child: any) => child.field === draggedChild.field
+        );
+        if (matchingChild) {
+          matchingChild.pinned = section === 'center' ? null : section;
+          matchingChild['isRowGrouped'] = false;
+        }
+      });
+    } else {
+      targetColumn.pinned = section === 'center' ? null : section;
+      targetColumn['isRowGrouped'] = false;
+    }
+
+    this.refreshPreviewColumns();
+    this.cdr.detectChanges();
+  }
+
+  enterToTopGroupingRow(dropList: CdkDragEnter<any>) {
+    console.log('Entered Drop List:', dropList);
+    this.shouldDisableDroplistSorting = this.isDisableColumnGrouping;
+    this.draggingInGroupArea = true;
+    // const index = this.groupedColumns.findIndex(
+    //   (col) => col.field === column.field
+    // );
+    // if (index !== -1) {
+    //   this.groupedColumns.splice(index, 1);
+    // }
+
+    // // 2. Traverse this.columns to find and update the matching column
+    // this.columns.forEach((group) => {
+    //   if (group?.children && Array.isArray(group.children)) {
+    //     group.children.forEach((child) => {
+    //       if (child.field === column.field) {
+    //         child.isRowGrouped = false;
+    //       }
+    //     });
+    //   } else if (group.field === column.field) {
+    //     group.isRowGrouped = false;
+    //   }
+    // });
+    this.cdr.detectChanges();
+  }
+
+  exitedFromTheTopRow(dropList: CdkDragExit<any>) {
+    console.log('EXITED Drop List:', dropList);
+    this.draggingInGroupArea = false;
+    this.isDisableColumnGrouping = false;
+    this.shouldDisableDroplistSorting = false;
+    const draggingData = dropList.item.data;
+    if (Array.isArray(draggingData?.children)) {
+      const targetGroup = this.columns.find(
+        (col) => col.header === draggingData.header
+      );
+      if (targetGroup) {
+        draggingData.children.forEach((draggedChild: any) => {
+          const matchingChild = targetGroup.children.find(
+            (child: any) => child.field === draggedChild.field
+          );
+          if (matchingChild) {
+            matchingChild.isRowGrouped = false;
+          }
+        });
+      }
+    } else {
+      let targetColumn = this.columns.find(
+        (col: any) => col.field === draggingData.field
+      );
+
+      if (targetColumn) {
+        targetColumn.isRowGrouped = false;
+      } else {
+        for (let group of this.columns) {
+          if (Array.isArray(group.children)) {
+            const matchingChild = group.children.find(
+              (child: any) => child.field === draggingData.field
+            );
+            if (matchingChild) {
+              matchingChild.isRowGrouped = false;
+              break;
+            }
+          }
+        }
+      }
+    }
+    this.refreshPreviewColumns();
+    this.cdr.detectChanges();
+  }
+
+  shouldDisableDroplistSorting = false;
+  isDisableColumnGrouping = false;
+  checkColumnGroupingStatus(col: any) {
+    if (col?.children && Array.isArray(col.children)) {
+      const allChildrenDisabled = col.children.every(
+        (child: any) => child.isGroupable === false
+      );
+      this.isDisableColumnGrouping = allChildrenDisabled;
+    } else {
+      this.isDisableColumnGrouping = col.isGroupable === false;
+    }
+    this.cdr.detectChanges();
+    console.log('isDisableColumnGrouping:', this.isDisableColumnGrouping);
+  }
+
+  currentDraggingColumn: any = null;
+  dragStartOnGroup(col: any) {
+    this.currentDraggingColumn = col;
+  }
+
+  onSortGroup(
+    event: CdkDragSortEvent<any>,
+    section: 'left' | 'center' | 'right'
+  ) {
+    const visibleColumns = this.columns.filter((col) => {
+      if (col?.children && Array.isArray(col.children)) {
+        return col.children.some((child: any) => child.is_visible);
+      }
+      return col.is_visible;
+    });
+
+    const previusHeader = visibleColumns[event.previousIndex].header;
+    const currentHeader = visibleColumns[event.currentIndex].header;
+
+    const visiblePrevIndex = this.columns.findIndex(
+      (col) => col.header === previusHeader
+    );
+    const visibleCurrIndex = this.columns.findIndex(
+      (col) => col.header === currentHeader
+    );
+
+    moveItemInArray(this.columns, visiblePrevIndex, visibleCurrIndex);
+    this.refreshPreviewColumns();
+    this.cdr.detectChanges();
+  }
+
+  onDropGroup() {
+    this.leftPinnedColumns = structuredClone(this.previewLeftPinnedColumns);
+    this.centerColumns = structuredClone(this.previewCenterColumns);
+    this.rightPinnedColumns = structuredClone(this.previewRightPinnedColumns);
+    this.cdr.detectChanges();
+  }
+
+  onDropTopGroup(event: CdkDragDrop<any>) {
+    const draggedData = event.item.data;
+    if (draggedData?.children && Array.isArray(draggedData.children)) {
+      draggedData.children.forEach((col: any) => {
+        if (col.is_visible && col.isGroupable) {
+          this.groupedColumns.push(col);
+        }
+      });
+    } else {
+      if (draggedData.is_visible && draggedData.isGroupable) {
+        this.groupedColumns.push(draggedData);
+      }
+    }
+    this.draggingInGroupArea = false;
+    const fields = this.groupedColumns.map((item) => item.field);
+    this.dataSet = this.groupData(this.originalDataSet, fields);
+    setTimeout(() => {
+      console.log('grouped data: ', this.dataSet);
+      this.updateColumnWidthsAndGroups();
+      this.refreshPreviewColumns();
+      this.updateVisibleRows(0);
+    }, 100);
+  }
+
+  ungroupColumn(column: any) {
+    const index = this.groupedColumns.findIndex(
+      (col) => col.field === column.field
+    );
+    if (index !== -1) {
+      this.groupedColumns.splice(index, 1);
+    }
+    this.columns.forEach((group) => {
+      if (group?.children && Array.isArray(group.children)) {
+        group.children.forEach((child: any) => {
+          if (child.field === column.field) {
+            child.isRowGrouped = false;
+            const fields = this.groupedColumns.map((item) => item.field);
+            this.dataSet = this.groupData(this.originalDataSet, fields);
+            setTimeout(() => {
+              console.log('grouped data: ', this.originalDataSet);
+              this.updateColumnWidthsAndGroups();
+              this.refreshPreviewColumns();
+              this.updateVisibleRows(0);
+            }, 100);
+          }
+        });
+      } else if (group.field === column.field) {
+        group.isRowGrouped = false;
+        const fields = this.groupedColumns.map((item) => item.field);
+        this.dataSet = this.groupData(this.originalDataSet, fields);
+        this.updateFlattenedData();
+        setTimeout(() => {
+          console.log('grouped data: ', this.originalDataSet);
+          this.updateColumnWidthsAndGroups();
+          this.refreshPreviewColumns();
+          this.updateVisibleRows(0);
+        }, 100);
+      }
+    });
+  }
+
+  shouldTheGroupHeaderShow(group: any) {
+    if (group?.children && group.children.length) {
+      return group.children.some(
+        (col: any) => col.is_visible && !col?.isRowGrouped
+      );
+    }
+    return group?.is_visible && !group?.isRowGrouped;
+  }
+
+  onChildDragStart() {
+    debugger;
+  }
+
+  dropListIds: string[] = [];
+
+  generateDropListIds() {
+    this.dropListIds = [];
+
+    const sectionKeys = [
+      'leftPinnedColumns',
+      'centerColumns',
+      'rightPinnedColumns',
+    ];
+
+    sectionKeys.forEach((sectionKey) => {
+      const sectionCols = (this as any)[sectionKey];
+
+      this.columns.forEach((col: any, i: number) => {
+        if (col?.children?.length > 0) {
+          col.children.forEach((child: any, childIndex: number) => {
+            if (child?.is_visible && !child.isRowGrouped) {
+              const id = `${sectionKey}${i}`;
+              this.dropListIds.push(id);
+            }
+          });
+        } else if (col?.is_visible && !col.isRowGrouped) {
+          const id = `${sectionKey}${i}`;
+          this.dropListIds.push(id);
+        }
+      });
+    });
+  }
+
+  onChildDroplistSorted(event: CdkDragSortEvent<any>, section: string) {
+    const pinned =
+      section == 'leftPinnedColumns'
+        ? 'left'
+        : section == 'rightPinnedColumns'
+        ? 'right'
+        : null;
+    const column = event.item.data;
+    let group = this.columns.find(
+      (col: any) =>
+        Array.isArray(col.children) &&
+        col.children.some((child: any) => child?.field === column?.field)
+    );
+
+    const groupIndex = this.columns.findIndex(
+      (col) => col.header === group.header
+    );
+
+    const filteredGroup = group?.children.filter(
+      (col: any) => col?.pinned == pinned && col?.is_visible
+    );
+    const previusField = filteredGroup[event.previousIndex].field;
+    const currentField = filteredGroup[event.currentIndex].field;
+    const visiblePreviusIndex = group.children.findIndex(
+      (col: any) => col.field == previusField
+    );
+    const visibleCurrentIndex = group.children.findIndex(
+      (col: any) => col.field == currentField
+    );
+    moveItemInArray(
+      this.columns[groupIndex]?.children,
+      visiblePreviusIndex,
+      visibleCurrentIndex
+    );
+
+    setTimeout(() => {
+      this.refreshPreviewColumns();
+      setTimeout(() => {
+        this.cdr.detectChanges();
+      }, 1);
+    }, 10);
+    console.group('Group: ', group);
+  }
+
+  onChildDroplistDroped(event: CdkDragDrop<any>) {
+    this.updateColumnWidthsAndGroups();
+    setTimeout(() => {
+      this.cdr.detectChanges();
+    }, 2);
+  }
+
+  // Rows Grouping Logic Goes Here
+
+  groupData(data: any[], groupFields: string[]): any[] {
+    let dataSet = structuredClone(data);
+    if (!groupFields.length) return data;
+
+    const [currentField, ...restFields] = groupFields;
+    const groupedMap = new Map<string, any[]>();
+
+    for (const item of dataSet) {
+      const key =
+        currentField.split('.').reduce((obj, k) => obj?.[k], item) ?? 'Unknown';
+
+      if (!groupedMap.has(key)) {
+        groupedMap.set(key, []);
+      }
+      groupedMap.get(key)!.push(item);
+    }
+
+    // Recursively group the children if more fields remain
+    return Array.from(groupedMap.entries()).map(([groupValue, groupItems]) => ({
+      isGroup: true,
+      groupField: currentField,
+      groupValue,
+      children: this.groupData(groupItems, restFields), // <-- recursive call
+      isExpand: false,
+    }));
+  }
+
+  countLeafRows(group: any): number {
+    if (!group.children || !group.children.length) return 0;
+
+    return group.children.reduce((count: number, child: any) => {
+      return count + (child.isGroup ? this.countLeafRows(child) : 1);
+    }, 0);
   }
 }

@@ -1,7 +1,46 @@
-<div class="h-100 data-grid-table-wrapper overflow-hidden" #dataGridContainer>
+<div
+  cdkDropListGroup
+  class="h-100 data-grid-table-wrapper overflow-hidden"
+  #dataGridContainer
+>
+  <div
+    *ngIf="showRowsGrouping"
+    [style.height.px]="headerRowHeight"
+    [cdkDropListData]="columns"
+    cdkDropList
+    (cdkDropListEntered)="enterToTopRowGrouping($event)"
+    (cdkDropListExited)="exitedFromTheTopRow($event)"
+    (cdkDropListDropped)="onDropTopGroup($event)"
+    [cdkDropListEnterPredicate]="canEnterToRowsGrouping"
+    id="rows-grouping-top-container"
+    class="border-bottom d-flex px-4 align-items-center"
+  >
+    <div class="d-flex gap-2 align-items-center">
+      <i class="bi bi-justify"></i>
+      <div *ngIf="!draggingInGroupArea && !groupedColumns?.length">
+        Drag here to set row groups
+      </div>
+      <ng-container *ngFor="let child of groupedColumns; let i = index">
+        <ng-container
+          *ngTemplateOutlet="
+            topGroupingRowPlaceholder;
+            context: {
+              $implicit: child,
+              showChevron:
+                groupedColumns.length > 1 && i != groupedColumns.length - 1
+            }
+          "
+        ></ng-container>
+      </ng-container>
+    </div>
+  </div>
   <div
     class="d-flex overflow-hidden"
-    [style.height]="'calc(100% - ' + footerRowHeight + 'px)'"
+    [style.height]="
+      'calc(100% - ' +
+      (showRowsGrouping ? headerRowHeight + footerRowHeight : footerRowHeight) +
+      'px)'
+    "
   >
     <div
       class="h-100"
@@ -9,7 +48,7 @@
         isShowSideMenu ? 'calc(100% - 280px)' : 'calc(100% - 30px)'
       "
     >
-      <div class="h-100 transition position-relative">
+      <div class="h-100 transition position-relative w-100">
         <!-- ##################################################################################################################################################################################### -->
         <!-- ##################################################################################################################################################################################### -->
         <!-- Data Grid Header starts here -->
@@ -17,7 +56,7 @@
         <!-- ##################################################################################################################################################################################### -->
 
         <div
-          class="data-grid-header-wrapper"
+          class="data-grid-header-wrapper w-100"
           [style.color]="headerTextColor"
           [style.fontSize.px]="headerTextFontsSize"
           [style.backgroundColor]="headerBackgroundColor"
@@ -50,11 +89,90 @@
                 (change)="toggleSelectAll(dataSet)"
               />
             </div>
-            <ng-container *ngFor="let col of leftPinnedColumns">
-              <ng-container
-                *ngTemplateOutlet="headerCell; context: { $implicit: col }"
-              ></ng-container>
-            </ng-container>
+            <div
+              class="d-flex"
+              cdkDropList
+              id="left-pinned-header"
+              cdkDropListOrientation="horizontal"
+              [cdkDropListData]="leftPinnedColumns"
+              (cdkDropListEntered)="onDropListEnter($event, 'left')"
+              (cdkDropListSorted)="onSortGroup($event, 'left')"
+              (cdkDropListDropped)="onDropGroup()"
+              style="min-width: 0.2px"
+              [style.background-color]="headerBackgroundColor"
+            >
+              <div
+                cdkDrag
+                [cdkDragData]="col"
+                *ngFor="let col of leftPinnedColumns; let i = index"
+              >
+                <ng-container
+                  *ngTemplateOutlet="
+                    headerCell;
+                    context: {
+                      $implicit: col,
+                      index: i,
+                      section: 'leftPinnedColumns'
+                    }
+                  "
+                ></ng-container>
+                <ng-template cdkDragPreview
+                  ><div class="p-2 border d-flex gap-2">
+                    <div><i class="bi bi-arrows-move"></i></div>
+                    <div>{{ col.header }}</div>
+                  </div>
+                </ng-template>
+                <ng-template cdkDragPlaceholder>
+                  <div *ngIf="!draggingInGroupArea">
+                    <div
+                      *ngTemplateOutlet="
+                        headerCell;
+                        context: {
+                          $implicit: col,
+                          index: i,
+                          section: 'centerColumns'
+                        }
+                      "
+                    ></div>
+                  </div>
+                  <div
+                    *ngIf="draggingInGroupArea"
+                    class="d-flex gap-2 ms-2"
+                    style="opacity: 0.6"
+                  >
+                    <ng-container *ngIf="col?.children?.length; else singleCol">
+                      <ng-container
+                        *ngFor="let child of col.children; let i = index"
+                      >
+                        <ng-container
+                          *ngTemplateOutlet="
+                            topGroupingRowPlaceholder;
+                            context: {
+                              $implicit: child,
+                              showChevron:
+                                col.children.length > 1 &&
+                                i != col.children.length - 1
+                            }
+                          "
+                        ></ng-container>
+                      </ng-container>
+                    </ng-container>
+
+                    <ng-template #singleCol>
+                      <ng-container
+                        *ngTemplateOutlet="
+                          topGroupingRowPlaceholder;
+                          context: {
+                            $implicit: col,
+                            showChevron: col?.children?.length > 1
+                          }
+                        "
+                      ></ng-container>
+                    </ng-template>
+                  </div>
+                </ng-template>
+              </div>
+            </div>
           </div>
 
           <!-- ********************************************************************************* -->
@@ -66,12 +184,106 @@
             class="data-grid-header center-scrollable"
             #centerPinnedHeader
             (scroll)="onCenterHeaderScroll($event)"
+            id="center-pinned-header"
+            cdkDropList
+            cdkDropListConnectedTo="rows-grouping-top-container"
+            [cdkDropListData]="centerColumns"
+            cdkDropListOrientation="horizontal"
+            [cdkDropListSortingDisabled]="
+              isDisableColumnGrouping && draggingInGroupArea
+            "
+            (cdkDropListEntered)="onDropListEnter($event, 'center')"
+            (cdkDropListSorted)="onSortGroup($event, 'center')"
+            (cdkDropListDropped)="onDropGroup()"
+            [style.maxWidth]="
+              'calc(100% - ' +
+              (rightPinnedHeader.offsetWidth + leftPinnedHeader.offsetWidth) +
+              'px)'
+            "
           >
-            <ng-container *ngFor="let col of centerColumns">
+            <div
+              (cdkDragStarted)="
+                checkColumnGroupingStatus(col); dragStartOnGroup(col)
+              "
+              cdkDrag
+              [cdkDragData]="col"
+              *ngFor="
+                let col of centerColumns;
+                let i = index;
+                trackBy: trackById
+              "
+            >
               <ng-container
-                *ngTemplateOutlet="headerCell; context: { $implicit: col }"
-              ></ng-container>
-            </ng-container>
+                *ngTemplateOutlet="
+                  headerCell;
+                  context: {
+                    $implicit: col,
+                    index: i,
+                    section: 'centerColumns'
+                  }
+                "
+              >
+              </ng-container>
+              <ng-template cdkDragPreview
+                ><div class="p-2 border d-flex gap-2">
+                  <div><i class="bi bi-arrows-move"></i></div>
+                  <div>{{ col.header }}</div>
+                </div>
+              </ng-template>
+              <ng-template cdkDragPlaceholder>
+                <div *ngIf="!draggingInGroupArea">
+                  <div
+                    *ngTemplateOutlet="
+                      headerCell;
+                      context: {
+                        $implicit: col,
+                        index: i,
+                        section: 'centerColumns'
+                      }
+                    "
+                  ></div>
+                </div>
+                <div
+                  *ngIf="draggingInGroupArea"
+                  class="d-flex gap-2 ms-2"
+                  style="opacity: 0.6"
+                >
+                  <ng-container *ngIf="col?.children?.length; else singleCol">
+                    <ng-container
+                      *ngFor="let child of col.children; let i = index"
+                    >
+                      <ng-container *ngIf="child?.isGroupable">
+                        <ng-container
+                          *ngTemplateOutlet="
+                            topGroupingRowPlaceholder;
+                            context: {
+                              $implicit: child,
+                              showChevron:
+                                col.children.length > 1 &&
+                                i != col.children.length - 1
+                            }
+                          "
+                        ></ng-container>
+                      </ng-container>
+                    </ng-container>
+                  </ng-container>
+
+                  <ng-template #singleCol>
+                    <ng-container *ngIf="col?.isGroupable">
+                      <ng-container
+                        *ngTemplateOutlet="
+                          topGroupingRowPlaceholder;
+                          context: {
+                            $implicit: col,
+                            showChevron: col?.children?.length > 1
+                          }
+                        "
+                      ></ng-container>
+                    </ng-container>
+                  </ng-template>
+                </div>
+              </ng-template>
+            </div>
           </div>
 
           <!-- ********************************************************************************* -->
@@ -79,15 +291,91 @@
           <!-- Data Grid Right Pinned Header starts here -->
           <!-- ********************************************************************************* -->
           <!-- ********************************************************************************* -->
-          <div class="data-grid-header right-pinned" #rightPinnedHeader>
-            <ng-container *ngFor="let col of rightPinnedColumns">
+          <div
+            cdkDropList
+            id="right-pinned-header"
+            cdkDropListConnectedTo="rows-grouping-top-container"
+            cdkDropListOrientation="horizontal"
+            class="data-grid-header right-pinned"
+            (cdkDropListSorted)="onSortGroup($event, 'right')"
+            (cdkDropListEntered)="onDropListEnter($event, 'right')"
+            (cdkDropListDropped)="onDropGroup()"
+            #rightPinnedHeader
+            class="right-pinned-header d-flex"
+            style="min-width: 0.2px"
+          >
+            <div
+              cdkDrag
+              [cdkDragData]="col"
+              *ngFor="let col of rightPinnedColumns; let i = index"
+            >
               <ng-container
                 *ngTemplateOutlet="
                   headerCell;
-                  context: { $implicit: col, pinnedRight: true }
+                  context: {
+                    $implicit: col,
+                    pinnedRight: true,
+                    index: i,
+                    section: ''
+                  }
                 "
               ></ng-container>
-            </ng-container>
+              <ng-template cdkDragPreview
+                ><div class="p-2 border d-flex gap-2">
+                  <div><i class="bi bi-arrows-move"></i></div>
+                  <div>{{ col.header }}</div>
+                </div>
+              </ng-template>
+              <ng-template cdkDragPlaceholder>
+                <div *ngIf="!draggingInGroupArea">
+                  <div
+                    *ngTemplateOutlet="
+                      headerCell;
+                      context: {
+                        $implicit: col,
+                        index: i,
+                        section: 'centerColumns'
+                      }
+                    "
+                  ></div>
+                </div>
+                <div
+                  *ngIf="draggingInGroupArea"
+                  class="d-flex gap-2 ms-2"
+                  style="opacity: 0.6"
+                >
+                  <ng-container *ngIf="col?.children?.length; else singleCol">
+                    <ng-container
+                      *ngFor="let child of col.children; let i = index"
+                    >
+                      <ng-container
+                        *ngTemplateOutlet="
+                          topGroupingRowPlaceholder;
+                          context: {
+                            $implicit: child,
+                            showChevron:
+                              col.children.length > 1 &&
+                              i != col.children.length - 1
+                          }
+                        "
+                      ></ng-container>
+                    </ng-container>
+                  </ng-container>
+
+                  <ng-template #singleCol>
+                    <ng-container
+                      *ngTemplateOutlet="
+                        topGroupingRowPlaceholder;
+                        context: {
+                          $implicit: col,
+                          showChevron: col?.children?.length > 1
+                        }
+                      "
+                    ></ng-container>
+                  </ng-template>
+                </div>
+              </ng-template>
+            </div>
           </div>
         </div>
 
@@ -117,10 +405,11 @@
                     rowCell;
                     context: {
                       $implicit: row,
-                      columns: leftPinnedColumns,
+                      columns: previewLeftPinnedColumns,
                       isEven: (startIndex + i) % 2 === 0,
                       isOdd: (startIndex + i) % 2 !== 0,
-                      isLeft: true
+                      isLeft: true,
+                      section: 'left'
                     }
                   "
                 ></ng-container>
@@ -143,9 +432,10 @@
                     rowCell;
                     context: {
                       $implicit: row,
-                      columns: centerColumns,
+                      columns: previewCenterColumns,
                       isEven: (startIndex + i) % 2 === 0,
-                      isOdd: (startIndex + i) % 2 !== 0
+                      isOdd: (startIndex + i) % 2 !== 0,
+                      section: 'center'
                     }
                   "
                 ></ng-container>
@@ -154,7 +444,10 @@
           </div>
 
           <!-- RIGHT PINNED -->
-          <div class="h-100" *ngIf="hasRightPinnedColumns">
+          <div
+            class="h-100 right-pinned-body-wrapper"
+            *ngIf="hasRightPinnedColumns"
+          >
             <div
               class="data-grid-body right-pinned-body w-100"
               style="overflow-y: hidden"
@@ -166,9 +459,10 @@
                     rowCell;
                     context: {
                       $implicit: row,
-                      columns: rightPinnedColumns,
+                      columns: previewRightPinnedColumns,
                       isEven: (startIndex + i) % 2 === 0,
-                      isOdd: (startIndex + i) % 2 !== 0
+                      isOdd: (startIndex + i) % 2 !== 0,
+                      section: 'right'
                     }
                   "
                 ></ng-container>
@@ -196,12 +490,12 @@
             z-index: 10;
           "
         >
-          <div [style.height.px]="rowHeight * dataSet.length"></div>
+          <div [style.height.px]="rowHeight * originalDataSet.length"></div>
         </div>
       </div>
 
       <!-- Horizintal Fake Scrollbars -->
-      <div class="d-flex">
+      <div class="d-flex justify-content-between">
         <div
           class="fake-horizintal-scrollbar"
           #fakeScroll
@@ -282,10 +576,10 @@
               </div>
               <hr />
 
-              <div class="side-menu-row-groups" style="height: 30%;">
+              <div class="side-menu-row-groups" style="height: 30%">
                 <ng-container
-                    *ngTemplateOutlet="sideMenuRowGroups"
-                  ></ng-container>
+                  *ngTemplateOutlet="sideMenuRowGroups"
+                ></ng-container>
               </div>
             </ng-container>
             <ng-container
@@ -312,264 +606,346 @@
 <!-- ------------------------------------------------------------------------------------------------------------------------ -->
 <!-- ------------------------------------------------------------------------------------------------------------------------ -->
 
-<ng-template #headerCell let-col let-pinnedRight="pinnedRight">
-  <!-- Group Header -->
-  <ng-container *ngIf="col.children?.length > 0; else flatHeader">
-    <div class="group-column-wrapper">
-      <!-- Parent Header -->
-      <div
-        class="header-cell group-header"
-        [style.height.px]="headerRowHeight"
-        [style.backgroundColor]="headerBackgroundColor"
-        [style.min-height.px]="headerRowHeight"
-        [style.max-height.px]="headerRowHeight"
-        [class.border-right]="showVerticalBorder"
-        [style.gridColumn]="'span ' + col.children.length"
-        [style.fontWeight]="headerFontWeight"
-        [class.flex-row-reverse]="pinnedRight"
-        [class.justify-content-end]="pinnedRight"
-        style="grid-row: 1"
-      >
+<ng-template
+  #headerCell
+  let-col
+  let-pinnedRight="pinnedRight"
+  let-i="index"
+  let-sections="section"
+  let-calledFromNestedPlaceholder="calledFromNestedPlaceholder"
+>
+  <div>
+    <!-- Group Header -->
+    <ng-container *ngIf="col.children?.length > 0; else flatHeader">
+      <div cdkDroplistGroup class="group-column-wrapper">
+        <!-- Parent Header -->
         <div
-          class="group-header-content"
-          [title]="col.header"
-          [class.ms-2]="pinnedRight"
+          *ngIf="shouldTheGroupHeaderShow(col)"
+          class="header-cell group-header"
+          [style.height.px]="headerRowHeight"
+          [style.min-height.px]="headerRowHeight"
+          [style.max-height.px]="headerRowHeight"
+          [class.border-right]="showVerticalBorder"
+          [style.gridColumn]="'span ' + col.children.length"
+          [style.fontWeight]="headerFontWeight"
+          [class.flex-row-reverse]="pinnedRight"
+          [class.justify-content-end]="pinnedRight"
+          style="grid-row: 1"
         >
-          {{ col.header }}
-        </div>
-        <div
-          class="resize-handle"
-          (dblclick)="autosizeColumn(col.children)"
-          (mousedown)="onResizeGroup($event, col, pinnedRight)"
-        >
-          |
-        </div>
-      </div>
-
-      <!-- Child Headers and Filters -->
-      <ng-container *ngFor="let child of col.children">
-        <!-- Child Header -->
-        <ng-container *ngIf="child.is_visible">
           <div
-            class="header-cell"
-            [style.backgroundColor]="headerBackgroundColor"
-            [class.border-right]="showVerticalBorder"
-            [attr.field]="child.field"
-            [style.width.px]="child.width"
-            [style.min-width.px]="child.width"
-            [style.min-height.px]="headerRowHeight"
-            [style.max-height.px]="headerRowHeight"
-            [class.border-right]="showVerticalBorder"
-            [style.fontWeight]="headerFontWeight"
-            style="grid-row: 2"
+            class="group-header-content"
+            [title]="col.header"
+            [class.ms-2]="pinnedRight"
           >
-            <div
-              class="d-flex justify-content-between h-100 align-items-center w-100"
-            >
+            {{ col.header }}
+          </div>
+          <div
+            class="resize-handle"
+            (dblclick)="autosizeColumn(col.children)"
+            (mousedown)="onResizeGroup($event, col, pinnedRight)"
+          >
+            |
+          </div>
+        </div>
+
+        <!-- Child Headers and Filters -->
+
+        <div
+          class="d-flex"
+          cdkDropList
+          cdkDropListOrientation="horizontal"
+          [cdkDropListData]="col.children"
+          (cdkDropListSorted)="onChildDroplistSorted($event, sections)"
+          (cdkDropListDropped)="onChildDroplistDroped($event)"
+          [cdkDropListSortingDisabled]="false"
+          [cdkDropListConnectedTo]="'rows-grouping-top-container'"
+        >
+          <div
+            cdkDrag
+            [cdkDragData]="child"
+            *ngFor="let child of col.children; let i = index"
+          >
+            <!-- Child Header -->
+            <ng-container *ngIf="child.is_visible && !child['isRowGrouped']">
               <div
-                class="d-flex justify-content-between w-100"
-                [class.flex-row-reverse]="pinnedRight"
+                cdkDragHandle
+                class="header-cell one-row-header-cells"
+                [class.border-right]="showVerticalBorder"
+                [attr.field]="child.field"
+                [style.width.px]="child.width"
+                [style.min-width.px]="child.width"
+                [style.min-height.px]="headerRowHeight"
+                [style.max-height.px]="headerRowHeight"
+                [class.border-right]="showVerticalBorder"
+                [style.fontWeight]="headerFontWeight"
+                style="grid-row: 2"
               >
                 <div
-                  class="text-ellipsis h-100 d-flex align-items-center"
-                  [title]="col.header"
-                  [class.w-100]="pinnedRight"
-                >
-                  {{ child.header }}
-                </div>
-
-                <div
-                  class="position-relative d-flex"
-                  [class.flex-row-reverse]="pinnedRight"
+                  class="d-flex justify-content-between h-100 align-items-center w-100"
                 >
                   <div
-                    class="three-dots p-1"
-                    (click)="openThreeDotsMenu($event, child)"
-                    style="cursor: pointer"
+                    class="d-flex justify-content-between w-100"
+                    [class.flex-row-reverse]="pinnedRight"
                   >
-                    <i class="bi bi-three-dots-vertical"></i>
-                  </div>
+                    <div
+                      class="text-ellipsis h-100 d-flex align-items-center"
+                      [title]="col.header"
+                      [class.w-100]="pinnedRight"
+                    >
+                      {{ child.header }}
+                    </div>
 
-                  <!-- Only show menu if this column is active -->
+                    <div
+                      class="position-relative d-flex"
+                      [class.flex-row-reverse]="pinnedRight"
+                    >
+                      <div
+                        class="three-dots p-1"
+                        (click)="openThreeDotsMenu($event, child)"
+                        style="cursor: pointer"
+                      >
+                        <i class="bi bi-three-dots-vertical"></i>
+                      </div>
+
+                      <!-- Only show menu if this column is active -->
+                      <div
+                        class="position-absolute"
+                        *ngIf="activeCol === child"
+                        style="top: -50%; z-index: 21"
+                        [style.left.px]="
+                          !child.pinned ? 0 : -fakeScrollbarScrollLeft
+                        "
+                      >
+                        <ng-container
+                          *ngTemplateOutlet="
+                            columnMenu;
+                            context: { col: child }
+                          "
+                        ></ng-container>
+                      </div>
+
+                      <div
+                        class="resize-handle"
+                        (dblclick)="autosizeColumn(child)"
+                        (mousedown)="onResizeColumn($event, child)"
+                      >
+                        |
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Filter Cell -->
+              <div
+                [style.backgroundColor]="headerBackgroundColor"
+                class="header-cell filter-cell"
+                [class.border-right]="showVerticalBorder"
+                [attr.field]="child.field"
+                [style.width.px]="child.width"
+                [style.min-width.px]="child.width"
+                [style.height.px]="headerRowHeight"
+                [style.min-height.px]="headerRowHeight"
+                [style.max-height.px]="headerRowHeight"
+                [class.border-right]="showVerticalBorder"
+                style="grid-row: 3"
+              >
+                <div
+                  class="header-cell filter-cell"
+                  [attr.field]="col.field"
+                  [style.width.px]="col.width"
+                  [style.min-width.px]="col.width"
+                  [style.height.px]="headerRowHeight"
+                  [style.min-height.px]="headerRowHeight"
+                  [style.max-height.px]="headerRowHeight"
+                >
+                  <input
+                    type="text"
+                    class="form-control form-control-sm"
+                    placeholder="Filter"
+                    [(ngModel)]="col.filterValue"
+                    (ngModelChange)="onFilterChange(col)"
+                  />
+                  <span
+                    class="filter-icon-wrapper"
+                    (click)="activeFilterCell = child; activeCol = null"
+                    ><i class="bi bi-filter"></i
+                  ></span>
+
                   <div
                     class="position-absolute"
-                    *ngIf="activeCol === child"
-                    style="top: -50%; z-index: 21"
-                    [style.left.px]="
-                      !child.pinned ? 0 : -fakeScrollbarScrollLeft
-                    "
+                    *ngIf="activeFilterCell === child"
+                    style="top: 100%; right: 0; z-index: 10; left: 0"
                   >
                     <ng-container
-                      *ngTemplateOutlet="columnMenu; context: { col: child }"
+                      *ngTemplateOutlet="filterMenu; context: { col: child }"
                     ></ng-container>
-                  </div>
-
-                  <div
-                    class="resize-handle"
-                    (dblclick)="autosizeColumn(child)"
-                    (mousedown)="onResizeColumn($event, child)"
-                  >
-                    |
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <!-- Filter Cell -->
-          <div
-            [style.backgroundColor]="headerBackgroundColor"
-            class="header-cell filter-cell"
-            [class.border-right]="showVerticalBorder"
-            [attr.field]="child.field"
-            [style.width.px]="child.width"
-            [style.min-width.px]="child.width"
-            [style.height.px]="headerRowHeight"
-            [style.min-height.px]="headerRowHeight"
-            [style.max-height.px]="headerRowHeight"
-            [class.border-right]="showVerticalBorder"
-            style="grid-row: 3"
-          >
-            <div
-              class="header-cell filter-cell"
-              [attr.field]="col.field"
-              [style.width.px]="col.width"
-              [style.min-width.px]="col.width"
-              [style.height.px]="headerRowHeight"
-              [style.min-height.px]="headerRowHeight"
-              [style.max-height.px]="headerRowHeight"
-            >
-              <input
-                type="text"
-                class="form-control form-control-sm"
-                placeholder="Filter"
-                [(ngModel)]="col.filterValue"
-                (ngModelChange)="onFilterChange(col)"
-              />
-              <span
-                class="filter-icon-wrapper"
-                (click)="activeFilterCell = child; activeCol = null"
-                ><i class="bi bi-filter"></i
-              ></span>
-
+            </ng-container>
+            <ng-template cdkDragPreview
+              ><div class="p-2 border d-flex gap-2">
+                <div
+                  *ngIf="
+                    !draggingInGroupArea ||
+                    (child.isGroupable && draggingInGroupArea)
+                  "
+                >
+                  <i class="bi bi-arrows-move"></i>
+                </div>
+                <div *ngIf="draggingInGroupArea && !child.isGroupable">
+                  <i class="bi bi-ban"></i>
+                </div>
+                <div>{{ child.header }}</div>
+              </div>
+            </ng-template>
+            <ng-template cdkDragPlaceholder>
+              <div *ngIf="!draggingInGroupArea" class="position-relative">
+                <div
+                  *ngTemplateOutlet="
+                  childHeaderPlaceholder;
+                  context: {
+                    $implicit: child,
+                    index: i,
+                    sections: sections,
+                    calledFromNestedPlaceholder: true,
+                  }
+                "
+                ></div>
+              </div>
               <div
-                class="position-absolute"
-                *ngIf="activeFilterCell === child"
-                style="top: 100%; right: 0; z-index: 10; left: 0"
+                *ngIf="draggingInGroupArea && child?.isGroupable"
+                class="d-flex gap-2 ms-2"
+                style="opacity: 0.6"
               >
                 <ng-container
-                  *ngTemplateOutlet="filterMenu; context: { col: child }"
+                  *ngTemplateOutlet="
+                    topGroupingRowPlaceholder;
+                    context: {
+                      $implicit: child,
+                      showChevron: false,
+                      pinnedRight: pinnedRight,
+                      sections: sections,
+                      index: i
+                    }
+                  "
                 ></ng-container>
               </div>
-            </div>
+            </ng-template>
           </div>
-        </ng-container>
-      </ng-container>
-    </div>
-  </ng-container>
+        </div>
+      </div>
+    </ng-container>
 
-  <!-- Flat Header || Single Header Cell-->
-  <ng-template #flatHeader>
-    <div class="group-column-wrapper">
-      <!-- Full-height Header Cell (spans 2 rows visually) -->
-      <div
-        [style.backgroundColor]="headerBackgroundColor"
-        class="header-cell"
-        [attr.field]="col.field"
-        [style.width.px]="col.width"
-        [style.min-width.px]="col.width"
-        [style.min-height.px]="headerRowHeight * 2"
-        [style.height.px]="headerRowHeight * 2"
-        [style.fontWeight]="headerFontWeight"
-        style="grid-row: 1 / span 2"
-      >
+    <!-- Flat Header || Single Header Cell-->
+    <ng-template #flatHeader>
+      <div class="group-column-wrapper">
+        <!-- Full-height Header Cell (spans 2 rows visually) -->
         <div
-          class="d-flex justify-content-between h-100 align-items-center w-100"
+          class="header-cell one-row-header-cells"
+          [attr.field]="col.field"
+          [style.width.px]="col.width"
+          [style.min-width.px]="col.width"
+          [style.min-height.px]="headerRowHeight * 2"
+          [style.height.px]="headerRowHeight * 2"
+          [style.fontWeight]="headerFontWeight"
+          style="grid-row: 1 / span 2"
         >
           <div
-            class="d-flex justify-content-between w-100"
-            [class.flex-row-reverse]="pinnedRight"
+            class="d-flex justify-content-between h-100 align-items-center w-100"
           >
             <div
-              class="text-ellipsis h-100 d-flex align-items-center w-100"
-              [title]="col.header"
-            >
-              {{ col.header }}
-            </div>
-
-            <div
-              class="position-relative d-flex"
+              class="d-flex justify-content-between w-100"
               [class.flex-row-reverse]="pinnedRight"
             >
               <div
-                class="three-dots p-1"
-                (click)="activeCol = col; activeFilterCell = null"
-                style="cursor: pointer"
+                class="text-ellipsis h-100 d-flex align-items-center w-100"
+                [title]="col.header"
               >
-                <i class="bi bi-three-dots-vertical"></i>
-              </div>
-
-              <!-- Only show menu if this column is active -->
-              <div
-                class="position-absolute"
-                *ngIf="activeCol === col"
-                style="top: -50%; z-index: 21"
-              >
-                <ng-container
-                  *ngTemplateOutlet="columnMenu; context: { col: col }"
-                ></ng-container>
+                {{ col.header }}
               </div>
 
               <div
-                class="resize-handle"
-                [class.w-100]="col.pinned == 'right'"
-                (dblclick)="autosizeColumn(col)"
-                (mousedown)="onResizeColumn($event, col)"
+                class="position-relative d-flex"
+                [class.flex-row-reverse]="pinnedRight"
               >
-                |
+                <div
+                  class="three-dots p-1"
+                  (click)="activeCol = col; activeFilterCell = null"
+                  style="cursor: pointer"
+                >
+                  <i class="bi bi-three-dots-vertical"></i>
+                </div>
+
+                <!-- Only show menu if this column is active -->
+                <div
+                  class="position-absolute"
+                  *ngIf="activeCol === col"
+                  style="top: -50%; z-index: 21"
+                  [style.left.px]="
+                    -(
+                      centerPinnedHeader.scrollWidth -
+                      centerPinnedHeader.offsetWidth
+                    )
+                  "
+                >
+                  <ng-container
+                    *ngTemplateOutlet="columnMenu; context: { col: col }"
+                  ></ng-container>
+                </div>
+
+                <div
+                  class="resize-handle"
+                  [class.w-100]="col.pinned == 'right'"
+                  (dblclick)="autosizeColumn(col)"
+                  (mousedown)="onResizeColumn($event, col)"
+                >
+                  |
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Filter Cell -->
-      <div
-        [style.backgroundColor]="headerBackgroundColor"
-        class="header-cell filter-cell"
-        [class.border-right]="showVerticalBorder"
-        [attr.field]="col.field"
-        [style.width.px]="col.width"
-        [style.min-width.px]="col.width"
-        [style.height.px]="headerRowHeight"
-        [style.min-height.px]="headerRowHeight"
-        [style.max-height.px]="headerRowHeight"
-      >
-        <input
-          type="text"
-          class="form-control form-control-sm"
-          placeholder="Filter"
-          [(ngModel)]="col.filterValue"
-          (ngModelChange)="onFilterChange(col)"
-        />
-        <span
-          class="filter-icon-wrapper"
-          (click)="activeFilterCell = col; activeCol = null"
-          ><i class="bi bi-filter"></i
-        ></span>
-
+        <!-- Filter Cell -->
         <div
-          class="position-absolute"
-          *ngIf="activeFilterCell === col"
-          style="top: 100%; right: 0; z-index: 10; left: 0"
+          [style.backgroundColor]="headerBackgroundColor"
+          class="header-cell filter-cell"
+          [class.border-right]="showVerticalBorder"
+          [attr.field]="col.field"
+          [style.width.px]="col.width"
+          [style.min-width.px]="col.width"
+          [style.height.px]="headerRowHeight"
+          [style.min-height.px]="headerRowHeight"
+          [style.max-height.px]="headerRowHeight"
         >
-          <ng-container
-            *ngTemplateOutlet="filterMenu; context: { col: col }"
-          ></ng-container>
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            placeholder="Filter"
+            [(ngModel)]="col.filterValue"
+            (ngModelChange)="onFilterChange(col)"
+          />
+          <span
+            class="filter-icon-wrapper"
+            (click)="activeFilterCell = col; activeCol = null"
+            ><i class="bi bi-filter"></i
+          ></span>
+
+          <div
+            class="position-absolute"
+            *ngIf="activeFilterCell === col"
+            style="top: 100%; right: 0; z-index: 10; left: 0"
+          >
+            <ng-container
+              *ngTemplateOutlet="filterMenu; context: { col: col }"
+            ></ng-container>
+          </div>
         </div>
       </div>
-    </div>
-  </ng-template>
+    </ng-template>
+  </div>
 </ng-template>
 
 <!-- -------------------------------------------------------------------------------------------------------------------------------------------------------------------- -->
@@ -585,59 +961,128 @@
   let-isEven="isEven"
   let-isOdd="isOdd"
   let-isLeftSection="isLeft"
+  let-section="section"
 >
-  <div
-    [style.height.px]="rowHeight"
-    class="data-grid-row"
-    [class.even-row]="isEven"
-    [class.odd-row]="isOdd"
-    [class.hovered-row]="hoveredRowId === (row._id || row.id)"
-    [ngStyle]="{
-      'background-color':
-        hoveredRowId === (row._id || row.id)
-          ? rowHoverColor
-          : isRowSelected(row)
-          ? checkedRowBackgroundColor
-          : null
-    }"
-    (mouseenter)="onRowHover(row)"
-    (mouseleave)="onRowLeave()"
-    [ngStyle]="{
-      'background-color': isEven
-        ? evenRowsBackgroundColor
-        : oddRowsBackgroundColor
-    }"
-  >
-    <div
-      [style.backgroundColor]="checkboxesBackgroundColor"
-      class="select-all-checkbox-cell"
-      *ngIf="isLeftSection"
-    >
-      <input
-        *ngIf="hasAnyVisibleColumn"
-        type="checkbox"
-        [checked]="isRowSelected(row)"
-        (change)="toggleRowSelection(row)"
-      />
-    </div>
-    <ng-container *ngFor="let col of columns">
-      <ng-container *ngIf="col.children?.length > 0; else flatColumn">
-        <!-- Loop over children and reuse cellTemplate -->
-        <ng-container *ngFor="let child of col.children">
-          <ng-container
-            *ngTemplateOutlet="cellTemplate; context: { col: child, row: row }"
-          ></ng-container>
-        </ng-container>
-      </ng-container>
+  <!-- Check if row is a group -->
+  <ng-container *ngTemplateOutlet="groupRowTemplate; context: { $implicit: row, depth: 0 }"></ng-container>
+<ng-template #groupRowTemplate let-row let-depth="depth">
+  <ng-container *ngIf="row.isGroup; else regularRow">
+    <!-- Group Header -->
+    <div class="group-header-row border-bottom d-flex" [style.height.px]="rowHeight">
+      <div *ngIf="section == 'left'" class="h-100" [style.width.px]="leftPinnedHeader.offsetWidth">
+        <div
+          style="width: 50px"
+          class="d-flex align-items-center justify-content-center h-100 border-end"
+          [style.backgroundColor]="checkboxesBackgroundColor"
+        >
+          <input style="width: 16px; height: 16px" type="checkbox" />
+        </div>
+      </div>
 
-      <ng-template #flatColumn>
-        <!-- Reuse cellTemplate for flat columns -->
-        <ng-container
-          *ngTemplateOutlet="cellTemplate; context: { col: col, row: row }"
-        ></ng-container>
-      </ng-template>
-    </ng-container>
-  </div>
+      <div
+        *ngIf="section == 'center'"
+        [style.width.px]="centerPinnedHeader.scrollWidth"
+        class="d-flex align-items-center ps-2"
+      >
+        <div
+          class="d-flex align-items-center justify-content-between"
+          [style.paddingLeft.px]="depth > 0 ? depth * 16 : 0"
+        >
+          <span class="me-2 filter-icon-wrapper" (click)="row.isExpand = !row.isExpand;updateFlattenedData(); onMainScroll(mainScroll.scrollTop)">
+            <i class="bi" [ngClass]="row.isExpand ? 'bi-chevron-down' : 'bi-chevron-right'"></i>
+          </span>
+          <strong> {{ row.groupValue }} ({{ countLeafRows(row) }}) </strong>
+        </div>
+      </div>
+
+      <div *ngIf="section == 'right'" [style.width.px]="rightPinnedHeader.offsetWidth"></div>
+    </div>
+
+    <!-- Recursive Children -->
+    <div class="group-children" *ngIf="row.isExpand">
+      <ng-container *ngFor="let child of row.children; let i = index">
+        <ng-container *ngIf="child.isGroup; else dataRow">
+          <!-- Recursive call for nested group -->
+          <ng-container *ngTemplateOutlet="groupRowTemplate; context: { $implicit: child, depth: depth + 1 }"></ng-container>
+        </ng-container>
+
+        <ng-template #dataRow>
+          <!-- Regular data row -->
+          <ng-container
+            *ngTemplateOutlet="
+              rowCell;
+              context: {
+                $implicit: child,
+                columns: columns,
+                isEven: i % 2 === 0,
+                isOdd: i % 2 !== 0,
+                isLeft: isLeftSection
+              }
+            "
+          ></ng-container>
+        </ng-template>
+      </ng-container>
+    </div>
+  </ng-container>
+</ng-template>
+
+  <!-- Regular row (not a group) -->
+  <ng-template #regularRow>
+    <div
+      [style.height.px]="rowHeight"
+      class="data-grid-row"
+      [class.even-row]="isEven"
+      [class.odd-row]="isOdd"
+      [class.hovered-row]="hoveredRowId === (row._id || row.id)"
+      (mouseenter)="onRowHover(row)"
+      (mouseleave)="onRowLeave()"
+      [ngStyle]="{
+        'background-color':
+          hoveredRowId === (row._id || row.id)
+            ? rowHoverColor
+            : isRowSelected(row)
+            ? checkedRowBackgroundColor
+            : isEven
+            ? evenRowsBackgroundColor
+            : oddRowsBackgroundColor
+      }"
+    >
+      <div
+        [style.backgroundColor]="checkboxesBackgroundColor"
+        class="select-all-checkbox-cell"
+        *ngIf="isLeftSection"
+      >
+        <input
+          *ngIf="hasAnyVisibleColumn"
+          type="checkbox"
+          [checked]="isRowSelected(row)"
+          (change)="toggleRowSelection(row)"
+        />
+      </div>
+
+      <!-- Render all columns -->
+      <ng-container *ngFor="let col of columns">
+        <ng-container *ngIf="col.children?.length > 0; else flatColumn">
+          <ng-container *ngFor="let child of col.children">
+            <ng-container *ngIf="child?.is_visible && !child?.isRowGrouped">
+              <ng-container
+                *ngTemplateOutlet="
+                  cellTemplate;
+                  context: { col: child, row: row }
+                "
+              ></ng-container>
+            </ng-container>
+          </ng-container>
+        </ng-container>
+
+        <ng-template #flatColumn>
+          <ng-container
+            *ngTemplateOutlet="cellTemplate; context: { col: col, row: row }"
+          ></ng-container>
+        </ng-template>
+      </ng-container>
+    </div>
+  </ng-template>
 </ng-template>
 
 <!-- Actual Cell is Here -->
@@ -1272,29 +1717,172 @@
   </div>
 </ng-template>
 
-
 <ng-template #sideMenuRowGroups>
   <div class="d-flex flex-column h-100">
     <div class="px-3 h-100">
-    <div class="d-flex gap-3 mb-4">
-      <i class="bi bi-justify"></i>
-      <span >Row Groups</span>
+      <div class="d-flex gap-3 mb-4">
+        <i class="bi bi-justify"></i>
+        <span>Row Groups</span>
+      </div>
+      <div class="h-50">
+        <div
+          class="px-3 py-2 border-dashed h-100 d-flex justify-content-center align-items-center"
+          style="font-size: 14px"
+        >
+          Drag here to set row Groups
+        </div>
+      </div>
     </div>
-    <div class="h-50 ">
-      <div class="px-3 py-2 border-dashed h-100 d-flex justify-content-center align-items-center" style="font-size: 14px;">Drag here to set row Groups</div>
+
+    <hr class="mt-4" />
+
+    <div class="px-3 h-100">
+      <div class="d-flex gap-3 mb-4">
+        <i class="bi bi-justify"></i>
+        <span>Values</span>
+      </div>
+      <div class="h-50 d-flex">
+        <div
+          class="px-3 py-2 border-dashed h-100 d-flex justify-content-center align-items-center"
+          style="font-size: 14px"
+        >
+          Drag here aggregate
+        </div>
+      </div>
     </div>
   </div>
+</ng-template>
 
-  <hr class="mt-4" />
+<!-- *************************************************** -->
+<!-- *************************************************** -->
+<!-- *************************************************** -->
+<!-- Drag Preview Template -->
+<!-- *************************************************** -->
+<!-- *************************************************** -->
+<ng-template #dragPreview let-col>
+  <div class="p-2 border d-flex gap-2">
+    <div><i class="bi bi-arrows-move"></i></div>
+    <div>{{ col.header }}</div>
+  </div>
+</ng-template>
 
-  <div class="px-3 h-100">
-    <div class="d-flex gap-3 mb-4">
-      <i class="bi bi-justify"></i>
-      <span>Values</span>
-    </div>
-    <div class="h-50 d-flex">
-      <div class="px-3 py-2 border-dashed h-100 d-flex justify-content-center align-items-center" style="font-size: 14px;">Drag here aggregate</div>
+<!-- Drag Placeholder Template -->
+<ng-template
+  #dragPlaceholder
+  let-col
+  let-i="index"
+  let-section="section"
+  let-draggingInGroupArea="draggingInGroupArea"
+>
+  <div *ngIf="!draggingInGroupArea">
+    <div
+      *ngTemplateOutlet="
+        headerCell;
+        context: { $implicit: col, index: i, section: section }
+      "
+    ></div>
+  </div>
+  <div *ngIf="draggingInGroupArea">New Placeholder</div>
+</ng-template>
+
+<!-- Top Group Row Placeholder -->
+<ng-template #topGroupingRowPlaceholder let-col let-showChevron="showChevron">
+  <div class="d-flex gap-2">
+    <div
+      class="d-flex gap-2 top-row-grouping-placeholder"
+      [style.backgroundColor]="topGroupedBadgesBackgroundColor"
+    >
+      <i class="bi bi-grid-3x2-gap-fill"></i>
+      <span>{{ col.header }}</span>
+      <i class="bi bi-x" (click)="ungroupColumn(col)"></i>
     </div>
   </div>
+  <div *ngIf="showChevron" style="opacity: 0.6; font-size: 14px">
+    <i class="bi bi-chevron-right"></i>
+  </div>
+</ng-template>
+
+<ng-template
+  #childHeaderPlaceholder
+  let-col
+  let-pinnedRight="pinnedRight"
+  let-i="index"
+  let-sections="sections"
+>
+  <div
+    class="header-cell one-row-header-cells"
+    [class.border-right]="showVerticalBorder"
+    [style.width.px]="col.width"
+    [style.min-width.px]="col.width"
+    [style.min-height.px]="headerRowHeight"
+    [style.max-height.px]="headerRowHeight"
+    [class.border-right]="showVerticalBorder"
+    [style.fontWeight]="headerFontWeight"
+  >
+    <div class="d-flex justify-content-between h-100 align-items-center w-100">
+      <div
+        class="d-flex justify-content-between w-100"
+        [class.flex-row-reverse]="pinnedRight"
+      >
+        <div
+          class="text-ellipsis h-100 d-flex align-items-center"
+          [title]="col.header"
+          [class.w-100]="pinnedRight"
+        >
+          {{ col.header }}
+        </div>
+
+        <div
+          class="position-relative d-flex"
+          [class.flex-row-reverse]="pinnedRight"
+        >
+          <div class="three-dots p-1" style="cursor: pointer">
+            <i class="bi bi-three-dots-vertical"></i>
+          </div>
+
+          <div class="resize-handle">|</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    [style.backgroundColor]="headerBackgroundColor"
+    class="header-cell filter-cell"
+    [class.border-right]="showVerticalBorder"
+    [style.width.px]="col.width"
+    [style.min-width.px]="col.width"
+    [style.height.px]="headerRowHeight"
+    [style.min-height.px]="headerRowHeight"
+    [style.max-height.px]="headerRowHeight"
+    [class.border-right]="showVerticalBorder"
+    style="grid-row: 3"
+  >
+    <div
+      class="header-cell filter-cell"
+      [style.backgroundColor]="headerBackgroundColor"
+      [style.width.px]="col.width"
+      [style.min-width.px]="col.width"
+      [style.height.px]="headerRowHeight"
+      [style.min-height.px]="headerRowHeight"
+      [style.max-height.px]="headerRowHeight"
+    >
+      <input
+        type="text"
+        class="form-control form-control-sm"
+        placeholder="Filter"
+        [(ngModel)]="col.filterValue"
+      />
+      <span
+        class="filter-icon-wrapper"
+        (click)="activeFilterCell = col; activeCol = null"
+        ><i class="bi bi-filter"></i
+      ></span>
+
+      <div
+        class="position-absolute"
+        *ngIf="activeFilterCell === col"
+        style="top: 100%; right: 0; z-index: 10; left: 0"
+      ></div>
+    </div>
   </div>
 </ng-template>
