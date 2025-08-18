@@ -139,6 +139,9 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   // Show Row wise grouping;
   @Input() showRowsGrouping: boolean | undefined = true;
 
+  // Show Row wise grouping;
+  @Input() fontFaimly: string | undefined = 'monospace';
+
   groupedColumns: any[] = [];
   activeCol: any = null;
   activeFilterCell: any = null;
@@ -686,6 +689,7 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     this.SetColumnsDefaultWidth();
     setTimeout(() => {
       this.updateColumnWidthsAndGroups();
+      this.refreshPreviewColumns();
       this.cdr.detectChanges();
     }, 100);
   }
@@ -1001,13 +1005,14 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     });
   }
 
-  // toggleExpand(row: any) {
-  //   row.isExpand = !row.isExpand;
-  //   requestAnimationFrame(() => this.updateFlattenedData());
-  //   setTimeout(() => {
-  //     this.cdr.detectChanges();
-  //   }, 10);
-  // }
+  toggleExpand(row: any) {
+    row.isExpand = !row.isExpand;
+    this.updateFlattenedData();
+    setTimeout(() => {
+      this.updateVisibleRows(0);
+      this.cdr.detectChanges();
+    }, 100);
+  }
 
   onMainFakeScroll(event: Event) {
     if (this.isSyncingFromMain) {
@@ -1389,6 +1394,10 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     );
     if (index !== -1) {
       this.groupedColumns.splice(index, 1);
+      const fields = this.groupedColumns.map((item) => item.field);
+      this.dataSet = this.groupData(this.originalDataSet, fields);
+      this.updateFlattenedData();
+      this.cdr.detectChanges();
     }
     this.columns.forEach((group) => {
       if (group?.children && Array.isArray(group.children)) {

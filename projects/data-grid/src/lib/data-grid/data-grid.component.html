@@ -2,6 +2,7 @@
   cdkDropListGroup
   class="h-100 data-grid-table-wrapper overflow-hidden"
   #dataGridContainer
+ [style.fontFamily]="fontFaimly"
 >
   <div
     *ngIf="showRowsGrouping"
@@ -988,7 +989,7 @@
           class="d-flex align-items-center justify-content-between"
           [style.paddingLeft.px]="depth > 0 ? depth * 16 : 0"
         >
-          <span class="me-2 filter-icon-wrapper" (click)="row.isExpand = !row.isExpand;updateFlattenedData(); onMainScroll(mainScroll.scrollTop)">
+          <span class="me-2 filter-icon-wrapper" (click)="toggleExpand(row)">
             <i class="bi" [ngClass]="row.isExpand ? 'bi-chevron-down' : 'bi-chevron-right'"></i>
           </span>
           <strong> {{ row.groupValue }} ({{ countLeafRows(row) }}) </strong>
