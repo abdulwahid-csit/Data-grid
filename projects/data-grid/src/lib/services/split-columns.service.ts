@@ -88,35 +88,46 @@ export class SplitColumnsService {
   }
 
    assignDefaultWidths(columns: any[], containerWidth: number): any[] {
-    const visibleLeafCols = this.getVisibleLeafColumns(columns);
+  const visibleLeafCols = this.getVisibleLeafColumns(columns);
 
-    if (!visibleLeafCols.length) return columns;
+  if (!visibleLeafCols.length) return columns;
 
-    let defaultWidth = Math.floor(containerWidth / visibleLeafCols.length);
-    if (defaultWidth < 80) defaultWidth = 80;
+  let defaultWidth = Math.floor(containerWidth / visibleLeafCols.length);
+  if (defaultWidth < 80) defaultWidth = 80;
 
-    const cloneColumns = (cols: any[]): any[] =>
-      cols.map((col) => {
-        if (col.children?.length) {
-          const newChildren = col.children.map((child: any) => {
-            if (child.is_visible !== false && !child.width) {
+  const cloneColumns = (cols: any[]): any[] =>
+    cols.map((col) => {
+      if (col.children?.length) {
+        const newChildren = col.children.map((child: any) => {
+          // If visible → dynamic default width
+          // If invisible → fixed 150px
+          if (!child.width) {
+            if (child.is_visible === false) {
+              return { ...child, width: 150 };
+            } else {
               return { ...child, width: defaultWidth };
             }
-            return { ...child };
-          });
+          }
+          return { ...child };
+        });
 
-          return { ...col, children: newChildren };
-        }
+        return { ...col, children: newChildren };
+      }
 
-        if (col.is_visible !== false && !col.width) {
+      if (!col.width) {
+        if (col.is_visible === false) {
+          return { ...col, width: 150 };
+        } else {
           return { ...col, width: defaultWidth };
         }
+      }
 
-        return { ...col };
-      });
+      return { ...col };
+    });
 
-    return cloneColumns(columns);
-  }
+  return cloneColumns(columns);
+}
+
 
   private getVisibleLeafColumns(columns: any[]): any[] {
     const result: any[] = [];

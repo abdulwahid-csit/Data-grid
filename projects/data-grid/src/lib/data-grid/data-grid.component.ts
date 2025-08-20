@@ -39,7 +39,7 @@ import { CdkDropList } from '@angular/cdk/drag-drop';
 @Component({
   selector: 'data-grid',
   templateUrl: './data-grid.component.html',
-  styleUrls: ['./data-grid.component.scss'],
+  styleUrls: ['./data-grid.component.scss', '../css/bootstrap.css'],
   animations: [
     trigger('accordionToggle', [
       state(
@@ -137,7 +137,10 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   @Input() topGroupedBadgesBackgroundColor: string | undefined = '#eaeaeb';
 
   // Show Row wise grouping;
-  @Input() showRowsGrouping: boolean | undefined = true;
+  @Input() showRowsGrouping: boolean | undefined = false;
+
+  // Show Row wise grouping;
+  @Input() showFilterRow: boolean | undefined = false;
 
   // Show Row wise grouping;
   @Input() fontFaimly: string | undefined = 'monospace';
@@ -160,53 +163,91 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   ) {}
 
   ngAfterViewInit(): void {
+    // this.columns = this.columnService.setColumnsQuery(this.columns);
+    // this.originalColumns = structuredClone(this.columns);
+    // this.SetColumnsDefaultWidth();
+    // this.updateColumnWidthsAndGroups();
+    // this.refreshPreviewColumns();
+    // setTimeout(() => {
+    //   this.setSectionsWidth();
+    // }, 10);
+
+    // setTimeout(() => {
+    //   this.updateFlattenedData();
+    //   this.computeViewportRows();
+    //   this.updateVisibleRows(0);
+    //   const ro = new ResizeObserver(() => {
+    //     this.updateFlattenedData();
+    //     this.computeViewportRows();
+    //     this.updateVisibleRows(this.mainScroll.nativeElement.scrollTop);
+    //   });
+    //   ro.observe(this.mainScroll.nativeElement);
+    // }, 300);
+
+    // setTimeout(() => {
+    //   this.generateDropListIds();
+    // }, 10);
+
+    // setTimeout(() => {
+    //   this.refreshPreviewColumns();
+    // }, 300);
+  }
+
+ngOnChanges(changes: SimpleChanges): void {
+  // When columns change
+  if (changes['columns']) {
     this.columns = this.columnService.setColumnsQuery(this.columns);
     this.originalColumns = structuredClone(this.columns);
-    this.SetColumnsDefaultWidth();
-    this.updateColumnWidthsAndGroups();
-    this.refreshPreviewColumns();
+
     setTimeout(() => {
-      this.setSectionsWidth();
+      if (this.dataGridContainer?.nativeElement?.offsetWidth) {
+        this.SetColumnsDefaultWidth();
+        this.updateColumnWidthsAndGroups();
+        this.refreshPreviewColumns();
+        this.setSectionsWidth();
+        this.cdr.detectChanges(); // ✅ force update after async DOM calc
+      }
     }, 10);
 
     setTimeout(() => {
       this.updateFlattenedData();
       this.computeViewportRows();
       this.updateVisibleRows(0);
-      const ro = new ResizeObserver(() => {
-        this.updateFlattenedData();
-        this.computeViewportRows();
-        this.updateVisibleRows(this.mainScroll.nativeElement.scrollTop);
-      });
-      ro.observe(this.mainScroll.nativeElement);
+
+      if (this.mainScroll?.nativeElement) {
+        const ro = new ResizeObserver(() => {
+          this.updateFlattenedData();
+          this.computeViewportRows();
+          this.updateVisibleRows(this.mainScroll.nativeElement.scrollTop);
+          this.cdr.detectChanges(); // ✅ ensure Angular sees changes from ResizeObserver
+        });
+        ro.observe(this.mainScroll.nativeElement);
+      }
+      this.cdr.detectChanges();
     }, 300);
 
     setTimeout(() => {
       this.generateDropListIds();
+      this.cdr.detectChanges();
     }, 10);
-  }
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['columns'] && !changes['columns'].firstChange) {
-      // Ensure the view is ready
-      this.columns = this.columnService.setColumnsQuery(this.columns);
-      setTimeout(() => {
-        if (this.dataGridContainer?.nativeElement?.offsetWidth) {
-          // this.originalColumns = structuredClone(this.columns);
-          this.SetColumnsDefaultWidth;
-          this.updateColumnWidthsAndGroups();
-          this.refreshPreviewColumns();
-        }
-      }, 0);
-    }
 
-    if (changes['dataSet']) {
-      this.originalDataSet = structuredClone(this.dataSet);
-    }
-
-    if (changes['dataSet'] && !changes['columns'].firstChange) {
-      this.updateFlattenedData();
-    }
+    setTimeout(() => {
+      this.refreshPreviewColumns();
+      this.cdr.detectChanges();
+    }, 300);
   }
+
+  // When dataSet changes
+  if (changes['dataSet']) {
+    this.originalDataSet = structuredClone(this.dataSet);
+    this.SetColumnsDefaultWidth();
+    this.refreshPreviewColumns();
+    this.updateFlattenedData();
+    this.cdr.detectChanges(); // ✅ ensures new dataset updates the grid instantly
+  }
+}
+
+
 
   leftPinnedColumns: any[] = [];
   centerColumns: any[] = [];
@@ -270,6 +311,10 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     this.previewCenterColumns = center;
     this.previewRightPinnedColumns = right;
 
+    setTimeout(() => {
+      this.cdr.detectChanges();
+    }, 10);
+
     console.log('Left groups: ', this.leftPinnedColumns);
     console.log('Left center: ', this.centerColumns);
     console.log('Left right: ', this.rightPinnedColumns);
@@ -281,6 +326,10 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
       this.columns,
       containerWidth
     );
+
+    setTimeout(() => {
+      this.cdr.detectChanges();
+    }, 100);
   }
 
   setSectionsWidth() {
@@ -477,7 +526,7 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
 
   // Get Body Height
   get bodyWrapperHeight(): string {
-    const rows = this.showColumnsGrouping ? 3 : 2;
+    const rows = this.showColumnsGrouping && this.showFilterRow ? 3 : (this.showColumnsGrouping || this.showFilterRow?  2: 1);
     const offset = this.headerRowHeight * rows + 17;
     return `calc(100% - ${offset}px)`;
   }
@@ -658,7 +707,7 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
 
     const containerWidth =
       this.dataGridContainer?.nativeElement?.offsetWidth ?? 0;
-    const equalWidth = Math.floor(containerWidth / visibleCount);
+    const equalWidth = Math.max(Math.floor(containerWidth / visibleCount), 150);
 
     // Update widths for all visible columns
     visibleColumns.forEach((col) => {
@@ -801,18 +850,25 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     flatten.forEach((col: any) => (col.is_visible = !allSelected));
     setTimeout(() => {
       this.updateColumnWidthsAndGroups();
-      this.refreshPreviewColumns();
-      this.cdr.detectChanges();
-    }, 10);
+      setTimeout(() => {
+        this.refreshPreviewColumns();
+        this.cdr.detectChanges();
+      }, 100);
+    }, 100);
   }
 
-  flattenColumns(cols: any[]): any[] {
-    return cols.flatMap((col) =>
-      col?.children && col.children.length
-        ? this.flattenColumns(col?.children)
-        : [col]
-    );
-  }
+ flattenColumns(cols: any[]): any[] {
+  return cols.reduce((acc: any[], col: any) => {
+    if (col?.children && col.children.length) {
+      // recursively flatten children
+      return acc.concat(this.flattenColumns(col.children));
+    } else {
+      // leaf column
+      return acc.concat(col);
+    }
+  }, []);
+}
+
 
   filteredColumns(cols: any[]): any[] {
     const search = this.columnSearch.toLowerCase();
@@ -882,6 +938,7 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
         this.setAccordionState(col.children, state); // Recursively handle nested
       }
     }
+    this.cdr.detectChanges();
   }
   private setFilterAccordionState(cols: any[], state: boolean): void {
     for (let col of cols) {

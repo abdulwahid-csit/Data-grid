@@ -1,8 +1,19 @@
+<div class="d-flex justify-content-between row">
+  <div class="col-4">
+    <input class="form-control form-control-sm" type="text" />
+  </div>
+  <div class="d-flex gap-2">
+    <div><i class="bi bi-filter"></i></div>
+    <div><i class="bi bi-filter"></i></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
 <div
   cdkDropListGroup
   class="h-100 data-grid-table-wrapper overflow-hidden"
   #dataGridContainer
- [style.fontFamily]="fontFaimly"
+  [style.fontFamily]="fontFaimly"
 >
   <div
     *ngIf="showRowsGrouping"
@@ -63,11 +74,11 @@
           [style.backgroundColor]="headerBackgroundColor"
           [class.border-bottom]="!hasAnyVisibleColumn"
           [style.height.px]="
-            showColumnsGrouping && !hasAnyVisibleColumn
+            showColumnsGrouping && !hasAnyVisibleColumn && showFilterRow
               ? headerRowHeight * 3
-              : !showColumnsGrouping && !hasAnyVisibleColumn
+              : (showColumnsGrouping || showFilterRow) && !hasAnyVisibleColumn
               ? headerRowHeight * 2
-              : ''
+              : headerRowHeight
           "
         >
           <!-- ********************************************************************************* -->
@@ -80,7 +91,11 @@
               [style.backgroundColor]="checkboxesBackgroundColor"
               class="select-all-checkbox-cell border-bottom"
               [style.height.px]="
-                showColumnsGrouping ? headerRowHeight * 3 : headerRowHeight * 2
+                showColumnsGrouping && showFilterRow
+                  ? headerRowHeight * 3
+                  : showColumnsGrouping || showFilterRow
+                  ? headerRowHeight * 2
+                  : headerRowHeight
               "
             >
               <input
@@ -491,7 +506,7 @@
             z-index: 10;
           "
         >
-          <div [style.height.px]="rowHeight * originalDataSet.length"></div>
+          <div [style.height.px]="bodyWrapperHeight"></div>
         </div>
       </div>
 
@@ -739,6 +754,7 @@
 
               <!-- Filter Cell -->
               <div
+                *ngIf="showFilterRow"
                 [style.backgroundColor]="headerBackgroundColor"
                 class="header-cell filter-cell"
                 [class.border-right]="showVerticalBorder"
@@ -848,8 +864,12 @@
           [attr.field]="col.field"
           [style.width.px]="col.width"
           [style.min-width.px]="col.width"
-          [style.min-height.px]="headerRowHeight * 2"
-          [style.height.px]="headerRowHeight * 2"
+          [style.min-height.px]="
+            showColumnsGrouping ? headerRowHeight * 2 : headerRowHeight
+          "
+          [style.height.px]="
+            showColumnsGrouping ? headerRowHeight * 2 : headerRowHeight
+          "
           [style.fontWeight]="headerFontWeight"
           style="grid-row: 1 / span 2"
         >
@@ -885,10 +905,7 @@
                   *ngIf="activeCol === col"
                   style="top: -50%; z-index: 21"
                   [style.left.px]="
-                    -(
-                      centerPinnedHeader.scrollWidth -
-                      centerPinnedHeader.offsetWidth
-                    )
+                    !col?.pinned ? 0 : -centerPinnedHeader.scrollLeft
                   "
                 >
                   <ng-container
@@ -911,6 +928,7 @@
 
         <!-- Filter Cell -->
         <div
+          *ngIf="showFilterRow"
           [style.backgroundColor]="headerBackgroundColor"
           class="header-cell filter-cell"
           [class.border-right]="showVerticalBorder"
@@ -965,67 +983,89 @@
   let-section="section"
 >
   <!-- Check if row is a group -->
-  <ng-container *ngTemplateOutlet="groupRowTemplate; context: { $implicit: row, depth: 0 }"></ng-container>
-<ng-template #groupRowTemplate let-row let-depth="depth">
-  <ng-container *ngIf="row.isGroup; else regularRow">
-    <!-- Group Header -->
-    <div class="group-header-row border-bottom d-flex" [style.height.px]="rowHeight">
-      <div *ngIf="section == 'left'" class="h-100" [style.width.px]="leftPinnedHeader.offsetWidth">
-        <div
-          style="width: 50px"
-          class="d-flex align-items-center justify-content-center h-100 border-end"
-          [style.backgroundColor]="checkboxesBackgroundColor"
-        >
-          <input style="width: 16px; height: 16px" type="checkbox" />
-        </div>
-      </div>
-
+  <ng-container
+    *ngTemplateOutlet="groupRowTemplate; context: { $implicit: row, depth: 0 }"
+  ></ng-container>
+  <ng-template #groupRowTemplate let-row let-depth="depth">
+    <ng-container *ngIf="row.isGroup; else regularRow">
+      <!-- Group Header -->
       <div
-        *ngIf="section == 'center'"
-        [style.width.px]="centerPinnedHeader.scrollWidth"
-        class="d-flex align-items-center ps-2"
+        class="group-header-row border-bottom d-flex"
+        [style.height.px]="rowHeight"
       >
         <div
-          class="d-flex align-items-center justify-content-between"
-          [style.paddingLeft.px]="depth > 0 ? depth * 16 : 0"
+          *ngIf="section == 'left'"
+          class="h-100"
+          [style.width.px]="leftPinnedHeader.offsetWidth"
         >
-          <span class="me-2 filter-icon-wrapper" (click)="toggleExpand(row)">
-            <i class="bi" [ngClass]="row.isExpand ? 'bi-chevron-down' : 'bi-chevron-right'"></i>
-          </span>
-          <strong> {{ row.groupValue }} ({{ countLeafRows(row) }}) </strong>
+          <div
+            style="width: 50px"
+            class="d-flex align-items-center justify-content-center h-100 border-end"
+            [style.backgroundColor]="checkboxesBackgroundColor"
+          >
+            <input style="width: 16px; height: 16px" type="checkbox" />
+          </div>
         </div>
+
+        <div
+          *ngIf="section == 'center'"
+          [style.width.px]="centerPinnedHeader.scrollWidth"
+          class="d-flex align-items-center ps-2"
+        >
+          <div
+            class="d-flex align-items-center justify-content-between"
+            [style.paddingLeft.px]="depth > 0 ? depth * 16 : 0"
+          >
+            <span class="me-2 filter-icon-wrapper" (click)="toggleExpand(row)">
+              <i
+                class="bi"
+                [ngClass]="
+                  row.isExpand ? 'bi-chevron-down' : 'bi-chevron-right'
+                "
+              ></i>
+            </span>
+            <strong> {{ row.groupValue }} ({{ countLeafRows(row) }}) </strong>
+          </div>
+        </div>
+
+        <div
+          *ngIf="section == 'right'"
+          [style.width.px]="rightPinnedHeader.offsetWidth"
+        ></div>
       </div>
 
-      <div *ngIf="section == 'right'" [style.width.px]="rightPinnedHeader.offsetWidth"></div>
-    </div>
+      <!-- Recursive Children -->
+      <div class="group-children" *ngIf="row.isExpand">
+        <ng-container *ngFor="let child of row.children; let i = index">
+          <ng-container *ngIf="child.isGroup; else dataRow">
+            <!-- Recursive call for nested group -->
+            <ng-container
+              *ngTemplateOutlet="
+                groupRowTemplate;
+                context: { $implicit: child, depth: depth + 1 }
+              "
+            ></ng-container>
+          </ng-container>
 
-    <!-- Recursive Children -->
-    <div class="group-children" *ngIf="row.isExpand">
-      <ng-container *ngFor="let child of row.children; let i = index">
-        <ng-container *ngIf="child.isGroup; else dataRow">
-          <!-- Recursive call for nested group -->
-          <ng-container *ngTemplateOutlet="groupRowTemplate; context: { $implicit: child, depth: depth + 1 }"></ng-container>
+          <ng-template #dataRow>
+            <!-- Regular data row -->
+            <ng-container
+              *ngTemplateOutlet="
+                rowCell;
+                context: {
+                  $implicit: child,
+                  columns: columns,
+                  isEven: i % 2 === 0,
+                  isOdd: i % 2 !== 0,
+                  isLeft: isLeftSection
+                }
+              "
+            ></ng-container>
+          </ng-template>
         </ng-container>
-
-        <ng-template #dataRow>
-          <!-- Regular data row -->
-          <ng-container
-            *ngTemplateOutlet="
-              rowCell;
-              context: {
-                $implicit: child,
-                columns: columns,
-                isEven: i % 2 === 0,
-                isOdd: i % 2 !== 0,
-                isLeft: isLeftSection
-              }
-            "
-          ></ng-container>
-        </ng-template>
-      </ng-container>
-    </div>
-  </ng-container>
-</ng-template>
+      </div>
+    </ng-container>
+  </ng-template>
 
   <!-- Regular row (not a group) -->
   <ng-template #regularRow>
@@ -1339,7 +1379,7 @@
 
     <!-- Select All & Search -->
     <div class="d-flex align-items-center mb-2 px-3">
-      <span class="filter-icon-wrapper me-2">
+      <span class="filter-icon-wrapper me-2" *ngIf="showColumnsGrouping">
         <i
           class="bi bi-chevron-right toggle-icon"
           [ngClass]="{
@@ -1680,7 +1720,7 @@
     <hr class="my-0" />
     <div>
       <div class="d-flex align-items-center px-2 pe-3" [style.height.px]="48">
-        <span class="filter-icon-wrapper me-2">
+        <span class="filter-icon-wrapper me-2" *ngIf="showColumnsGrouping">
           <i
             class="bi bi-chevron-right toggle-icon"
             [ngClass]="{
@@ -1847,6 +1887,7 @@
     </div>
   </div>
   <div
+    *ngIf="showFilterRow"
     [style.backgroundColor]="headerBackgroundColor"
     class="header-cell filter-cell"
     [class.border-right]="showVerticalBorder"
