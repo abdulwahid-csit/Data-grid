@@ -811,4 +811,43 @@ $header-background-color: #efe1e1;
   background-color: #fff;  
 }
 }
+
+.fs-14px{
+  font-size: 14px;
+}
+
+.fs-12px{
+  font-size: 12px !important;
+}
+
+.save-preset-dropdown{
+    background: #fff;
+    color: #111 !important;
+    right: 0;
+    font-weight: 400 !important;
+    text-align: left !important ;
+    max-width: 250px !important;
+    text-wrap: auto !important;
+    top: 14px;
+    font-size: 14px !important;
+
+}
+
+.add-filter-button{
+ box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+ height: 32px;
+ cursor: pointer;
+ border-radius: 4px;
+ &:hover{
+  color: #000 !important;
+  ::ng-deep svg path{
+    stroke: black !important;
+  }
+ }
+
+ span{
+  margin-top: -4px;
+ }
+
+}
  

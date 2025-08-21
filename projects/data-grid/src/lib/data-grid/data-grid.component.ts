@@ -153,6 +153,10 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   @Input() footerPadding: number = 3
 
 
+  // Footer Padding
+  @Input() topFilterRowHeight: number = 53
+
+
 
 
 
@@ -1678,6 +1682,14 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   toggleActions(type: string) {
     if (type === this.activeTopButton) this.activeTopButton = '';
     else this.activeTopButton = type;
+    this.activeSubButton = '';
+    this.cdr.detectChanges();
+  }
+
+  activeSubButton = '';
+  toggleSubActions(type: string) {
+    if (type === this.activeSubButton) this.activeSubButton = '';
+    else this.activeSubButton = type;
     this.cdr.detectChanges();
   }
 
@@ -1685,6 +1697,7 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     this.showActionsDropDown = !this.showActionsDropDown;
     this.cdr.detectChanges();
   }
+
 
 
   changeTableLayout(event: Event, layoutType: string) {
