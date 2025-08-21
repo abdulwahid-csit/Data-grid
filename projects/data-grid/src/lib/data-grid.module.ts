@@ -5,12 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './pipes/filter.pipe';
 import { DraggableHeaderDirective } from './directives/draggable-header.directive';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { InlineSVGModule } from 'ng-inline-svg';
 
 
 
 @NgModule({
   declarations: [DataGridComponent, FilterPipe, DraggableHeaderDirective],
-  imports: [CommonModule, FormsModule, DragDropModule],
+  imports: [CommonModule, FormsModule, DragDropModule, InlineSVGModule.forRoot()],
   exports: [DataGridComponent, DraggableHeaderDirective],
   providers: [],
 })

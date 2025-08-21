@@ -19,6 +19,20 @@ gethasVisibleColumns(columns: any[]): boolean {
   return checkVisible(columns);
 }
 
+gethasInVisibleColumns(columns: any[]): boolean {
+  const checkVisible = (columns: any[]): boolean => {
+    return columns.some((col) => {
+      if (!col?.is_visible) return true;
+      if (col?.children?.length) {
+        return checkVisible(col.children);
+      }
+      return false;
+    });
+  };
+  return checkVisible(columns);
+}
+
+
   gethasRightPinnedColumns(columns: any[]): boolean {
     const checkPinnedRight = (columns: any[]): boolean => {
       return columns.some((col) => {

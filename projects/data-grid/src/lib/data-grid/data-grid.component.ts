@@ -10,6 +10,7 @@ import {
   AfterViewInit,
   HostListener,
   ChangeDetectorRef,
+  EventEmitter,
 } from '@angular/core';
 import { SplitColumnsService } from '../services/split-columns.service';
 import { CommonService } from '../services/common.service';
@@ -68,10 +69,10 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   @Input() columns: any[] = [];
 
   // Row Height;
-  @Input() rowHeight: number = 40;
+  @Input() rowHeight: number = 44;
 
   // Header Row Height;
-  @Input() headerRowHeight: number = 48;
+  @Input() headerRowHeight: number = 44;
 
   // Show Vertical Borders;
   @Input() showVerticalBorder: boolean = true;
@@ -145,21 +146,54 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   // Show Row wise grouping;
   @Input() fontFaimly: string | undefined = 'monospace';
 
+  // Show SideColumn;
+  @Input() showSideMenu: boolean = false;
+
+
+
+
+
+
+
+
+
+
+  // ///////////////////////////////////////////////////////////////////////////////////////////
+  // ///////////////////////////////////////////////////////////////////////////////////////////
+  //                         Out Put Events
+  // ///////////////////////////////////////////////////////////////////////////////////////////
+  // ///////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+@Output() public changeLayout = new EventEmitter<any>();
+
+
+
+
+
+
+
   groupedColumns: any[] = [];
   activeCol: any = null;
   activeFilterCell: any = null;
-  isShowSideMenu = false;
+  showActionsDropDown = false;
+  sideMenuVisible = false;
   pivotMode: boolean = false;
   columnSearch: string = '';
   expandAllAccordians = true;
   currentOpenedSideMenue: 'cols' | 'filtrs' | null = null;
   originalColumns: any[] = [];
   originalDataSet: any[] = [];
+  activeTopButton: string | null = '';
+  selectedTableLayout = 'medium';
   constructor(
     private columnService: SplitColumnsService,
     private cdr: ChangeDetectorRef,
     public commonSevice: CommonService,
-    private swapColumnService: SwapColumnsService
+    private swapColumnService: SwapColumnsService,
+    private elementRef: ElementRef
   ) {}
 
   ngAfterViewInit(): void {
@@ -556,6 +590,9 @@ ngOnChanges(changes: SimpleChanges): void {
       this.activeCol = null;
       this.activeFilterCell = null;
     }
+    if (!this.elementRef.nativeElement.contains(event.target)) {
+    this.showActionsDropDown = false;
+  }
   }
 
   private hasParentWithClass(
@@ -807,16 +844,16 @@ ngOnChanges(changes: SimpleChanges): void {
   toggleSideMenu(clickedOn: 'cols' | 'filtrs') {
     if (this.currentOpenedSideMenue == clickedOn) {
       this.currentOpenedSideMenue = clickedOn;
-      this.isShowSideMenu = !this.isShowSideMenu;
+      this.sideMenuVisible = !this.sideMenuVisible;
     } else if (
-      this.isShowSideMenu &&
+      this.sideMenuVisible &&
       clickedOn != this.currentOpenedSideMenue
     ) {
       this.currentOpenedSideMenue = clickedOn;
       return;
     } else {
       this.currentOpenedSideMenue = clickedOn;
-      this.isShowSideMenu = !this.isShowSideMenu;
+      this.sideMenuVisible = !this.sideMenuVisible;
     }
   }
 
@@ -842,6 +879,15 @@ ngOnChanges(changes: SimpleChanges): void {
   allColumnsSelected(): boolean {
     const flatten = this.flattenColumns(this.columns);
     return flatten.every((col) => col.is_visible);
+  }
+
+
+  toggleColumnVisibility(column: any, isVisible: boolean){
+    const col = this.columns.find(col => col.field == column.field);
+    if(col){
+      col.is_visible = isVisible;
+    }
+    this.refreshHeaders();
   }
 
   toggleAllColumnsVisibility(): void {
@@ -980,6 +1026,10 @@ ngOnChanges(changes: SimpleChanges): void {
 
   get hasAnyVisibleColumn() {
     return this.commonSevice.gethasVisibleColumns(this.columns);
+  }
+
+  get hasAnyInVisibleColumn() {
+    return this.commonSevice.gethasInVisibleColumns(this.columns);
   }
 
   tableHeaderAndBodyHeight() {
@@ -1616,4 +1666,44 @@ ngOnChanges(changes: SimpleChanges): void {
       return count + (child.isGroup ? this.countLeafRows(child) : 1);
     }, 0);
   }
+
+  toggleActions(type: string){
+    if(type === this.activeTopButton) this.activeTopButton = '';
+    else this.activeTopButton = type;
+    this.cdr.detectChanges();
+  }
+
+  toggleActionsDropdown(){
+    this.showActionsDropDown = !this.showActionsDropDown;
+    this.cdr.detectChanges();
+  }
+
+
+  changeTableLayout(event: Event, layoutType: string){
+    let target = event.target as HTMLInputElement;
+
+    if(target.checked){
+      this.selectedTableLayout = layoutType;
+      if(layoutType === 'small'){
+        this.rowHeight = 36;
+        this.headerRowHeight = 40;
+
+
+      }else if(layoutType === 'medium'){
+        this.rowHeight = 44;
+        this.headerRowHeight = 44;
+        
+      }else{
+         this.rowHeight = 60;
+        this.headerRowHeight = 52;
+      }
+      this.refreshHeaders();
+      setTimeout(() => {
+        this.cdr.detectChanges();
+      }, 100);
+    }
+  }
+
+
+
 }

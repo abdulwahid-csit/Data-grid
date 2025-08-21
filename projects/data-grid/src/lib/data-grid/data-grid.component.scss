@@ -125,6 +125,8 @@ $header-background-color: #efe1e1;
   overflow: hidden;
   text-overflow: ellipsis;
   height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .data-grid-row {
@@ -632,3 +634,113 @@ $header-background-color: #efe1e1;
     position: absolute;
     right: 0;
   }
+
+  .actions-dropdown {
+  position: fixed;
+  right: 200px;         
+  z-index: 1050;
+  background-color: #fff;  
+}
+
+.actions-dropdown-setting{
+  right: 335px;
+}
+
+.action-button{
+  background-color: #007CF5 !important;
+  border-radius: 8px !important;
+  padding: 8px 16px !important;
+  font-size: 14px;
+  height: 32px;
+  align-items: center;
+}
+.global-search{
+  max-width: 380px !important;
+  span{
+    margin-top: 2px;
+  }
+  input{
+    padding-left: 28px;
+    border-radius: 8px !important;
+    &:focus{
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  }
+  
+}
+
+.active .top-icon {
+  ::ng-deep svg path {
+    stroke: #007CF5 !important;
+  }
+}
+
+.custom-menu {
+  width: 220px;
+  border-radius: 8px;
+  padding: 4px 0;
+}
+
+.custom-menu .dropdown-item {
+  font-size: 14px;
+  padding: 8px 14px;
+}
+
+.custom-menu .dropdown-item:hover {
+  background-color: #f5f5f5;
+  border-radius: 6px;
+}
+.table-layout{
+  right: 90px;
+}
+.preview-box {
+  width: 40px;
+  height: 10px;
+  border-radius: 3px;
+  background-color: transparent;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-check:checked + label .preview-box {
+  background-color: var(--bs-primary); 
+}
+.preview-box {
+  width: 40px;
+  height: 10px;
+  border-radius: 3px;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease-in-out;
+}
+#small:checked + label .preview-box {
+  border-color: #007CF5 !important;
+  background-color: transparent !important;
+}
+
+#medium:checked + label .preview-box {
+    border-color: #007CF5 !important;
+  background-color: transparent !important;
+}
+
+#large:checked + label .preview-box {
+  border-color: #007CF5 !important;
+  background-color: transparent !important;
+}
+.btn-check:checked + .btn {
+  background-color: transparent !important;
+  border-color: #007CF5 !important;
+}
+.layout-button{
+  padding: 8px 28px !important;
+  width: 82px;
+}
+.show-hide-table-label{
+    position: sticky;
+    top: 0px;
+    z-index: 99;
+    background: #fff;
+}
+
+.cursor-grap{
+  cursor: grabbing;
+}
