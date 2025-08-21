@@ -156,6 +156,8 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   // Footer Padding
   @Input() topFilterRowHeight: number = 53
 
+  @Input() rowShadingEnabled: boolean = false;
+
 
 
 
@@ -1708,15 +1710,21 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
       if (layoutType === 'small') {
         this.rowHeight = 36;
         this.headerRowHeight = 40;
+        this.bodyTextFontsSize = 10;
+        this.headerTextFontsSize = 10;
 
 
       } else if (layoutType === 'medium') {
         this.rowHeight = 44;
         this.headerRowHeight = 44;
+           this.bodyTextFontsSize = 14;
+        this.headerTextFontsSize = 14;
 
       } else {
         this.rowHeight = 60;
         this.headerRowHeight = 52;
+        this.bodyTextFontsSize = 16;
+        this.headerTextFontsSize = 16;
       }
       this.refreshHeaders();
       setTimeout(() => {
@@ -1727,7 +1735,6 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
 
 
   pageSizeOptions = [25, 50, 75, 100, 150, 200, 250, 300, 500];
-
   get startIndexData() {
     return (this.paginationConfig.page - 1) * this.paginationConfig.limit;
   }
@@ -1772,6 +1779,10 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
 
   onPageSizeChange() {
     this.paginationConfig.page = 1;
+  }
+
+  toggleRowShading() {
+    this.oddRowsBackgroundColor = this.rowShadingEnabled ? '#f1f1f1' : undefined;
   }
 
 
