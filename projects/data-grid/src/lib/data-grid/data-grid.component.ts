@@ -1032,6 +1032,10 @@ ngOnChanges(changes: SimpleChanges): void {
     return this.commonSevice.gethasInVisibleColumns(this.columns);
   }
 
+  get columnsCount() {
+    return this.commonSevice.getTotalColumnsLength(this.columns);
+  }
+
   tableHeaderAndBodyHeight() {
     return `calc(100% - ${this.footerRowHeight})`;
   }

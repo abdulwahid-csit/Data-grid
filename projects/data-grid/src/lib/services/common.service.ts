@@ -33,6 +33,20 @@ gethasInVisibleColumns(columns: any[]): boolean {
 }
 
 
+getTotalColumnsLength(columns: any[]): number {
+  let count = 0;
+
+  columns.forEach(col => {
+    if (col.children && Array.isArray(col.children) && col.children.length) {
+      count += col.children.length; // count children instead of parent
+    } else {
+      count += 1; // count parent directly
+    }
+  });
+
+  return count;
+}
+
   gethasRightPinnedColumns(columns: any[]): boolean {
     const checkPinnedRight = (columns: any[]): boolean => {
       return columns.some((col) => {
