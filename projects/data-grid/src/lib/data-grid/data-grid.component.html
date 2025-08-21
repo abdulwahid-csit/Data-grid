@@ -7,7 +7,11 @@
         [inlineSVG]="'assets/icons/search.svg'"
         class="mx-2 position-absolute"
       ></span>
-      <input class="form-control form-control-sm" placeholder="Search all columns" type="search" />
+      <input
+        class="form-control form-control-sm"
+        placeholder="Search all columns"
+        type="search"
+      />
     </div>
     <div class="d-flex gap-2">
       <div
@@ -170,11 +174,26 @@
     </div>
   </div>
 
-  <div class="top-filter-row border-top py-2" [style.height.px]="topFilterRowHeight">
-    <div class="d-flex justify-content-center align-items-center text-muted add-filter-button" style="width: 70px;"><span [inlineSVG]="'assets/icons/plus.svg'" class="me-2"></span>Filter</div>
+  <div
+    class="top-filter-row border-top py-2"
+    [style.height.px]="topFilterRowHeight"
+  >
+    <div>
+      <div
+        (click)="toggleActions('filter-columns')"
+        class="d-flex justify-content-center align-items-center text-muted add-filter-button"
+        style="width: 70px"
+      >
+        <span [inlineSVG]="'assets/icons/plus.svg'" class="me-2"></span>Filter
+      </div>
+      <ng-container *ngIf="activeTopButton === 'filter-columns'">
+        <div
+          *ngTemplateOutlet="filterColumns"
+          class="actions-dropdown mt-1"
+        ></div>
+      </ng-container>
+    </div>
   </div>
-
-
 
   <div
     cdkDropListGroup
@@ -814,7 +833,7 @@
         </div>
 
         <div class="page-info">
-          Results: {{ startIndex + 1 }}-{{ endIndex }} of 
+          Results: {{ startIndex + 1 }}-{{ endIndex }} of
           {{ paginationConfig.totalResults }}
         </div>
 
@@ -1368,7 +1387,7 @@
     [attr.field]="col.field"
     [style.width.px]="col.width"
     [style.min-width.px]="col.width"
-     [style.fontSize.px]="bodyTextFontsSize"
+    [style.fontSize.px]="bodyTextFontsSize"
   >
     <ng-container [ngSwitch]="col.type">
       <span *ngSwitchCase="'text'">{{ getNestedValue(row, col.field) }}</span>
@@ -2248,7 +2267,13 @@
     <div class="d-flex justify-content-between align-items-center">
       <span>Row shading</span>
       <div class="form-check form-switch m-0">
-        <input class="form-check-input" [(ngModel)]="rowShadingEnabled"  (change)="toggleRowShading()" type="checkbox" id="rowShading" />
+        <input
+          class="form-check-input"
+          [(ngModel)]="rowShadingEnabled"
+          (change)="toggleRowShading()"
+          type="checkbox"
+          id="rowShading"
+        />
       </div>
     </div>
   </div>
@@ -2256,7 +2281,7 @@
 
 <ng-template #tablePreset>
   <div
-  *ngIf="activeSubButton !== 'save-preset'"
+    *ngIf="activeSubButton !== 'save-preset'"
     (click)="$event.stopPropagation()"
     class="p-3 shadow rounded-3 bg-white actions-dropdown mt-1 dropdown-menu show shadow custom-menu table-layout"
     style="width: 280px"
@@ -2347,14 +2372,14 @@
   </div>
 
   <div
-  (click)="$event.stopPropagation()"
+    (click)="$event.stopPropagation()"
     *ngIf="activeSubButton == 'save-preset'"
     class="dropdown-menu p-3 badge mt-4 save-preset-dropdown mt-1"
     aria-labelledby="savePresetDropdown"
     style="min-width: 250px"
   >
     <div class="fw-bold fs-14px mb-2">Save preset</div>
-    <div class="fs-14px mb-2" style="line-height: 20px;">
+    <div class="fs-14px mb-2" style="line-height: 20px">
       This will save the current table adjustments as a preset.
     </div>
     <!-- Input -->
@@ -2380,9 +2405,23 @@
     </div>
 
     <!-- Save Button -->
-    <div class="d-flex justify-content-center gap-2" style="height: 32px;">
-      <button type="button" style="height: 32px;" class="btn border w-100 d-flex align-items-center justify-content-center" (click)="$event.stopPropagation(); toggleActions('table-presets')" style="margin-top: -2px;"><span>Cancel</span></button>
-      <button type="button" style="height: 32px;" class="btn btn-primary w-100 d-flex align-items-center justify-content-center"><span style="margin-top: -2px;">Save</span></button>
+    <div class="d-flex justify-content-center gap-2" style="height: 32px">
+      <button
+        type="button"
+        style="height: 32px"
+        class="btn border w-100 d-flex align-items-center justify-content-center"
+        (click)="$event.stopPropagation(); toggleActions('table-presets')"
+        style="margin-top: -2px"
+      >
+        <span>Cancel</span>
+      </button>
+      <button
+        type="button"
+        style="height: 32px"
+        class="btn btn-primary w-100 d-flex align-items-center justify-content-center"
+      >
+        <span style="margin-top: -2px">Save</span>
+      </button>
     </div>
   </div>
 </ng-template>
@@ -2420,7 +2459,11 @@
           [inlineSVG]="'assets/icons/search.svg'"
           class="mx-2 position-absolute"
         ></span>
-        <input class="form-control form-control-sm" placeholder="Serach column" type="search" />
+        <input
+          class="form-control form-control-sm"
+          placeholder="Serach column"
+          type="search"
+        />
       </div>
     </div>
     <!-- Preset List -->
@@ -2523,59 +2566,127 @@
 
 <ng-template #filterColumns>
   <div
+    *ngIf="!isFilterOpen"
     (click)="$event.stopPropagation()"
-    class="p-3 shadow rounded-3 bg-white actions-dropdown mt-1 dropdown-menu show shadow custom-menu table-layout"
-    style="width: 280px"
+    class="shadow rounded-3 bg-white actions-dropdown mt-1 dropdown-menu show shadow custom-menu table-layout"
+    style="width: 280px; right: unset; max-width: 230px;"
   >
-    <!-- Search -->
-    <div class="mb-3">
+    <div class="mb-2 px-3">
       <div class="col-12 global-search">
         <span
           [inlineSVG]="'assets/icons/search.svg'"
           class="mx-2 position-absolute"
         ></span>
-        <input class="form-control form-control-sm" placeholder="Filter by" type="search" />
+        <input
+          class="form-control form-control-sm"
+          placeholder="Filter by"
+          type="search"
+        />
       </div>
     </div>
-    <!-- Preset List -->
     <div
       class="list-group list-group-flush"
       style="max-height: 500px; overflow: auto"
     >
-      <!-- Item -->
       <ng-container *ngFor="let col of columns">
         <div
+        (click)="openFilter(col)"
           *ngIf="col.is_visible"
-          class="list-group-item border-0 px-0 d-flex justify-content-between align-items-center"
+          class="list-group-item border-0 px-0 d-flex justify-content-between align-items-center dropdown-item cursor-pointer"
         >
           <div class="d-flex gap-1">
             <div style="margin-top: -3px">
-              <span
-                *ngIf="!col?.pinned"
-                [inlineSVG]="'assets/icons/grip-vertical.svg'"
-                class="cursor-grap"
-                (mousedown)="$event.preventDefault()"
-              ></span>
-              <span
-                *ngIf="col?.pinned"
-                [inlineSVG]="'assets/icons/pin-blue.svg'"
-                class="cursor-grap"
-                (mousedown)="$event.preventDefault()"
-              ></span>
             </div>
             <div class="fw-semibold">
               {{ col.header }}
             </div>
           </div>
-          <div
-            class="d-flex align-items-center"
-            (click)="toggleColumnVisibility(col, false)"
-          >
-            <span [inlineSVG]="'assets/icons/eye.svg'" class="me-2"></span>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <!-- Dropdown -->
+  <div
+  *ngIf="isFilterOpen"
+    (click)="$event.stopPropagation()"
+    class="shadow rounded-3 bg-white actions-dropdown mt-1 dropdown-menu show shadow custom-menu table-layout"
+    style="width: 280px; right: unset; max-width: 230px"
+  >
+    <!-- Selected Tags (top area) -->
+    <!-- Search + Tags inside input -->
+    <div class="mb-2 px-3">
+      <div
+        class="col-12 global-search position-relative border rounded d-flex align-items-center flex-wrap px-2"
+      >
+        <!-- Selected Tags -->
+        <span
+          *ngFor="let selected of selectedColumnForFilter.column_dropdown_value;"
+          class="badge bg-primary d-flex align-items-center gap-1 me-1 mb-1"
+        >
+          {{ selected.value ||  selected}}
+          <button
+            type="button"
+            class="btn-close btn-close-white ms-1"
+            aria-label="Remove"
+            (click)="removeColumnFromFilter(selected)"
+          ></button>
+        </span>
+
+        <!-- Search Input -->
+        <input
+          class="form-control form-control-sm border-0 flex-grow-1"
+          style="padding: 0;"
+          placeholder="Filter by"
+          type="search"
+          [(ngModel)]="searchTextForFilterDropDown"
+          (keydown.backspace)="handleBackspace($event)"
+        />
+      </div>
+    </div>
+
+    <!-- Column List -->
+    <div
+      class="list-group list-group-flush"
+      style="max-height: 500px; overflow: auto"
+    >
+      <ng-container *ngFor="let col of selectedColumnForFilter.column_dropdown_value; let i = index">
+        <div
+          class="list-group-item border-0 px-2 d-flex justify-content-between align-items-center dropdown-item cursor-pointer"
+        >
+          <div class="form-check">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              [id]="i"
+              [(ngModel)]="col.selected"
+              (change)="toggleSelectionInFilter(col)"
+            />
+            <label class="form-check-label fw-semibold" [for]="i">
+              {{ col.value }}
+            </label>
           </div>
         </div>
       </ng-container>
-      <!-- Item End Here -->
+    </div>
+       <!-- Save Button -->
+    <div class="d-flex justify-content-center gap-2" style="height: 32px">
+      <button
+        type="button"
+        style="height: 32px"
+        class="btn border w-100 d-flex align-items-center justify-content-center"
+        (click)="$event.stopPropagation(); isFilterOpen = false"
+        style="margin-top: -2px"
+      >
+        <span>Cancel</span>
+      </button>
+      <button
+        type="button"
+        style="height: 32px"
+        class="btn btn-primary w-100 d-flex align-items-center justify-content-center"
+      >
+        <span style="margin-top: -2px">Save</span>
+      </button>
     </div>
   </div>
 </ng-template>
