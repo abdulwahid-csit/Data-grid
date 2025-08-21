@@ -7,14 +7,15 @@ import { result } from './testing-data/writeup/data'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'data-grid-workspace';
-  dataSet = result.results;
-  columns = result.config.columns;
+ title = 'data-grid-workspace';
+  dataSet = result.data;
+  columns = result.columns;
 
   pagginationConfig = {
-    limit: result.config.limit,
-    totalResults: result.config.totalResults,
-    totalPages: result.config.totalPages,
-    page: result.config.page
+    limit: result.limit,
+    totalResults: result.total,
+    totalPages: result.totalPages,
+    page: result.page
   }
 }
+
