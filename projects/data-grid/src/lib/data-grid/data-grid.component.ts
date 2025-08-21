@@ -149,6 +149,10 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   // Show SideColumn;
   @Input() showSideMenu: boolean = false;
 
+  // Footer Padding
+  @Input() footerPadding: number = 3
+
+
 
 
 
@@ -167,7 +171,7 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
 
 
 
-@Output() public changeLayout = new EventEmitter<any>();
+  @Output() public changeLayout = new EventEmitter<any>();
 
 
 
@@ -194,7 +198,7 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     public commonSevice: CommonService,
     private swapColumnService: SwapColumnsService,
     private elementRef: ElementRef
-  ) {}
+  ) { }
 
   ngAfterViewInit(): void {
     // this.columns = this.columnService.setColumnsQuery(this.columns);
@@ -227,59 +231,59 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     // }, 300);
   }
 
-ngOnChanges(changes: SimpleChanges): void {
-  // When columns change
-  if (changes['columns']) {
-    this.columns = this.columnService.setColumnsQuery(this.columns);
-    this.originalColumns = structuredClone(this.columns);
+  ngOnChanges(changes: SimpleChanges): void {
+    // When columns change
+    if (changes['columns']) {
+      this.columns = this.columnService.setColumnsQuery(this.columns);
+      this.originalColumns = structuredClone(this.columns);
 
-    setTimeout(() => {
-      if (this.dataGridContainer?.nativeElement?.offsetWidth) {
-        this.SetColumnsDefaultWidth();
-        this.updateColumnWidthsAndGroups();
+      setTimeout(() => {
+        if (this.dataGridContainer?.nativeElement?.offsetWidth) {
+          this.SetColumnsDefaultWidth();
+          this.updateColumnWidthsAndGroups();
+          this.refreshPreviewColumns();
+          this.setSectionsWidth();
+          this.cdr.detectChanges(); // ✅ force update after async DOM calc
+        }
+      }, 10);
+
+      setTimeout(() => {
+        this.updateFlattenedData();
+        this.computeViewportRows();
+        this.updateVisibleRows(0);
+
+        if (this.mainScroll?.nativeElement) {
+          const ro = new ResizeObserver(() => {
+            this.updateFlattenedData();
+            this.computeViewportRows();
+            this.updateVisibleRows(this.mainScroll.nativeElement.scrollTop);
+            this.cdr.detectChanges(); // ✅ ensure Angular sees changes from ResizeObserver
+          });
+          ro.observe(this.mainScroll.nativeElement);
+        }
+        this.cdr.detectChanges();
+      }, 300);
+
+      setTimeout(() => {
+        this.generateDropListIds();
+        this.cdr.detectChanges();
+      }, 10);
+
+      setTimeout(() => {
         this.refreshPreviewColumns();
-        this.setSectionsWidth();
-        this.cdr.detectChanges(); // ✅ force update after async DOM calc
-      }
-    }, 10);
+        this.cdr.detectChanges();
+      }, 300);
+    }
 
-    setTimeout(() => {
-      this.updateFlattenedData();
-      this.computeViewportRows();
-      this.updateVisibleRows(0);
-
-      if (this.mainScroll?.nativeElement) {
-        const ro = new ResizeObserver(() => {
-          this.updateFlattenedData();
-          this.computeViewportRows();
-          this.updateVisibleRows(this.mainScroll.nativeElement.scrollTop);
-          this.cdr.detectChanges(); // ✅ ensure Angular sees changes from ResizeObserver
-        });
-        ro.observe(this.mainScroll.nativeElement);
-      }
-      this.cdr.detectChanges();
-    }, 300);
-
-    setTimeout(() => {
-      this.generateDropListIds();
-      this.cdr.detectChanges();
-    }, 10);
-
-    setTimeout(() => {
+    // When dataSet changes
+    if (changes['dataSet']) {
+      this.originalDataSet = structuredClone(this.dataSet);
+      this.SetColumnsDefaultWidth();
       this.refreshPreviewColumns();
-      this.cdr.detectChanges();
-    }, 300);
+      this.updateFlattenedData();
+      this.cdr.detectChanges(); // ✅ ensures new dataset updates the grid instantly
+    }
   }
-
-  // When dataSet changes
-  if (changes['dataSet']) {
-    this.originalDataSet = structuredClone(this.dataSet);
-    this.SetColumnsDefaultWidth();
-    this.refreshPreviewColumns();
-    this.updateFlattenedData();
-    this.cdr.detectChanges(); // ✅ ensures new dataset updates the grid instantly
-  }
-}
 
 
 
@@ -560,7 +564,7 @@ ngOnChanges(changes: SimpleChanges): void {
 
   // Get Body Height
   get bodyWrapperHeight(): string {
-    const rows = this.showColumnsGrouping && this.showFilterRow ? 3 : (this.showColumnsGrouping || this.showFilterRow?  2: 1);
+    const rows = this.showColumnsGrouping && this.showFilterRow ? 3 : (this.showColumnsGrouping || this.showFilterRow ? 2 : 1);
     const offset = this.headerRowHeight * rows + 17;
     return `calc(100% - ${offset}px)`;
   }
@@ -591,8 +595,8 @@ ngOnChanges(changes: SimpleChanges): void {
       this.activeFilterCell = null;
     }
     if (!this.elementRef.nativeElement.contains(event.target)) {
-    this.showActionsDropDown = false;
-  }
+      this.showActionsDropDown = false;
+    }
   }
 
   private hasParentWithClass(
@@ -882,9 +886,9 @@ ngOnChanges(changes: SimpleChanges): void {
   }
 
 
-  toggleColumnVisibility(column: any, isVisible: boolean){
+  toggleColumnVisibility(column: any, isVisible: boolean) {
     const col = this.columns.find(col => col.field == column.field);
-    if(col){
+    if (col) {
       col.is_visible = isVisible;
     }
     this.refreshHeaders();
@@ -903,17 +907,17 @@ ngOnChanges(changes: SimpleChanges): void {
     }, 100);
   }
 
- flattenColumns(cols: any[]): any[] {
-  return cols.reduce((acc: any[], col: any) => {
-    if (col?.children && col.children.length) {
-      // recursively flatten children
-      return acc.concat(this.flattenColumns(col.children));
-    } else {
-      // leaf column
-      return acc.concat(col);
-    }
-  }, []);
-}
+  flattenColumns(cols: any[]): any[] {
+    return cols.reduce((acc: any[], col: any) => {
+      if (col?.children && col.children.length) {
+        // recursively flatten children
+        return acc.concat(this.flattenColumns(col.children));
+      } else {
+        // leaf column
+        return acc.concat(col);
+      }
+    }, []);
+  }
 
 
   filteredColumns(cols: any[]): any[] {
@@ -1014,7 +1018,7 @@ ngOnChanges(changes: SimpleChanges): void {
   @HostListener('window:resize', ['$event'])
   onResize(event: UIEvent) {
     this.autosizeAllColumns();
-    setTimeout(() => {}, 100);
+    setTimeout(() => { }, 100);
   }
 
   refreshHeaders() {
@@ -1588,8 +1592,8 @@ ngOnChanges(changes: SimpleChanges): void {
       section == 'leftPinnedColumns'
         ? 'left'
         : section == 'rightPinnedColumns'
-        ? 'right'
-        : null;
+          ? 'right'
+          : null;
     const column = event.item.data;
     let group = this.columns.find(
       (col: any) =>
@@ -1671,34 +1675,34 @@ ngOnChanges(changes: SimpleChanges): void {
     }, 0);
   }
 
-  toggleActions(type: string){
-    if(type === this.activeTopButton) this.activeTopButton = '';
+  toggleActions(type: string) {
+    if (type === this.activeTopButton) this.activeTopButton = '';
     else this.activeTopButton = type;
     this.cdr.detectChanges();
   }
 
-  toggleActionsDropdown(){
+  toggleActionsDropdown() {
     this.showActionsDropDown = !this.showActionsDropDown;
     this.cdr.detectChanges();
   }
 
 
-  changeTableLayout(event: Event, layoutType: string){
+  changeTableLayout(event: Event, layoutType: string) {
     let target = event.target as HTMLInputElement;
 
-    if(target.checked){
+    if (target.checked) {
       this.selectedTableLayout = layoutType;
-      if(layoutType === 'small'){
+      if (layoutType === 'small') {
         this.rowHeight = 36;
         this.headerRowHeight = 40;
 
 
-      }else if(layoutType === 'medium'){
+      } else if (layoutType === 'medium') {
         this.rowHeight = 44;
         this.headerRowHeight = 44;
-        
-      }else{
-         this.rowHeight = 60;
+
+      } else {
+        this.rowHeight = 60;
         this.headerRowHeight = 52;
       }
       this.refreshHeaders();
@@ -1708,6 +1712,54 @@ ngOnChanges(changes: SimpleChanges): void {
     }
   }
 
+
+  pageSizeOptions = [25, 50, 75, 100, 150, 200, 250, 300, 500];
+
+  get startIndexData() {
+    return (this.paginationConfig.page - 1) * this.paginationConfig.limit;
+  }
+
+  get endIndex() {
+    return Math.min(this.startIndex + this.paginationConfig.limit, this.paginationConfig.totalResults);
+  }
+
+  get visiblePages(): (number | string)[] {
+    const pages: (number | string)[] = [];
+
+    if (this.paginationConfig.totalPages <= 7) {
+      for (let i = 1; i <= this.paginationConfig.totalPages; i++) {
+        pages.push(i);
+      }
+    } else {
+      pages.push(1);
+      if (this.paginationConfig.page > 3) {
+        pages.push('...');
+      }
+      let start = Math.max(2, this.paginationConfig.page - 1);
+      let end = Math.min(this.paginationConfig.totalPages - 1, this.paginationConfig.page + 1);
+
+      for (let i = start; i <= end; i++) {
+        pages.push(i);
+      }
+
+      if (this.paginationConfig.page < this.paginationConfig.totalPages - 2) {
+        pages.push('...');
+      }
+      pages.push(this.paginationConfig.totalPages);
+    }
+
+    return pages;
+  }
+
+
+  goToPage(page: any) {
+    if (page < 1 || page > this.paginationConfig.totalPages) return;
+    this.paginationConfig.page = page;
+  }
+
+  onPageSizeChange() {
+    this.paginationConfig.page = 1;
+  }
 
 
 }

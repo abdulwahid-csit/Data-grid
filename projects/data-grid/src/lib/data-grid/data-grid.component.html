@@ -75,7 +75,8 @@
             </a>
 
             <!-- Columns -->
-            <a *ngIf="!showSideMenu"
+            <a
+              *ngIf="!showSideMenu"
               (click)="
                 $event.stopPropagation(); toggleActions('show-hide-columns')
               "
@@ -85,7 +86,7 @@
                 ><span [inlineSVG]="'assets/icons/eye.svg'" class="me-2"></span>
                 Columns</span
               >
-              <span class="text-muted">{{columnsCount}}</span>
+              <span class="text-muted">{{ columnsCount }}</span>
             </a>
 
             <div class="dropdown-divider"></div>
@@ -212,7 +213,13 @@
     >
       <div
         class="h-100"
-        [style.width]=" !showSideMenu ? '100%' : (sideMenuVisible ? 'calc(100% - 280px)' : 'calc(100% - 30px)')"
+        [style.width]="
+          !showSideMenu
+            ? '100%'
+            : sideMenuVisible
+            ? 'calc(100% - 280px)'
+            : 'calc(100% - 30px)'
+        "
       >
         <div class="h-100 transition position-relative w-100">
           <!-- ##################################################################################################################################################################################### -->
@@ -701,7 +708,8 @@
       </div>
 
       <!-- Side Menu Implemented Here -->
-      <div *ngIf="showSideMenu"
+      <div
+        *ngIf="showSideMenu"
         [style.width.px]="sideMenuVisible ? 280 : 30"
         class="right-menu"
         [style.backgroundColor]="sidemenuBackgroundColor"
@@ -775,9 +783,59 @@
     </div>
     <div
       [style.height.px]="footerRowHeight"
-      class="footer-row d-flex align-items-center"
+      class="border-top"
     >
-      Rows: <span class="fw-500 ms-1">{{ dataSet.length }}</span>
+      <!-- Rows: <span class="fw-500 ms-1">{{ dataSet.length }}</span> -->
+
+      <div
+        class="pagination-container"
+        [style.height.px]="footerRowHeight"
+        [style.padding.px]="footerPadding"
+      >
+        <div class="page-size">
+          <select
+            [(ngModel)]="paginationConfig.limit"
+            (change)="onPageSizeChange()"
+          >
+            <option *ngFor="let size of pageSizeOptions" [value]="size">
+              {{ size }}
+            </option>
+          </select>
+          <span class="separator"> per page </span>
+        </div>
+
+        <div class="page-info">
+          Results: {{ startIndex + 1 }}-{{ endIndex }} of
+          {{ paginationConfig.totalResults }}
+        </div>
+
+        <div class="page-buttons">
+          <button
+            (click)="goToPage(paginationConfig.page - 1)"
+            [disabled]="paginationConfig.page === 1"
+          >
+            ‹
+          </button>
+
+          <ng-container *ngFor="let page of visiblePages">
+            <button
+              *ngIf="page !== '...'"
+              (click)="goToPage(page)"
+              [class.active]="page === paginationConfig.page"
+            >
+              {{ page }}
+            </button>
+            <span *ngIf="page === '...'">...</span>
+          </ng-container>
+
+          <button
+            (click)="goToPage(paginationConfig.page + 1)"
+            [disabled]="paginationConfig.page === paginationConfig.totalResults"
+          >
+            ›
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -860,7 +918,6 @@
                 [style.max-height.px]="headerRowHeight"
                 [style.fontWeight]="headerFontWeight"
                 style="grid-row: 2"
-               
               >
                 <div
                   class="d-flex justify-content-between h-100 align-items-center w-100"
@@ -1030,7 +1087,7 @@
           [attr.field]="col.field"
           [style.width.px]="col.width"
           [style.min-width.px]="col.width"
-           [class.border-right]="showVerticalBorder"
+          [class.border-right]="showVerticalBorder"
           [style.min-height.px]="
             showColumnsGrouping ? headerRowHeight * 2 : headerRowHeight
           "
@@ -2103,7 +2160,11 @@
     style="width: 320px"
   >
     <div class="d-flex align-items-center mb-3">
-      <button class="btn btn-link p-0" style="margin-left: -10px;" (click)="toggleActions('setting')">
+      <button
+        class="btn btn-link p-0"
+        style="margin-left: -10px"
+        (click)="toggleActions('setting')"
+      >
         <span [inlineSVG]="'assets/icons/arrow-left.svg'" class="me-2"></span>
       </button>
       <h6 class="mb-0 fw-bold">Table Layout</h6>
@@ -2193,7 +2254,8 @@
     <div class="d-flex justify-content-between align-items-center mb-3">
       <div class="d-flex align-items-center">
         <button
-          class="btn btn-link p-0" style="margin-left: -10px;"
+          class="btn btn-link p-0"
+          style="margin-left: -10px"
           (click)="toggleActions('setting')"
         >
           <span [inlineSVG]="'assets/icons/arrow-left.svg'"></span>
@@ -2276,14 +2338,18 @@
     <div class="d-flex justify-content-between align-items-center mb-3">
       <div class="d-flex align-items-center">
         <button
-          class="btn btn-link p-0" style="margin-left: -10px;"
+          class="btn btn-link p-0"
+          style="margin-left: -10px"
           (click)="toggleActions('setting')"
         >
           <span [inlineSVG]="'assets/icons/arrow-left.svg'"></span>
         </button>
         <h6 class="mb-0 fw-bold">Columns</h6>
       </div>
-      <a (click)="resetColumns()" href="javascript:void(0)" class="text-primary text-decoration-none"
+      <a
+        (click)="resetColumns()"
+        href="javascript:void(0)"
+        class="text-primary text-decoration-none"
         >Reset</a
       >
     </div>
@@ -2300,10 +2366,12 @@
     </div>
     <!-- Preset List -->
     <div
-    class="list-group list-group-flush"
-    style="max-height: 500px; overflow: auto"
+      class="list-group list-group-flush"
+      style="max-height: 500px; overflow: auto"
     >
-    <div class="text-muted show-hide-table-label" *ngIf="hasAnyVisibleColumn">Show in table</div>
+      <div class="text-muted show-hide-table-label" *ngIf="hasAnyVisibleColumn">
+        Show in table
+      </div>
       <!-- Item -->
       <ng-container *ngFor="let col of columns">
         <div
@@ -2312,13 +2380,20 @@
         >
           <div class="d-flex gap-1">
             <div style="margin-top: -3px">
-              <span [inlineSVG]="'assets/icons/grip-vertical.svg'" class="cursor-grap" (mousedown)="$event.preventDefault();"></span>
+              <span
+                [inlineSVG]="'assets/icons/grip-vertical.svg'"
+                class="cursor-grap"
+                (mousedown)="$event.preventDefault()"
+              ></span>
             </div>
             <div class="fw-semibold">
               {{ col.header }}
             </div>
           </div>
-          <div class="d-flex align-items-center" (click)="toggleColumnVisibility(col, false)">
+          <div
+            class="d-flex align-items-center"
+            (click)="toggleColumnVisibility(col, false)"
+          >
             <span [inlineSVG]="'assets/icons/eye.svg'" class="me-2"></span>
           </div>
         </div>
@@ -2326,12 +2401,18 @@
 
       <!-- Item End Here -->
 
-      <div class="dropdown-divider" *ngIf="hasAnyVisibleColumn && hasAnyInVisibleColumn"></div>
-
-      <div class="text-muted show-hide-table-label" *ngIf="hasAnyInVisibleColumn">Hide in table</div>
       <div
-        class="list-group list-group-flush"
+        class="dropdown-divider"
+        *ngIf="hasAnyVisibleColumn && hasAnyInVisibleColumn"
+      ></div>
+
+      <div
+        class="text-muted show-hide-table-label"
+        *ngIf="hasAnyInVisibleColumn"
       >
+        Hide in table
+      </div>
+      <div class="list-group list-group-flush">
         <ng-container *ngFor="let col of columns">
           <div
             *ngIf="!col.is_visible"
@@ -2339,14 +2420,24 @@
           >
             <div class="d-flex gap-1">
               <div style="margin-top: -3px">
-                <span [inlineSVG]="'assets/icons/grip-vertical.svg'" class="cursor-grap" (mousedown)="$event.preventDefault();"></span>
+                <span
+                  [inlineSVG]="'assets/icons/grip-vertical.svg'"
+                  class="cursor-grap"
+                  (mousedown)="$event.preventDefault()"
+                ></span>
               </div>
               <div class="fw-semibold">
                 {{ col.header }}
               </div>
             </div>
-            <div class="d-flex align-items-center" (click)="toggleColumnVisibility(col, true)">
-              <span [inlineSVG]="'assets/icons/eye-cross.svg'" class="me-2"></span>
+            <div
+              class="d-flex align-items-center"
+              (click)="toggleColumnVisibility(col, true)"
+            >
+              <span
+                [inlineSVG]="'assets/icons/eye-cross.svg'"
+                class="me-2"
+              ></span>
             </div>
           </div>
         </ng-container>

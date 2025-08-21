@@ -744,3 +744,71 @@ $header-background-color: #efe1e1;
 .cursor-grap{
   cursor: grabbing;
 }
+
+
+// Pagination Css
+
+ .pagination-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: #333;
+}
+ 
+.page-size select {
+  padding: 3px 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 13px;
+}
+ 
+.page-info {
+  margin-left: 10px;
+}
+ 
+.page-buttons {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+  align-items: center;
+}
+ 
+.page-buttons button {
+  padding: 3px 8px;
+  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1.2;
+}
+ 
+.page-buttons button.active {
+  background: #eee;
+  font-weight: 600;
+}
+ 
+.page-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+ 
+.page-buttons span {
+  padding: 0 6px;
+  color: #666;
+}
+ 
+.page-size .separator {
+  padding: 0 8px;
+  border-right: 1px solid #ccc; /* vertical line */
+  margin-right: 8px;           /* space after line */
+  .actions-dropdown {
+  position: fixed;
+  right: 200px;        
+  z-index: 1050;
+  background-color: #fff;  
+}
+}
+ 
