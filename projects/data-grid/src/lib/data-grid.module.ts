@@ -6,12 +6,13 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { DraggableHeaderDirective } from './directives/draggable-header.directive';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { InlineSVGModule } from 'ng-inline-svg';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
 @NgModule({
   declarations: [DataGridComponent, FilterPipe, DraggableHeaderDirective],
-  imports: [CommonModule, FormsModule, DragDropModule, InlineSVGModule.forRoot()],
+  imports: [CommonModule, FormsModule, DragDropModule, InlineSVGModule.forRoot(), BrowserAnimationsModule],
   exports: [DataGridComponent, DraggableHeaderDirective],
   providers: [],
 })

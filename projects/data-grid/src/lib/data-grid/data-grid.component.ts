@@ -50,6 +50,16 @@ import { CdkDropList } from '@angular/cdk/drag-drop';
       state('expanded', style({ height: '*', overflow: 'hidden', opacity: 1 })),
       transition('collapsed <=> expanded', animate('200ms ease-in-out')),
     ]),
+    trigger('slideToggle', [
+      transition(':enter', [
+        style({ height: '0px', opacity: 0, overflow: 'hidden' }),
+        animate('300ms ease-out', style({ height: '*', opacity: 1 }))
+      ]),
+      transition(':leave', [
+        style({ height: '*', opacity: 1, overflow: 'hidden' }),
+        animate('300ms ease-in', style({ height: '0px', opacity: 0 }))
+      ])
+    ])
   ],
 })
 export class DataGridComponent implements OnChanges, AfterViewInit {
@@ -804,7 +814,7 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   }
 
   applyFilter(col: any) {
-   this.filterColumnsList.push(col);
+    this.filterColumnsList.push(col);
     console.log('Applying filter for:', col);
   }
 
@@ -1683,10 +1693,16 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     }, 0);
   }
 
+  isActiveFilterOpen = false;
+  toggleActiveFilter() {
+    this.isActiveFilterOpen = !this.isActiveFilterOpen;
+  }
+
   toggleActions(type: string) {
     if (type === this.activeTopButton) this.activeTopButton = '';
     else this.activeTopButton = type;
     this.activeSubButton = '';
+    this.isFilterOpen = false;
     this.cdr.detectChanges();
   }
 
@@ -1719,7 +1735,7 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
       } else if (layoutType === 'medium') {
         this.rowHeight = 44;
         this.headerRowHeight = 44;
-           this.bodyTextFontsSize = 14;
+        this.bodyTextFontsSize = 14;
         this.headerTextFontsSize = 14;
 
       } else {
@@ -1787,42 +1803,202 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     this.oddRowsBackgroundColor = this.rowShadingEnabled ? '#f1f1f1' : undefined;
   }
 
-   searchTextForFilterDropDown = '';
-  toggleColumnInFilterDropdown(col: any){
+  searchTextForFilterDropDown = '';
+  toggleColumnInFilterDropdown(col: any) {
 
   }
 
-  removeColumnFromFilter(option: any){
+  removeColumnFromFilter(option: any) {
 
   }
 
   handleBackspace(event: Event) {
-  // If search is empty, remove last tag
-  if (!this.searchTextForFilterDropDown && this.selectedColumns.length) {
-    const last = this.selectedColumns[this.selectedColumns.length - 1];
-    this.removeColumnFromFilter(last);
+    // If search is empty, remove last tag
+    if (!this.searchTextForFilterDropDown && this.selectedFilterOptions.length) {
+      const last = this.selectedFilterOptions[this.selectedFilterOptions.length - 1];
+      this.toggleSelectionInFilter(last);
+    }
   }
-}
 
-isFilterOpen = false
-selectedColumnForFilter: any;
+  isFilterOpen = false
+  selectedColumnForFilter: any;
+  showFilters = false;
 
-openFilter(col: any){
-  this.isFilterOpen = true;
-  this.selectedColumnForFilter = col;
-}
+  openFilter(col: any) {
+    this.isFilterOpen = true;
+    this.selectedColumnForFilter = col;
 
-currentFilterSelectedIds :any[] = [];
+    if (col.type === 'dropdown') {
+      this.currentFilterSelectedIds.clear();
+      const savedIds = col?.query?._ids || [];
+      savedIds.forEach((id: string) => this.currentFilterSelectedIds.add(id));
 
-selectedColumns : any[] = [{id: 1, value: 'ABC'}]
-
-toggleSelectionInFilter(option: any){
-  let id = option.id || option._id || option;
-  if(this.currentFilterSelectedIds?.includes(id)){
-    this.currentFilterSelectedIds = this.currentFilterSelectedIds.filter(c => c.id ? c.id : c._id !== id);
-  }else{
-    this.currentFilterSelectedIds.push(id);
+      this.selectedFilterOptions = this.selectedColumnForFilter?.column_dropdown_value.filter(
+        (option: any) => this.currentFilterSelectedIds.has(option?.id || option?._id || option)
+      );
+    } else if (['string', 'number', 'date'].includes(col.type)) {
+      this.firstCondition = col?.query?.first_condition || 'contain';
+      this.firstValue = col?.query?.first_value || '';
+      this.condition = col?.query?.condition || 'none';
+      this.secondCondition = col?.query?.second_condition || '';
+      this.secondValue = col?.query?.second_value || '';
+    }
   }
+
+
+  firstValue: string | number = '';
+  firstCondition = '';
+  secondValue: string | number = '';
+  secondCondition = '';
+  condition = '';
+
+  resetTextFilterChanges() {
+    this.firstCondition = 'contain';
+    this.firstValue = '';
+    this.condition = 'none';
+    this.secondCondition = '';
+    this.secondValue = '';
+    this.isFilterOpen = false;
+    this.isActiveFilterOpen = false;
+    this.activeTopButton = '';
+  }
+
+
+  selectedFilterOptions: any[] = []
+
+  currentFilterSelectedIds = new Set<string>();
+
+  toggleSelectionInFilter(option: any) {
+    const id = option.id || option._id || option;
+    if (this.currentFilterSelectedIds.has(id)) {
+      this.currentFilterSelectedIds.delete(id);
+    } else {
+      this.currentFilterSelectedIds.add(id);
+    }
+    this.selectedFilterOptions = this.selectedColumnForFilter?.column_dropdown_value.filter((option: any) => this.currentFilterSelectedIds.has(option.id || option._id || option))
+    this.cdr.detectChanges();
+  }
+
+  resetFilterChanges() {
+    this.isFilterOpen = false;
+    this.currentFilterSelectedIds.clear();
+    this.selectedFilterOptions!.length = 0;
+    this.isActiveFilterOpen = false;
+    this.activeTopButton = '';
+  }
+
+  applyDropdownFilter() {
+    const findColumn = (columns: any[], field: string): any => {
+      for (const col of columns) {
+        if (col.field === field) return col;
+        if (col.children && col.children.length) {
+          const found = findColumn(col.children, field);
+          if (found) return found;
+        }
+      }
+      return null;
+    };
+
+    const column = findColumn(this.columns, this.selectedColumnForFilter.field);
+    if (column) {
+      if (column.type === 'dropdown') {
+        column.query = column.query || {};
+        column.query._ids = [];
+        this.currentFilterSelectedIds.forEach(id => {
+          if (!column.query._ids.includes(id)) {
+            column.query._ids.push(id);
+          }
+        });
+      } else if (['string', 'number', 'date'].includes(column.type)) {
+        column.query = {
+          first_condition: this.firstCondition || 'contain',
+          first_value: this.firstValue || '',
+          condition: this.condition || 'none',
+          second_condition: this.secondCondition || '',
+          second_value: this.secondValue || ''
+        };
+      }
+    }
+    this.isFilterOpen = false;
+    this.isActiveFilterOpen = false;
+    this.activeTopButton = '';
+    console.log("Columns after filter applied: ", this.columns);
+  }
+
+  get activeFilteredColumns(): any[] {
+    const collectFiltered = (columns: any[]): any[] => {
+      let result: any[] = [];
+
+      columns.forEach(col => {
+        // If col has children, search them too
+        if (col.children && col.children.length) {
+          result = result.concat(collectFiltered(col.children));
+        }
+
+        if (col.query) {
+          const hasDropdownFilter =
+            Array.isArray(col.query._ids) && col.query._ids.length > 0;
+
+          const hasValueFilter =
+            (col.query.first_value && col.query.first_value !== '') ||
+            (col.query.second_value && col.query.second_value !== '');
+
+          if (hasDropdownFilter || hasValueFilter) {
+            result.push(col);
+          }
+        }
+      });
+
+      return result;
+    };
+
+    return collectFiltered(this.columns);
+  }
+
+
+  toggleOpenFilter() {
+
+  }
+
+
+
+
+  // Cell Editing Work start here
+
+ editingKey: string | null = null;
+ activeCell: string | null = null;
+
+setActiveCell(row: any, column: any) {
+  this.activeCell = ((row.id || row._id) + '-' + column.field);
+  this.cdr.detectChanges();
 }
 
+isActiveCell(row: any, col: any): boolean {
+  return this.activeCell === ((row.id || row._id) + '-' + col.field);
+}
+
+enableEdit(row: any, column: any) {
+  this.editingKey = ((row.id || row._id) + '-' + column.field);
+  this.cdr.detectChanges();
+}
+
+disableEdit() {
+  this.editingKey = null;
+  this.cdr.detectChanges();
+}
+
+isEditing(row: any, col: any): boolean {
+  return this.editingKey === ((row.id || row._id) + '-' + col.field);
+}
+
+ setNestedValue(obj: any, path: string, value: any): void {
+    const keys = path.split('.');
+    const lastKey = keys.pop();
+    const target = keys.reduce((acc, key) => acc[key] ??= {}, obj);
+    if (lastKey) target[lastKey] = value;
+    const sendObj = {
+      data: { ...obj },
+      eventType: 'onCellEdit',
+    };
+  }
 }

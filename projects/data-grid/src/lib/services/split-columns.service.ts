@@ -60,10 +60,10 @@ export class SplitColumnsService {
         for (const child of col.children) {
           if (!child?.query?.firt_value && !child?.query?._ids?.length) {
             child['query'] = {
-              first_condition: 'contains',
+              first_condition: 'contain',
               first_value: null,
-              condition: 'or',
-              second_condition: 'contains',
+              condition: 'none',
+              second_condition: 'contain',
               second_value: null,
               _ids: [],
             };
@@ -72,10 +72,10 @@ export class SplitColumnsService {
       }
       if (!col?.query?.firt_value && !col?.query?._ids?.length) {
         col.query = {
-          first_condition: 'contains',
+          first_condition: 'contain',
           first_value: null,
-          condition: 'or',
-          second_condition: 'contains',
+          condition: 'none',
+          second_condition: 'contain',
           second_value: null,
           _ids: [],
         };

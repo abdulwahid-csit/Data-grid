@@ -16,8 +16,8 @@
     <div class="d-flex gap-2">
       <div
         class="cursor-pointer"
-        (click)="toggleActions('filter')"
-        [class.active]="activeTopButton === 'filter'"
+        (click)="showFilters = !showFilters"
+        [class.active]="showFilters"
       >
         <span
           [inlineSVG]="'assets/icons/filter-2.svg'"
@@ -175,18 +175,59 @@
   </div>
 
   <div
-    class="top-filter-row border-top py-2"
+    *ngIf="showFilters"
+    class="top-filter-row border-top py-2 d-flex gap-2"
     [style.height.px]="topFilterRowHeight"
   >
+    <div *ngFor="let col of activeFilteredColumns" class="filter-tags">
+      <div
+        (click)="
+          isActiveFilterOpen = true;
+          activeTopButton = 'filter-columns';
+          openFilter(col)
+        "
+        class="d-flex justify-content-center align-items-center text-muted add-filter-button active-filters"
+        style="white-space: nowrap"
+        [class.active]="
+          col.field == selectedColumnForFilter.field &&
+          isActiveFilterOpen &&
+          activeTopButton == 'filter-columns'
+        "
+      >
+        <span class="header-tag mt-0"
+          ><span
+            *ngIf="col?.pinned"
+            [inlineSVG]="'assets/icons/pin.svg'"
+            class="me-2"
+          ></span
+          >{{ col.header }}</span
+        >
+      </div>
+      <ng-container
+        *ngIf="
+          activeTopButton === 'filter-columns' &&
+          col.field == selectedColumnForFilter.field &&
+          isActiveFilterOpen
+        "
+      >
+        <div
+          *ngTemplateOutlet="filterColumns; context: { column: col }"
+          class="actions-dropdown mt-1"
+        ></div>
+      </ng-container>
+    </div>
+
     <div>
       <div
-        (click)="toggleActions('filter-columns')"
+        (click)="toggleActions('filter-columns'); isActiveFilterOpen = false"
         class="d-flex justify-content-center align-items-center text-muted add-filter-button"
         style="width: 70px"
       >
         <span [inlineSVG]="'assets/icons/plus.svg'" class="me-2"></span>Filter
       </div>
-      <ng-container *ngIf="activeTopButton === 'filter-columns'">
+      <ng-container
+        *ngIf="activeTopButton === 'filter-columns' && !isActiveFilterOpen"
+      >
         <div
           *ngTemplateOutlet="filterColumns"
           class="actions-dropdown mt-1"
@@ -196,8 +237,11 @@
   </div>
 
   <div
+    [style.height]="
+      showFilters ? 'calc(100% - ' + topFilterRowHeight + 'px)' : '100%'
+    "
     cdkDropListGroup
-    class="h-100 data-grid-table-wrapper overflow-hidden"
+    class="data-grid-table-wrapper overflow-hidden"
     #dataGridContainer
     [style.fontFamily]="fontFaimly"
   >
@@ -1381,6 +1425,7 @@
 <!-- Actual Cell is Here -->
 <ng-template #cellTemplate let-col="col" let-row="row">
   <div
+    (click)="disableEdit(); setActiveCell(row, col)"
     [style.fontWeight]="bodyFontWeight"
     [class.border-right]="showVerticalBorder"
     class="cell"
@@ -1388,12 +1433,79 @@
     [style.width.px]="col.width"
     [style.min-width.px]="col.width"
     [style.fontSize.px]="bodyTextFontsSize"
+    [class.active-cell]="isActiveCell(row, col) && !isEditing(row, col)"
+    (dblclick)="enableEdit(row, col)"
   >
-    <ng-container [ngSwitch]="col.type">
-      <span *ngSwitchCase="'text'">{{ getNestedValue(row, col.field) }}</span>
-      <input *ngSwitchCase="'input'" [(ngModel)]="row[col.field]" />
-      <span *ngSwitchDefault>{{ getNestedValue(row, col.field) || "-" }}</span>
-    </ng-container>
+    <div class="table-cell" [class.active-for-editing]="isEditing(row, col)">
+      <div (click)="$event.stopPropagation()" *ngIf="isEditing(row, col); else viewMode">
+        <ng-container [ngSwitch]="col.type">
+          <!-- Text Input -->
+          <input
+            [style.height.px]="rowHeight - 10"
+            *ngSwitchCase="'input'"
+            type="text"
+            [(ngModel)]="row[col.field]"
+            (blur)="disableEdit()"
+            autofocus
+            class="form-control form-control-sm"
+          />
+
+          <!-- Number Input -->
+          <input
+            [style.height.px]="rowHeight - 8"
+            *ngSwitchCase="'number'"
+            type="number"
+            [(ngModel)]="row[col.field]"
+            (blur)="disableEdit()"
+            autofocus
+            class="form-control form-control-sm"
+          />
+
+          <!-- Date Input -->
+          <input
+            [style.height.px]="rowHeight - 8"
+            *ngSwitchCase="'date'"
+            type="date"
+            [(ngModel)]="row[col.field]"
+            (blur)="disableEdit()"
+            autofocus
+            class="form-control form-control-sm"
+          />
+
+          <!-- Dropdown -->
+          <!-- <select
+            *ngSwitchCase="'dropdown'"
+            [(ngModel)]="row[col.field]"
+            (blur)="disableEdit()"
+            autofocus
+            class="form-select form-select-sm"
+          > -->
+            <!-- <option *ngFor="let option of col.options" [value]="option.value">
+              {{ option.label }}
+            </option>
+          </select> -->
+
+          <!-- Default fallback -->
+          <input
+            *ngSwitchDefault
+            [style.height.px]="rowHeight - 10"
+            [style.maxHeight.px]="rowHeight - 10"
+            #textInput
+            type="text"
+            [(ngModel)]="row[col.field]"
+            (blur)="disableEdit()"
+            (keydown.enter)="textInput.blur()"
+            autofocus
+            class="form-control form-control-sm"
+          />
+        </ng-container>
+      </div>
+
+      <!-- Display mode -->
+      <ng-template #viewMode>
+        <div class="text-ellipsis w-100">{{ getNestedValue(row, col.field) || "-" }}</div>
+      </ng-template>
+    </div>
   </div>
 </ng-template>
 
@@ -2564,12 +2676,13 @@
   </div>
 </ng-template>
 
-<ng-template #filterColumns>
+<ng-template #filterColumns let-col="column">
   <div
-    *ngIf="!isFilterOpen"
+    @slideToggle
+    *ngIf="!isFilterOpen && activeTopButton == 'filter-columns'"
     (click)="$event.stopPropagation()"
     class="shadow rounded-3 bg-white actions-dropdown mt-1 dropdown-menu show shadow custom-menu table-layout"
-    style="width: 280px; right: unset; max-width: 230px;"
+    style="width: 280px; right: unset; max-width: 230px"
   >
     <div class="mb-2 px-3">
       <div class="col-12 global-search">
@@ -2590,13 +2703,16 @@
     >
       <ng-container *ngFor="let col of columns">
         <div
-        (click)="openFilter(col)"
-          *ngIf="col.is_visible"
+          (click)="openFilter(col)"
+          *ngIf="
+            col.is_visible &&
+            !col?.query?.first_value &&
+            !col?.query?._ids?.length
+          "
           class="list-group-item border-0 px-0 d-flex justify-content-between align-items-center dropdown-item cursor-pointer"
         >
           <div class="d-flex gap-1">
-            <div style="margin-top: -3px">
-            </div>
+            <div style="margin-top: -3px"></div>
             <div class="fw-semibold">
               {{ col.header }}
             </div>
@@ -2608,49 +2724,47 @@
 
   <!-- Dropdown -->
   <div
-  *ngIf="isFilterOpen"
+    @slideToggle
+    *ngIf="isFilterOpen && selectedColumnForFilter.type == 'dropdown'"
     (click)="$event.stopPropagation()"
     class="shadow rounded-3 bg-white actions-dropdown mt-1 dropdown-menu show shadow custom-menu table-layout"
     style="width: 280px; right: unset; max-width: 230px"
   >
-    <!-- Selected Tags (top area) -->
-    <!-- Search + Tags inside input -->
     <div class="mb-2 px-3">
       <div
-        class="col-12 global-search position-relative border rounded d-flex align-items-center flex-wrap px-2"
+        class="col-12 global-search position-relative border rounded d-flex align-items-center flex-wrap px-2 filter-serach-inpt"
       >
-        <!-- Selected Tags -->
         <span
-          *ngFor="let selected of selectedColumnForFilter.column_dropdown_value;"
-          class="badge bg-primary d-flex align-items-center gap-1 me-1 mb-1"
+          *ngFor="let selected of selectedFilterOptions"
+          class="badge d-flex align-items-center gap-1 me-1 mb-1"
         >
-          {{ selected.value ||  selected}}
-          <button
-            type="button"
-            class="btn-close btn-close-white ms-1"
-            aria-label="Remove"
-            (click)="removeColumnFromFilter(selected)"
-          ></button>
+          {{ selected?.value ? selected.value : selected }}
+          <span
+            (click)="toggleSelectionInFilter(selected)"
+            [inlineSVG]="'assets/icons/cross-primary.svg'"
+            class="me-2"
+          ></span>
         </span>
-
-        <!-- Search Input -->
         <input
           class="form-control form-control-sm border-0 flex-grow-1"
-          style="padding: 0;"
-          placeholder="Filter by"
+          style="padding: 0"
+          [placeholder]="selectedFilterOptions?.length ? '' : 'Filter by'"
           type="search"
           [(ngModel)]="searchTextForFilterDropDown"
           (keydown.backspace)="handleBackspace($event)"
         />
       </div>
     </div>
-
-    <!-- Column List -->
     <div
       class="list-group list-group-flush"
       style="max-height: 500px; overflow: auto"
     >
-      <ng-container *ngFor="let col of selectedColumnForFilter.column_dropdown_value; let i = index">
+      <ng-container
+        *ngFor="
+          let col of selectedColumnForFilter.column_dropdown_value;
+          let i = index
+        "
+      >
         <div
           class="list-group-item border-0 px-2 d-flex justify-content-between align-items-center dropdown-item cursor-pointer"
         >
@@ -2659,34 +2773,175 @@
               class="form-check-input"
               type="checkbox"
               [id]="i"
-              [(ngModel)]="col.selected"
+              [checked]="currentFilterSelectedIds.has(col.id || col._id || col)"
               (change)="toggleSelectionInFilter(col)"
             />
             <label class="form-check-label fw-semibold" [for]="i">
-              {{ col.value }}
+              {{ col?.value || col?.name || col }}
             </label>
           </div>
         </div>
       </ng-container>
     </div>
-       <!-- Save Button -->
-    <div class="d-flex justify-content-center gap-2" style="height: 32px">
+    <div
+      class="d-flex justify-content-center gap-2 px-2 border-top"
+      style="height: 38px"
+    >
       <button
         type="button"
         style="height: 32px"
-        class="btn border w-100 d-flex align-items-center justify-content-center"
-        (click)="$event.stopPropagation(); isFilterOpen = false"
-        style="margin-top: -2px"
+        class="btn btn-outline-secondary border w-100 d-flex align-items-center justify-content-center mt-1"
+        (click)="$event.stopPropagation(); resetFilterChanges()"
       >
         <span>Cancel</span>
       </button>
       <button
         type="button"
         style="height: 32px"
-        class="btn btn-primary w-100 d-flex align-items-center justify-content-center"
+        class="btn btn-primary w-100 d-flex align-items-center justify-content-center mt-1"
+        (click)="applyDropdownFilter()"
       >
         <span style="margin-top: -2px">Save</span>
       </button>
     </div>
+  </div>
+
+  <!-- For Text fields and number fields-->
+
+  <div
+    @slideToggle
+    *ngIf="
+      isFilterOpen &&
+      (selectedColumnForFilter.type == 'string' ||
+        selectedColumnForFilter.type == 'number' ||
+        selectedColumnForFilter.type == 'date')
+    "
+    (click)="$event.stopPropagation()"
+    class="shadow rounded-3 bg-white actions-dropdown mt-1 dropdown-menu show shadow custom-menu table-layout"
+    style="width: 280px; right: unset; max-width: 230px"
+  >
+    <div class="col-12 position-relative p-2 text-filter">
+      <div class="mb-2">
+        <select
+          class="form-select form-select-sm custom-select"
+          [(ngModel)]="firstCondition"
+        >
+          <option value="equal">Equals</option>
+          <!-- <option value="not_equal">Not Equals</option> -->
+          <option value="contain">Contains</option>
+          <option value="before">Starts With</option>
+          <option value="after">Ends With</option>
+        </select>
+      </div>
+      <div class="mb-2">
+        <input
+          class="form-control form-control-sm"
+          placeholder="Enter first value"
+          type="search"
+          [type]="
+            selectedColumnForFilter.type == 'string'
+              ? 'text'
+              : selectedColumnForFilter.type
+          "
+          [(ngModel)]="firstValue"
+        />
+      </div>
+      <div *ngIf="firstValue">
+        <div class="d-flex my-3">
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="logicalAnd"
+              name="logicalOperator"
+              value="and"
+              [(ngModel)]="condition"
+            />
+            <label class="form-check-label" for="logicalAnd">AND</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="logicalOr"
+              name="logicalOperator"
+              value="or"
+              [(ngModel)]="condition"
+            />
+            <label class="form-check-label" for="logicalOr">OR</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input
+              class="form-check-input"
+              type="radio"
+              id="logicalNone"
+              name="logicalOperator"
+              value="none"
+              [(ngModel)]="condition"
+            />
+            <label class="form-check-label" for="logicalNone">None</label>
+          </div>
+        </div>
+
+        <div class="my-3">
+          <!-- Second condition select -->
+          <select
+            class="form-select form-select-sm"
+            [(ngModel)]="secondCondition"
+          >
+            <option value="equal">Equals</option>
+            <!-- <option value="not_equal">Not Equals</option> -->
+            <option value="contain">Contains</option>
+            <option value="before">Starts With</option>
+            <option value="after">Ends With</option>
+          </select>
+        </div>
+
+        <div class="mb-2">
+          <!-- Second value input -->
+          <input
+            [type]="
+              selectedColumnForFilter.type == 'string'
+                ? 'text'
+                : selectedColumnForFilter.type
+            "
+            class="form-control form-control-sm"
+            placeholder="Enter second value"
+            type="search"
+            [(ngModel)]="secondValue"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="d-flex justify-content-center gap-2 px-2 border-top"
+      style="height: 38px"
+    >
+      <button
+        type="button"
+        style="height: 32px"
+        class="btn btn-outline-secondary border w-100 d-flex align-items-center justify-content-center mt-1"
+        (click)="$event.stopPropagation(); resetTextFilterChanges()"
+      >
+        <span>Cancel</span>
+      </button>
+      <button
+        type="button"
+        style="height: 32px"
+        class="btn btn-primary w-100 d-flex align-items-center justify-content-center mt-1"
+        (click)="applyDropdownFilter()"
+      >
+        <span style="margin-top: -2px">Save</span>
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<!-- Edit dropdown here -->
+<ng-template let-col>
+  <div class="drop-down-edit">
   </div>
 </ng-template>
