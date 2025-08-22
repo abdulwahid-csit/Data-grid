@@ -152,7 +152,13 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   // Footer Padding
   @Input() footerPadding: number = 3
 
+
+  // Footer Padding
+  @Input() topFilterRowHeight: number = 53
+
   @Input() rowShadingEnabled: boolean = false;
+
+
 
 
 
@@ -192,6 +198,8 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   originalDataSet: any[] = [];
   activeTopButton: string | null = '';
   selectedTableLayout = 'medium';
+  filterColumnsList: any[] = [];
+
   constructor(
     private columnService: SplitColumnsService,
     private cdr: ChangeDetectorRef,
@@ -796,7 +804,7 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   }
 
   applyFilter(col: any) {
-    // Implement filter logic
+   this.filterColumnsList.push(col);
     console.log('Applying filter for:', col);
   }
 
@@ -1678,6 +1686,14 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   toggleActions(type: string) {
     if (type === this.activeTopButton) this.activeTopButton = '';
     else this.activeTopButton = type;
+    this.activeSubButton = '';
+    this.cdr.detectChanges();
+  }
+
+  activeSubButton = '';
+  toggleSubActions(type: string) {
+    if (type === this.activeSubButton) this.activeSubButton = '';
+    else this.activeSubButton = type;
     this.cdr.detectChanges();
   }
 
@@ -1685,6 +1701,7 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     this.showActionsDropDown = !this.showActionsDropDown;
     this.cdr.detectChanges();
   }
+
 
 
   changeTableLayout(event: Event, layoutType: string) {
@@ -1770,5 +1787,42 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
     this.oddRowsBackgroundColor = this.rowShadingEnabled ? '#f1f1f1' : undefined;
   }
 
+   searchTextForFilterDropDown = '';
+  toggleColumnInFilterDropdown(col: any){
+
+  }
+
+  removeColumnFromFilter(option: any){
+
+  }
+
+  handleBackspace(event: Event) {
+  // If search is empty, remove last tag
+  if (!this.searchTextForFilterDropDown && this.selectedColumns.length) {
+    const last = this.selectedColumns[this.selectedColumns.length - 1];
+    this.removeColumnFromFilter(last);
+  }
+}
+
+isFilterOpen = false
+selectedColumnForFilter: any;
+
+openFilter(col: any){
+  this.isFilterOpen = true;
+  this.selectedColumnForFilter = col;
+}
+
+currentFilterSelectedIds :any[] = [];
+
+selectedColumns : any[] = [{id: 1, value: 'ABC'}]
+
+toggleSelectionInFilter(option: any){
+  let id = option.id || option._id || option;
+  if(this.currentFilterSelectedIds?.includes(id)){
+    this.currentFilterSelectedIds = this.currentFilterSelectedIds.filter(c => c.id ? c.id : c._id !== id);
+  }else{
+    this.currentFilterSelectedIds.push(id);
+  }
+}
 
 }
