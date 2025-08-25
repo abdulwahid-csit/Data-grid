@@ -109,7 +109,7 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   @Input() leftPinnedBackgroundColor: string | undefined = '#000';
 
   // Body Background color;
-  @Input() bodyBackgroundColor: string | undefined = '#000';
+  @Input() bodyBackgroundColor: string | undefined = '#fff';
 
   // Right Pinned Background color;
   @Input() rightPinnedBackgroundColor: string | undefined = '#000';
@@ -167,6 +167,9 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   @Input() topFilterRowHeight: number = 53
 
   @Input() rowShadingEnabled: boolean = false;
+
+
+  @Input() singleSpaAssetsPath: string = '';
 
 
 
@@ -261,14 +264,12 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
           this.updateColumnWidthsAndGroups();
           this.refreshPreviewColumns();
           this.setSectionsWidth();
-          this.cdr.detectChanges(); // ✅ force update after async DOM calc
+          this.cdr.detectChanges();
         }
       }, 10);
 
       setTimeout(() => {
         this.updateFlattenedData();
-        this.computeViewportRows();
-        this.updateVisibleRows(0);
 
         if (this.mainScroll?.nativeElement) {
           const ro = new ResizeObserver(() => {
@@ -300,6 +301,12 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
       this.refreshPreviewColumns();
       this.updateFlattenedData();
       this.cdr.detectChanges(); // ✅ ensures new dataset updates the grid instantly
+      setTimeout(() => {
+         if (this.mainScroll?.nativeElement) {
+        this.computeViewportRows();
+        this.updateVisibleRows(0);
+         }
+      }, 100);
     }
   }
 
@@ -377,7 +384,7 @@ export class DataGridComponent implements OnChanges, AfterViewInit {
   }
 
   SetColumnsDefaultWidth() {
-    const containerWidth = this.dataGridContainer.nativeElement.offsetWidth;
+    const containerWidth = this.dataGridContainer?.nativeElement.offsetWidth;
     this.columns = this.columnService.assignDefaultWidths(
       this.columns,
       containerWidth
@@ -1979,8 +1986,26 @@ isActiveCell(row: any, col: any): boolean {
 
 enableEdit(row: any, column: any) {
   this.editingKey = ((row.id || row._id) + '-' + column.field);
+
+  if (column.type === 'dropdown') {
+    setTimeout(() => {
+      const dropdownMenu = document.querySelector('.cell-editing-dropdown-menu') as HTMLElement;
+      if (dropdownMenu) {
+        const rect = dropdownMenu.getBoundingClientRect();
+        const windowHeight = this.dataGridContainer.nativeElement?.offsetHeight;
+
+        if (rect.bottom > windowHeight) {
+          dropdownMenu.style.top = `-${rect.height}px`;
+        } else {
+          dropdownMenu.style.top = '100%';
+        }
+      }
+    });
+  }
+
   this.cdr.detectChanges();
 }
+
 
 disableEdit() {
   this.editingKey = null;

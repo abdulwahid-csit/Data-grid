@@ -12,7 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [DataGridComponent, FilterPipe, DraggableHeaderDirective],
-  imports: [CommonModule, FormsModule, DragDropModule, InlineSVGModule.forRoot(), BrowserAnimationsModule],
+  imports: [CommonModule, FormsModule, DragDropModule, InlineSVGModule.forRoot()],
   exports: [DataGridComponent, DraggableHeaderDirective],
   providers: [],
 })

@@ -4,7 +4,8 @@
   >
     <div class="col-4 global-search">
       <span
-        [inlineSVG]="'assets/icons/search.svg'"
+      style="top: 8px;"
+        [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/search.svg'"
         class="mx-2 position-absolute"
       ></span>
       <input
@@ -20,7 +21,7 @@
         [class.active]="showFilters"
       >
         <span
-          [inlineSVG]="'assets/icons/filter-2.svg'"
+          [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/filter-2.svg'"
           class="top-icon me-2"
         ></span>
       </div>
@@ -30,7 +31,7 @@
         [class.active]="activeTopButton === 'advance-filter'"
       >
         <span
-          [inlineSVG]="'assets/icons/zoom-charge.svg'"
+          [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/zoom-charge.svg'"
           class="top-icon me-2"
         ></span>
       </div>
@@ -45,7 +46,7 @@
         "
       >
         <span
-          [inlineSVG]="'assets/icons/settings-2.svg'"
+          [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/settings-2.svg'"
           class="top-icon me-2"
         ></span>
 
@@ -61,12 +62,15 @@
             >
               <span
                 ><span
-                  [inlineSVG]="'assets/icons/table-2.svg'"
+                  [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/table-2.svg'"
                   class="me-2"
                 ></span>
                 Table Layout</span
               >
-              <i class="bi bi-chevron-right"></i>
+              <span
+                  [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/chevron-right.svg'"
+                  class="me-2"
+                ></span>
             </a>
             <!-- Table Presets -->
             <a
@@ -75,12 +79,15 @@
             >
               <span
                 ><span
-                  [inlineSVG]="'assets/icons/list-details.svg'"
+                  [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/list-details.svg'"
                   class="me-2"
                 ></span>
                 Table Presets</span
               >
-              <i class="bi bi-chevron-right"></i>
+             <span
+                  [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/chevron-right.svg'"
+                  class="me-2"
+                ></span>
             </a>
 
             <!-- Columns -->
@@ -92,7 +99,7 @@
               class="dropdown-item d-flex justify-content-between align-items-center"
             >
               <span
-                ><span [inlineSVG]="'assets/icons/eye.svg'" class="me-2"></span>
+                ><span [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/eye.svg'" class="me-2"></span>
                 Columns</span
               >
               <span class="text-muted">{{ columnsCount }}</span>
@@ -103,8 +110,8 @@
             <!-- Filter -->
             <a class="dropdown-item">
               <span
-                [inlineSVG]="'assets/icons/filter-2.svg'"
-                class="me-2"
+                [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/filter-2.svg'"
+                class="me-2 mt-1"
               ></span>
               Filter
             </a>
@@ -112,7 +119,7 @@
             <!-- Download -->
             <a class="dropdown-item">
               <span
-                [inlineSVG]="'assets/icons/download.svg'"
+                [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/download.svg'"
                 class="me-2"
               ></span>
               Download as CSV
@@ -154,7 +161,7 @@
           (click)="toggleActions('actions')"
         >
           Action
-          <span [inlineSVG]="'assets/icons/Vector.svg'" class=""></span>
+          <span [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/Vector.svg'" class=""></span>
         </button>
 
         <!-- Dropdown overlay -->
@@ -197,7 +204,7 @@
         <span class="header-tag mt-0"
           ><span
             *ngIf="col?.pinned"
-            [inlineSVG]="'assets/icons/pin.svg'"
+            [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/pin.svg'"
             class="me-2"
           ></span
           >{{ col.header }}</span
@@ -223,7 +230,7 @@
         class="d-flex justify-content-center align-items-center text-muted add-filter-button"
         style="width: 70px"
       >
-        <span [inlineSVG]="'assets/icons/plus.svg'" class="me-2"></span>Filter
+        <span [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/plus.svg'" class="me-2"></span>Filter
       </div>
       <ng-container
         *ngIf="activeTopButton === 'filter-columns' && !isActiveFilterOpen"
@@ -684,6 +691,7 @@
                 [style.transform]="
                   'translateY(' + startIndex * rowHeight + 'px)'
                 "
+                [style.backgroundColor]="bodyBackgroundColor"
                 #centerScrollableBody
                 (scroll)="onCenterBodyScroll($event)"
               >
@@ -1024,7 +1032,7 @@
                         *ngIf="activeCol === child"
                         style="top: -50%; z-index: 21"
                         [style.left.px]="
-                          !child.pinned ? 0 : -fakeScrollbarScrollLeft
+                          -(!child?.pinned ? centerPinnedHeader.scrollLeft : 0)
                         "
                       >
                         <ng-container
@@ -1189,7 +1197,7 @@
               >
                 <div
                   class="three-dots p-1"
-                  (click)="activeCol = col; activeFilterCell = null"
+                  (click)="openThreeDotsMenu($event, col)"
                   style="cursor: pointer"
                 >
                   <i class="bi bi-three-dots-vertical"></i>
@@ -1201,7 +1209,7 @@
                   *ngIf="activeCol === col"
                   style="top: -50%; z-index: 21"
                   [style.left.px]="
-                    !col?.pinned ? 0 : -centerPinnedHeader.scrollLeft
+                    -(!col?.pinned ? centerPinnedHeader.scrollLeft : 0)
                   "
                 >
                   <ng-container
@@ -1428,16 +1436,19 @@
     (click)="disableEdit(); setActiveCell(row, col)"
     [style.fontWeight]="bodyFontWeight"
     [class.border-right]="showVerticalBorder"
-    class="cell"
+    class="cell overflow-visible"
     [attr.field]="col.field"
     [style.width.px]="col.width"
     [style.min-width.px]="col.width"
     [style.fontSize.px]="bodyTextFontsSize"
     [class.active-cell]="isActiveCell(row, col) && !isEditing(row, col)"
-    (dblclick)="enableEdit(row, col)"
+    (dblclick)="$event.preventDefault(); enableEdit(row, col)"
   >
     <div class="table-cell" [class.active-for-editing]="isEditing(row, col)">
-      <div (click)="$event.stopPropagation()" *ngIf="isEditing(row, col); else viewMode">
+      <div
+        (click)="$event.stopPropagation()"
+        *ngIf="isEditing(row, col); else viewMode"
+      >
         <ng-container [ngSwitch]="col.type">
           <!-- Text Input -->
           <input
@@ -1473,17 +1484,59 @@
           />
 
           <!-- Dropdown -->
-          <!-- <select
+          <!-- ng-select like dropdown -->
+          <div
             *ngSwitchCase="'dropdown'"
-            [(ngModel)]="row[col.field]"
+            class="dropdown w-100"
             (blur)="disableEdit()"
-            autofocus
-            class="form-select form-select-sm"
-          > -->
-            <!-- <option *ngFor="let option of col.options" [value]="option.value">
-              {{ option.label }}
-            </option>
-          </select> -->
+          >
+            <!-- Trigger -->
+            <button
+              class="form-select form-select-sm text-start w-100 text-ellipsis"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              [style.minHeight.px]="(rowHeight - 10)"
+               data-bs-display="static"
+            >
+              <ng-container>
+                {{getNestedValue(row, col.field)?.value || getNestedValue(row, col.field)?.name || getNestedValue(row, col.field)}}
+              </ng-container>
+              <ng-template #placeholder> Select options... </ng-template>
+            </button>
+
+            <!-- Menu -->
+            <div class="dropdown-menu w-100 p-0 cell-editing-dropdown-menu rounded-3" [class.show]="isEditing(row, col)">
+              <!-- Search -->
+              <div class="px-2 py-1">
+                <input
+                  type="text"
+                  class="form-control form-control-sm"
+                  placeholder="Search..."
+                  [(ngModel)]="col._searchText"
+                />
+              </div>
+
+              <!-- Options -->
+              <div class="cell-editin-dropdown" style="max-height: 200px; overflow: auto;">
+                <div
+                  (click)="setNestedValue(row, col.field, option); disableEdit()"
+                  class="px-2 py-1 d-flex align-items-center item"
+                  *ngFor="
+                    let option of col.column_dropdown_value
+                      | filter : col._searchText
+                  "
+                >
+                  <label
+                    class="form-check-label d-flex align-items-center mb-0"
+                    [for]="col.field + '-' + option.value || option"
+                  >
+                    {{ option.value || option }}
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <!-- Default fallback -->
           <input
@@ -1503,7 +1556,9 @@
 
       <!-- Display mode -->
       <ng-template #viewMode>
-        <div class="text-ellipsis w-100">{{ getNestedValue(row, col.field) || "-" }}</div>
+        <div class="text-ellipsis w-100">
+          {{ getNestedValue(row, col.field)?.value || getNestedValue(row, col.field)?.name || getNestedValue(row, col.field) || '-'}}
+        </div>
       </ng-template>
     </div>
   </div>
@@ -2306,7 +2361,7 @@
         style="margin-left: -10px"
         (click)="toggleActions('setting')"
       >
-        <span [inlineSVG]="'assets/icons/arrow-left.svg'" class="me-2"></span>
+        <span [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/arrow-left.svg'" class="me-2"></span>
       </button>
       <h6 class="mb-0 fw-bold">Table Layout</h6>
     </div>
@@ -2406,7 +2461,7 @@
           style="margin-left: -10px"
           (click)="toggleActions('setting')"
         >
-          <span [inlineSVG]="'assets/icons/arrow-left.svg'"></span>
+          <span [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/arrow-left.svg'"></span>
         </button>
         <h6 class="mb-0 fw-bold">Table Presets</h6>
       </div>
@@ -2427,7 +2482,7 @@
     <div class="mb-3">
       <div class="col-12 global-search">
         <span
-          [inlineSVG]="'assets/icons/search.svg'"
+          [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/search.svg'"
           class="mx-2 position-absolute"
         ></span>
         <input class="form-control form-control-sm" type="search" />
@@ -2448,7 +2503,7 @@
           <small class="text-muted">Created Aug 14, 2025</small>
         </div>
         <div class="d-flex align-items-center">
-          <span [inlineSVG]="'assets/icons/check-blue.svg'" class="me-2"></span>
+          <span [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/check-blue.svg'" class="me-2"></span>
           <div class="dropdown">
             <a
               href="javascript:void(0)"
@@ -2456,20 +2511,20 @@
               data-bs-toggle="dropdown"
             >
               <span
-                [inlineSVG]="'assets/icons/horizontal-dots.svg'"
+                [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/horizontal-dots.svg'"
                 class="me-2"
               ></span>
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
               <a class="dropdown-item d-flex align-items-center">
-                <span [inlineSVG]="'assets/icons/star.svg'" class="me-2"></span>
+                <span [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/star.svg'" class="me-2"></span>
                 Set as default
               </a>
 
               <a class="dropdown-item d-flex align-items-center text-danger">
                 <span
                   style="margin-top: -4px"
-                  [inlineSVG]="'assets/icons/trash-red.svg'"
+                  [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/trash-red.svg'"
                   class="me-2"
                 ></span>
                 Delete
@@ -2552,7 +2607,7 @@
           style="margin-left: -10px"
           (click)="toggleActions('setting')"
         >
-          <span [inlineSVG]="'assets/icons/arrow-left.svg'"></span>
+          <span [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/arrow-left.svg'"></span>
         </button>
         <h6 class="mb-0 fw-bold">Columns</h6>
       </div>
@@ -2568,7 +2623,7 @@
     <div class="mb-3">
       <div class="col-12 global-search">
         <span
-          [inlineSVG]="'assets/icons/search.svg'"
+          [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/search.svg'"
           class="mx-2 position-absolute"
         ></span>
         <input
@@ -2581,7 +2636,7 @@
     <!-- Preset List -->
     <div
       class="list-group list-group-flush"
-      style="max-height: 500px; overflow: auto; scrollbar-width: thin;"
+      style="max-height: 500px; overflow: auto; scrollbar-width: thin"
     >
       <div class="text-muted show-hide-table-label" *ngIf="hasAnyVisibleColumn">
         Show in table
@@ -2596,13 +2651,13 @@
             <div style="margin-top: -3px">
               <span
                 *ngIf="!col?.pinned"
-                [inlineSVG]="'assets/icons/grip-vertical.svg'"
+                [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/grip-vertical.svg'"
                 class="cursor-grap"
                 (mousedown)="$event.preventDefault()"
               ></span>
               <span
                 *ngIf="col?.pinned"
-                [inlineSVG]="'assets/icons/pin-blue.svg'"
+                [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/pin-blue.svg'"
                 class="cursor-grap"
                 (mousedown)="$event.preventDefault()"
               ></span>
@@ -2615,7 +2670,7 @@
             class="d-flex align-items-center"
             (click)="toggleColumnVisibility(col, false)"
           >
-            <span [inlineSVG]="'assets/icons/eye.svg'" class="me-2"></span>
+            <span [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/eye.svg'" class="me-2"></span>
           </div>
         </div>
       </ng-container>
@@ -2643,13 +2698,13 @@
               <div style="margin-top: -3px">
                 <span
                   *ngIf="!col?.pinned"
-                  [inlineSVG]="'assets/icons/grip-vertical.svg'"
+                  [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/grip-vertical.svg'"
                   class="cursor-grap"
                   (mousedown)="$event.preventDefault()"
                 ></span>
                 <span
                   *ngIf="col?.pinned"
-                  [inlineSVG]="'assets/icons/pin-blue.svg'"
+                  [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/pin-blue.svg'"
                   class="cursor-grap"
                   (mousedown)="$event.preventDefault()"
                 ></span>
@@ -2663,7 +2718,7 @@
               (click)="toggleColumnVisibility(col, true)"
             >
               <span
-                [inlineSVG]="'assets/icons/eye-cross.svg'"
+                [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/eye-cross.svg'"
                 class="me-2"
               ></span>
             </div>
@@ -2687,7 +2742,7 @@
     <div class="mb-2 px-3">
       <div class="col-12 global-search">
         <span
-          [inlineSVG]="'assets/icons/search.svg'"
+          [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/search.svg'"
           class="mx-2 position-absolute"
         ></span>
         <input
@@ -2741,7 +2796,7 @@
           {{ selected?.value ? selected.value : selected }}
           <span
             (click)="toggleSelectionInFilter(selected)"
-            [inlineSVG]="'assets/icons/cross-primary.svg'"
+            [inlineSVG]="singleSpaAssetsPath + 'data-grid/icons/cross-primary.svg'"
             class="me-2"
           ></span>
         </span>
@@ -2942,6 +2997,5 @@
 
 <!-- Edit dropdown here -->
 <ng-template let-col>
-  <div class="drop-down-edit">
-  </div>
+  <div class="drop-down-edit"></div>
 </ng-template>

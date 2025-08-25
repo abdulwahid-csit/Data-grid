@@ -29024,6 +29024,9 @@ export const result = {
                 "is_editable": false,
                 "is_sortable": false,
                 "is_search_able": false,
+                "query": {
+                    _ids: [100, 67, 34]
+                },
                 "column_dropdown_value": [
                     {
                         "id": 100,
